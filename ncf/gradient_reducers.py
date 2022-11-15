@@ -7,6 +7,8 @@ from typing import List
 import numpy as np
 import torch
 
+import random
+
 
 
 class Reducer:
@@ -64,8 +66,6 @@ class TopKReducer(Reducer):
             for tensor, start, end in zip(grad_in, flatgrad_start_idx, flatgrad_end_idx):
                 top_size = max(1, int(self.compression * tensor.nelement()))
                 _, positions = torch.topk(tensor.view(-1).abs(), top_size, sorted=False)
-                #_, indices = (tensor.view(-1).abs()).sort(descending = True)
-                #positions = indices[:top_size]
                 values = tensor.view(-1)[positions].contiguous()
                 flat_values[start:end] = values
                 flat_positions[start:end] = positions
@@ -102,7 +102,7 @@ class TopKReducer(Reducer):
                     values = val[start:end]
                     # out.view(-1)[pos].add_(1.0 / self.n_workers, val)
                     out.view(-1)[positions.long()] += values / self.n_workers
-            
+
         return bits_communicated, params_transmitted
 
 class GlobalTopKReducer(Reducer):
@@ -181,6 +181,10 @@ class ThreshReducer(Reducer):
     def __init__(self, random_seed, device, timer, thresh=0.5):
         super().__init__(random_seed, device, timer)
         self.threshold = thresh
+        self.iteration = -1
+        self.density_actual = 0.0
+        self.density_average = 0.0
+        self.num_grad = 0
 
     def reduce(self, grad_in, grad_out, memory_out):
         """
@@ -195,6 +199,13 @@ class ThreshReducer(Reducer):
         tensors_compressed = []
         compressed_positions = []
         local_sizes = []
+
+        self.iteration += 1
+
+        if self.iteration == 0:
+            for tensor in grad_in:
+                self.num_grad += tensor.view(-1).numel()
+
         with self.timer("reduce.threshold", verbosity=2):
             for tensor in grad_in:
                 positions, =  torch.where(tensor.view(-1).abs()>=self.threshold)
@@ -220,6 +231,7 @@ class ThreshReducer(Reducer):
             flatgrad_end_idx = tensor_idx[1:]
             flat_values = torch.empty(flatgrad_size, device=self.device)
             flat_positions = torch.empty(flatgrad_size, device=self.device, dtype=torch.int)
+            self.density_actual = flatgrad_size / self.num_grad
             
         with self.timer("reduce.flatput", verbosity=2):
             for values, positions, start, end in zip(tensors_compressed, compressed_positions, flatgrad_start_idx, flatgrad_end_idx):
@@ -278,8 +290,173 @@ class ThreshReducer(Reducer):
                     values = val[start:end]
                     # out.view(-1)[pos].add_(1.0 / self.n_workers, val)
                     out.view(-1)[positions.long()] += values / self.n_workers
-                    
+        self.density_average = (self.iteration * self.density_average + self.density_actual) / (self.iteration + 1)
+        if self.iteration % 10 == 0:
+            print('[Iteration ' + str(self.iteration) + '] [Rank ' + str(self.rank) + '] ' + ', d = ' + str(self.density_actual) + ', m = ' + str(self.density_average))
+                   
         return bits_communicated, params_transmitted
+
+class SageReducer(Reducer):
+     
+    def __init__(self, random_seed, device, timer, thresh=0.5, compression=0.001):
+        super().__init__(random_seed, device, timer)
+        self.threshold = thresh
+        self.iteration = -1
+        self.alpha = 1.0
+        self.beta = 1.0
+        self.savg_prev = 1 # Sampled average
+        self.savg_curr = 1
+        self.density_ideal = compression
+        self.density_actual = 0.0
+        self.density_average = 0.0
+        self.density_exam = 0.0 # Density examined by threshold of previous iteration
+        self.samp_sz = 400
+        self.tensor_sz = []
+        self.num_tensor = 0
+        self.num_grad = 0
+
+    def reduce(self, grad_in, grad_out, memory_out):
+        """
+        Reduce gradients between the workers in place
+        :param grad_in: dictionary
+        :param grad_out: dictionary
+        :param memory_out: dictionary
+        """
+        bits_communicated = 0
+        params_transmitted = 0
+        
+        tensors_compressed = []
+        compressed_positions = []
+        local_sizes = []
+
+        self.iteration += 1
+
+        with self.timer("reduce.heur_params", verbosity=2):
+            if self.iteration:
+                with self.timer("reduce.heur_params.alpha", verbosity=2):
+                    samp_acc = 0.0
+                    for i in range(self.samp_sz):
+                        idx_rand = random.randint(0, self.num_tensor - 1)
+                        samp_acc += abs(grad_in[idx_rand].view(-1)[random.randint(0, self.tensor_sz[idx_rand] - 1)])
+                    self.savg_curr = samp_acc / self.samp_sz   
+                    self.alpha = self.savg_curr / self.savg_prev
+                with self.timer("reduce.heur_params.beta", verbosity=2):
+                    numel_exam = 0
+                    for tensor in grad_in:
+                        positions, = torch.where(tensor.view(-1).abs()>=self.threshold*self.alpha)
+                        numel_exam += positions.numel()
+                    self.density_exam = numel_exam / self.num_grad
+                    exam = self.density_ideal - self.density_exam
+                    self.beta = 2.0 / (1.0 + np.exp(exam)) # 0.99975
+                self.threshold = self.threshold * self.alpha * self.beta
+            else:
+                for tensor in grad_in:
+                    temp_sz = tensor.view(-1).numel()
+                    self.tensor_sz.append(temp_sz)
+                    self.num_grad += temp_sz
+                self.samp_sz = int(self.num_grad / (1 + self.num_grad * 0.05 * 0.05)) # Slovin's formula
+                self.num_tensor = len(grad_in)
+                samp_acc = 0.0
+                for i in range(self.samp_sz):
+                    idx_rand = random.randint(0, self.num_tensor - 1)
+                    samp_acc += abs(grad_in[idx_rand].view(-1)[random.randint(0, self.tensor_sz[idx_rand] - 1)])
+                self.savg_curr = samp_acc / self.samp_sz
+        with self.timer("reduce.threshold", verbosity=2):
+            for tensor in grad_in:
+                positions, =  torch.where(tensor.view(-1).abs()>=self.threshold)
+                values = tensor.view(-1)[positions].contiguous()
+                tensors_compressed.append(values)
+                compressed_positions.append(positions)
+                local_sizes.append(values.numel())
+        with self.timer("reduce.memory", verbosity=2):
+            for tensor, mem, positions in zip(
+                grad_in, memory_out, compressed_positions
+            ):
+                mem.data[:] = tensor
+                mem.view(-1)[positions] = 0.0
+                
+        with self.timer("reduce.flatpack", verbosity=2):
+            flatgrad_size = 0
+            tensor_idx = [0]
+            for local_size in local_sizes:
+                flatgrad_size += local_size
+                tensor_idx.append(tensor_idx[-1] + local_size)
+            flatgrad_start_idx = tensor_idx[:-1]
+            flatgrad_end_idx = tensor_idx[1:]
+            flat_values = torch.empty(flatgrad_size, device=self.device)
+            flat_positions = torch.empty(flatgrad_size, device=self.device, dtype=torch.int)
+            self.density_actual = flatgrad_size / self.num_grad # We define density as 'num_selected / num_grad'
+            
+        with self.timer("reduce.flatput", verbosity=2):
+            for values, positions, start, end in zip(tensors_compressed, compressed_positions, flatgrad_start_idx, flatgrad_end_idx):
+                flat_values[start:end] = values
+                flat_positions[start:end] = positions
+
+        with self.timer("reduce.gather.context", verbosity=2):
+            flatgrad_size = torch.tensor(flatgrad_size, device = self.device)
+            flatgrad_start_idx = torch.tensor(flatgrad_start_idx, device = self.device)
+            flatgrad_end_idx = torch.tensor(flatgrad_end_idx, device = self.device)
+            if self.n_workers > 1:
+                gathered_sizes = [torch.empty_like(flatgrad_size) for i in range(self.n_workers)]
+                h1 = all_gather(gathered_sizes, flatgrad_size, async_op = True)
+                gathered_start_indices = [torch.empty_like(flatgrad_start_idx) for i in range(self.n_workers)]
+                h2 = all_gather(gathered_start_indices, flatgrad_start_idx, async_op = True)
+                gathered_end_indices = [torch.empty_like(flatgrad_end_idx) for i in range(self.n_workers)]
+                h3 = all_gather(gathered_end_indices, flatgrad_end_idx, async_op = True)
+                h1.wait()
+                h2.wait()
+                h3.wait()
+            else:
+                gathered_sizes = [flatgrad_size]
+                gathered_start_indices = [flatgrad_start_idx]
+                gathered_end_indices = [flatgrad_end_idx]
+                
+        with self.timer("reduce.pad", verbosity=2):
+            if self.n_workers > 1:
+                max_size = max(gathered_sizes)
+                if flatgrad_size != max_size:
+                    padding_values = torch.empty(max_size-flatgrad_size, dtype=flat_values.dtype, device=flat_values.device)
+                    padding_positions = torch.empty(max_size-flatgrad_size, dtype=flat_positions.dtype, device=flat_values.device)
+                    flat_values = torch.cat((flat_values, padding_values), dim=0)
+                    flat_positions = torch.cat((flat_positions, padding_positions), dim=0)
+
+                    '''
+                    Because of this padding, exising code prints high density which is not based on actual density.
+                    Rather, that density stands for the communication traffic which increased by padding.
+                    Thus, in our code, we consider 'density' as 'num of selected gradients locally / num of gradients' based on our definition.
+                    '''
+                
+        with self.timer("reduce.gather.tensors", verbosity=2):
+            if self.n_workers > 1:
+                worker_values = [torch.empty_like(flat_values) for i in range(self.n_workers)]
+                worker_positions = [torch.empty_like(flat_positions) for i in range(self.n_workers)]
+                h1 = all_gather(worker_values, flat_values, async_op=True)
+                h2 = all_gather(worker_positions, flat_positions, async_op=True)
+                h1.wait()
+                h2.wait()
+            else:
+                worker_values = [flat_values]
+                worker_positions = [flat_positions]
+            bits_communicated = n_bits(flat_values) + n_bits(flat_positions)
+            params_transmitted = flat_values.numel()
+        
+        with self.timer("reduce.combine", verbosity=2):
+            for out, start_indices, end_indices in zip(
+                grad_out, zip(*gathered_start_indices), zip(*gathered_end_indices)
+            ):
+                out.data[:] = 0
+                for pos, val, start, end in zip(worker_positions, worker_values, start_indices, end_indices):
+                    positions = pos[start:end]
+                    values = val[start:end]
+                    # out.view(-1)[pos].add_(1.0 / self.n_workers, val)
+                    out.view(-1)[positions.long()] += values / self.n_workers
+                   
+        self.savg_prev = self.savg_curr
+        self.density_average = (self.iteration * self.density_average + self.density_actual) / (self.iteration + 1)
+        if self.iteration % 10 == 0:
+            print('[Iteration ' + str(self.iteration) + '] [Rank ' + str(self.rank) + '] ' + 'a = ' + str(float(self.alpha)) + ', b = ' + str(self.beta) + ', delta = ' + str(float(self.threshold)) + ', c = ' + str(self.density_exam) + ', d = ' + str(self.density_actual) + ', m = ' + str(self.density_average))
+        return bits_communicated, params_transmitted
+
 class AccordionTopKReducer(Reducer):
     """
     Modified from https://github.com/uw-mad-dash/Accordion

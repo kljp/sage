@@ -364,24 +364,24 @@ def main():
                             
         total_params_transmitted += params_transmitted
         with timer("epoch_metrics.collect", epoch + 1.0, verbosity=2):
-            density = params_transmitted/(batches_per_epoch*total_params)*100
-            avg_density = total_params_transmitted/(batches_per_epoch*total_params*(epoch+1.0))*100
+            rtg = params_transmitted/(batches_per_epoch*total_params)*100 # rtg: ratio of transmitted gradients by compression
+            avg_rtg = total_params_transmitted/(batches_per_epoch*total_params*(epoch+1.0))*100
             epoch_metrics.reduce()
 
             if config["use_wandb"]:
-                wandb.log({'density'+'/'+'current': density}, step=int(current_step))
-                wandb.log({'density'+'/'+'average': avg_density}, step=int(current_step))
+                wandb.log({'ratio_transmit_grad'+'/'+'current': rtg}, step=int(current_step))
+                wandb.log({'ratio_transmit_grad'+'/'+'average': avg_rtg}, step=int(current_step))
                 wandb.log({'Epoch':epoch+1.0}, step=int(current_step))
 
             for key, value in epoch_metrics.value().items():
                 metric(
                     key,
-                    {"value": value.item(), "epoch": epoch + 1.0, "bits": bits_communicated, "density": density},
+                    {"value": value.item(), "epoch": epoch + 1.0, "bits": bits_communicated, "ratio_transmit_grad": rtg},
                     tags={"split": "train"},
                 )
                 metric(
                     f"last_{key}",
-                    {"value": value.item(), "epoch": epoch + 1.0, "bits": bits_communicated, "density": density},
+                    {"value": value.item(), "epoch": epoch + 1.0, "bits": bits_communicated, "ratio_transmit_grad": rtg},
                     tags={"split": "train"},
                 )
 
@@ -390,7 +390,7 @@ def main():
             for key, value in test_stats.items():
                 metric(
                     f"last_{key}",
-                    {"value": value.item(), "epoch": epoch + 1.0, "bits": bits_communicated, "density": density},
+                    {"value": value.item(), "epoch": epoch + 1.0, "bits": bits_communicated, "ratio_transmit_grad": rtg},
                     tags={"split": "test"},
                 )
 
@@ -399,7 +399,7 @@ def main():
             for key, value in test_stats.items():
                 metric(
                     f"runavg_{key}",
-                    {"value": value.item(), "epoch": epoch + 1.0, "bits": bits_communicated, "density": density},
+                    {"value": value.item(), "epoch": epoch + 1.0, "bits": bits_communicated, "ratio_transmit_grad": rtg},
                     tags={"split": "test"},
                 )
 

@@ -60,6 +60,7 @@ import dataloading
 from neumf import NeuMF
 
 import gradient_reducers
+from timer import Timer
 import wandb
 
 
@@ -125,7 +126,9 @@ def parse_args():
     parser.add_argument('--k_low', type=float, default=0.1, help='lower k in ACCORDION')
     parser.add_argument('--k_high', type=float, default=0.99, help='higher k in ACCORDION')
     ######################
+    parser.add_argument('--use_wandb', type=int, default=0)
     parser.add_argument('--wandbkey', type=str, default=None) # Add wandb key here
+    #parser.add_argument('--distributed', type=int, default=1)
     return parser.parse_args()
 
 
@@ -152,14 +155,9 @@ def init_distributed(args):
             run_name = args.reducer+'_'+str(args.comp_ratio)+'_'+ str(args.seed)
         elif args.reducer=='accordiontopk':
             run_name = 'acck' + '_' + str(args.k_low)+'_' + str(args.k_high) + '_'+ str(args.seed)
-        
-        filename = "dist_init"+'_'+run_name
-        if not os.path.isdir(args.shared_path):
-            raise RuntimeError(f"{shared_path} not a valid (existing) directory")
-        shared_file = os.path.join(args.shared_path, filename)
-
+         
         '''Initialize distributed communication'''
-        torch.distributed.init_process_group(backend=args.backend, init_method=f'file://{shared_file}', world_size=args.world_size, rank=args.rank)
+        torch.distributed.init_process_group(backend=args.backend, init_method=os.getenv('SHARED_PATH'), world_size=args.world_size, rank=args.rank)
     else:
         args.local_rank = 0
 
@@ -223,6 +221,9 @@ def main():
     elif args.reducer=='thresh':
         reducer = getattr(gradient_reducers, "ThreshReducer")(1, device, timer, thresh=args.thresh)
         run_name = args.reducer+'_'+str(args.thresh)+'_'+str(args.seed)
+    elif args.reducer=='sage':
+        reducer = getattr(gradient_reducers, "SageReducer")(1, device, timer, thresh=args.thresh, compression=args.comp_ratio)
+        run_name = args.reducer+'_'+str(args.thresh)+'_'+str(args.comp_ratio)+'_'+str(args.seed)
     elif args.reducer=='topk':
         reducer = getattr(gradient_reducers, "TopKReducer")(1, device, timer, compression=args.comp_ratio)
         run_name = args.reducer+'_'+str(args.comp_ratio)+'_'+str(args.seed)
@@ -357,14 +358,14 @@ def main():
         avg_ratio_transmitted = total_params_transmitted/(num_batches*total_params*(epoch+1.0))*100
         if args.use_wandb:
             wandb.log({'grad_norm'+'/'+'entire_model': grad_norm}, step=int(epoch+1))
-            wandb.log({'density'+'/'+'current': ratio_transmitted}, step=int(epoch+1))
-            wandb.log({'density'+'/'+'average': avg_ratio_transmitted}, step=int(epoch+1))
-            wandb.log({'density'+'/'+'bits': bits_communicated}, step=int(epoch+1))
-            wandb.log({'density'+'/'+'current': ratio_transmitted}, step=int(epoch+1))
-        print("###### Epoch stats: #######")
-        print("Current density:", ratio_transmitted)
-        print("Average Density:", avg_ratio_transmitted)
-        print("Total bits transmitted:", bits_communicated)
+            wandb.log({'ratio_transmit_grad'+'/'+'current': ratio_transmitted}, step=int(epoch+1))
+            wandb.log({'ratio_transmit_grad'+'/'+'average': avg_ratio_transmitted}, step=int(epoch+1))
+            wandb.log({'ratio_transmit_grad'+'/'+'bits': bits_communicated}, step=int(epoch+1))
+            wandb.log({'ratio_transmit_grad'+'/'+'current': ratio_transmitted}, step=int(epoch+1))
+        print("[Epoch " + str(epoch) + "] " + "[Rank " + str(args.rank) + "] " + "###### Epoch stats: #######")
+        print("[Epoch " + str(epoch) + "] " + "[Rank " + str(args.rank) + "] " + "Current ratio of transmitted gradients:", ratio_transmitted)
+        print("[Epoch " + str(epoch) + "] " + "[Rank " + str(args.rank) + "] " + "Average ratio of transmitted gradients:", avg_ratio_transmitted)
+        print("[Epoch " + str(epoch) + "] " + "[Rank " + str(args.rank) + "] " + "Total bits transmitted:", bits_communicated)
         
         del epoch_users, epoch_items, epoch_label
         train_time = time.time() - begin
@@ -390,13 +391,14 @@ def main():
                               'validation_epoch_time': val_time,
                               'eval_throughput': eval_throughput}
         epoch_stats = {'epoch_stats'+'/'+ key : value for key, value in cur_stats.items()}
-        wandb.log(epoch_stats, step=int(epoch+1))
+        if args.use_wandb:
+            wandb.log(epoch_stats, step=int(epoch+1))
 
         if hr > max_hr and args.rank == 0:
             max_hr = hr
             best_epoch = epoch
 #            save_checkpoint_path = os.path.join(args.checkpoint_dir, 'model.pth')
-            print("New best hr!")
+            print("[Epoch " + str(epoch) + "] " + "[Rank " + str(args.rank) + "] " + "New best hr!")
 #            torch.save(model.state_dict(), save_checkpoint_path)
             best_model_timestamp = time.time()
             best_stats={'best_train_throughput': max(train_throughputs),
@@ -408,12 +410,13 @@ def main():
                 'time_to_target': time.time() - main_start_time,
                 'time_to_best_model': best_model_timestamp - main_start_time}
             best_epoch_stats = {'best_epoch_stats'+'/'+key : value for key, value in best_stats.items()}
-            print(best_epoch_stats)
-            wandb.log(best_epoch_stats, step=int(best_epoch+1))
+            print("[Epoch " + str(epoch) + "] " + "[Rank " + str(args.rank) + "] " + str(best_epoch_stats))
+            if args.use_wandb:
+                wandb.log(best_epoch_stats, step=int(best_epoch+1))
 
         if args.threshold is not None:
             if hr >= args.threshold:
-                print("Hit threshold of {}".format(args.threshold))
+                print("[Epoch " + str(epoch) + "] " + "[Rank " + str(args.rank) + "] " + "Hit threshold of {}".format(args.threshold))
                 break
        
         # Log relative compression error and memory norm
@@ -459,6 +462,30 @@ def l2norm(tensor):
     """Compute the L2 Norm of a tensor in a fast and correct way"""
     return torch.sqrt(torch.sum(tensor ** 2))
 
+def log_metric(name, values, tags={}):
+    """Log timeseries data
+       This function will be overwritten when called through run.py"""
+    global current_step
+    value_list = []
+    for key in sorted(values.keys()):
+        value = values[key]
+        value_list.append(f"{key}:{value:7.3f}")
+
+    #Wandb logging
+        if os.getenv('USE_WANDB'):
+            for _, tag in tags.items():
+                wandb.log({str(name)+'/'+str(tag)+'_'+str(key): value}, step=int(current_step))
+
+    values = ", ".join(value_list)
+    tag_list = []
+    for key, tag in tags.items():
+        tag_list.append(f"{key}:{tag}")
+    tags = ", ".join(tag_list)
+    print("{name:30s} - {values} ({tags})".format(name=name, values=values, tags=tags))
+
+def metric(*args, **kwargs):
+    if os.getenv('RANK') == 0:
+        log_metric(*args, **kwargs) 
 
 if __name__ == '__main__':
     main()

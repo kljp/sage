@@ -33,10 +33,15 @@
 set -e
 set -x
 
+module purge
+module load python/3.7.1
+source activate sage
+
 curdir=`pwd`
 DATASET_NAME=${1:-'ml-20m'}
 RAW_DATADIR=${2:-$curdir}
 CACHED_DATADIR=${3:-"${RAW_DATADIR}/cache/${DATASET_NAME}"}
+REPO='https://files.grouplens.org/datasets/movielens/'
 
 # you can add another option to this case in order to support other datasets
 case ${DATASET_NAME} in
@@ -67,7 +72,7 @@ fi
 
 if [ ! -f ${ZIP_PATH} ]; then
     echo 'Dataset not found, downloading...'
-    ./download_dataset.sh ${DATASET_NAME} ${RAW_DATADIR}
+    wget ${REPO}${DATASET_NAME}'.zip' --no-check-certificate
 fi
 
 if [ ! -f ${RATINGS_PATH} ]; then
