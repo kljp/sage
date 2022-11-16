@@ -8,17 +8,25 @@ export WANDB_API_KEY=0 # Your wandb key
 export OUTPUT_DIR="" # Directoy for output files.
 export method="tcp://"
 export hostip="${hostip:-localhost}"
-export port=":23456"
-export DIST_INIT=$method$hostip$port # Path of torch.distributed distributed init file for rendezvous
+export port="${port:-23456}"
+export DIST_INIT=$method$hostip":"$port # Path of torch.distributed distributed init file for rendezvous
 export USE_WANDB=0 # Whether to use wandb or not
 ########################################## Tasks #########################################
 
 ##### ResNet18-CIFAR10 #######
- task='resnet18'
+# task='resnet18'
 ##############################
 
 ##### ResNet18-CIFAR100#######
 # task='resnet18_cifar100'
+##############################
+
+##### VGG16-CIFAR10 ####### ABNORMAL WORK
+# task='vgg16'
+##############################
+
+##### VGG16-CIFAR100####### ABNORMAL WORK
+# task='vgg16_cifar100'
 ##############################
 
 ##### GoogleNet-CIFAR10 #######
@@ -38,7 +46,7 @@ export USE_WANDB=0 # Whether to use wandb or not
 ##############################
 
 ###### LSTM-WikiText ###########
-# task='wikitext2'
+ task='wikitext2'
 ################################
 
 
@@ -72,9 +80,9 @@ world_size=2
 # |-----------------------------------------------------------------------------|
 
 ########### Exact ################
-#reducer='exact'
-#if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
-#python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --rank=${RANK}
+ reducer='exact'
+ if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
+ python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --rank=${RANK}
 ##############################
 
 ########### Threshold ############ 
@@ -84,9 +92,9 @@ world_size=2
 ##################################
 
 ########### SAGE ############ 
- reducer='sage'
- if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
- python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --thresh=0.00473 --comp_ratio=0.001 --rank=${RANK}
+# reducer='sage'
+# if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
+# python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --thresh=0.00473 --comp_ratio=0.001 --rank=${RANK}
 ##################################
 
 ########### Top-k ############

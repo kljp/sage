@@ -64,6 +64,16 @@ elif args.task == 'resnet18_cifar100':
     train.config['task']= "Cifar100"
     train.config['task_architecture']= "resnet18"
     #############################################
+    ############## VGG16-CIFAR10########## ABNORMAL WORK
+if args.task == 'vgg16':
+    train.config['task']= "Cifar"
+    train.config['task_architecture']= "vgg16"
+    #############################################
+    ############## VGG16-CIFAR100 ########## ABNORMAL WORK
+elif args.task == 'vgg16_cifar100':
+    train.config['task']= "Cifar100"
+    train.config['task_architecture']= "vgg16"
+    #############################################
     ############## SENet-CIFAR10 ##########
 elif args.task == 'senet':
     train.config['task']= "Cifar"

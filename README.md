@@ -1,49 +1,45 @@
-# Rethinking Gradient Sparsification as Total error minimization
+# SAGE: toward on-the-fly gradient compression ratio scaling
 
-## Deep Neural Network experiments
-Our DNN experiments consist of three tasks: Image Classification using CNNs, Language Modelling using LSTMs, and Recommendation using NCF. Image Classification and Language Modelling experiments are in the `cnn-lstm` directory, and Recommendation experiment is in the `ncf` directory. 
+## Description
+> ***SAGE*** is abbreviation of 'Sparsity-Adjustable Gradient Exchanger'. SAGE supports dynamic scaling of gradient compression ratio on-the-fly. Benchmarks include: 1) Image Classification using CNNs, 2) Language Modelling using LSTMs `cnn-lstm`, and 3) Recommendation using NCF `ncf`.
 
-## Logistic Regression experiments
-Our logistic regression experiment is implemented in the `logistic-regression` directory.
-## Create the Conda environment
+## How to setup
 
-To install the necessary dependencies, use the provided `environment.yml` to create a Conda envrironment by running the following command.
+To install the necessary dependencies, create Conda environment using `environment.yml` by running the following commands (note: check compatibility of each package version such as `cudatoolkit` and `cudnn` with your device, e.g., NVIDIA Tesla V100 GPU is compatible).
 
 ```bash
-$ conda env create --prefix ./env --file environment.yml
+$ conda env create --file environment.yml
+$ conda activate sage
+$ python -m spacy download en
+$ conda deactivate sage
 ```
 
-Once the new environment has been created you can activate the environment with the following 
-command.
+## How to start
+TBD
+### CNN and LSTM benchmarks
 
-```bash
-$ conda activate ./env
-```
-<!--
-Note that the `env` directory is *not* under version control as it can always be re-created from 
-the `environment.yml` file as necessary.
+TBD
 
-### Updating the Conda environment
+### Neural Collaborative Filtering (NCF) benchmarks
+#### 1. Prepare dataset
+TBD
+#### 2. Run training process
+TBD
 
-If you add (remove) dependencies to (from) the `environment.yml` file after the environment has 
-already been created, then you can update the environment with the following command.
+## Acknowledgements
 
-```bash
-$ conda env update --prefix ./env --file environment.yml --prune
-```
+Most of code except [SAGE](https://github.com/kljp/sage) implementation is provided by previous works. If you use the code, please cite the following papers also.
 
-### Listing the full contents of the Conda environment
+**PowerSGD** \[[Paper](https://arxiv.org/abs/1905.13727)\] \[[Code](https://github.com/epfml/powersgd)\] (`cnn-lstm`)
 
-The list of explicit dependencies for the project are listed in the `environmen.yml` file. Too see the full lost of packages installed into the environment run the following command.
-
-```bash
-conda list --prefix ./env
-```
--->
-
-# Reference
-
-If you use this code, please cite the following [paper](https://arxiv.org/abs/2108.00951)
+    @inproceedings{vkj2019powerSGD,
+      author = {Vogels, Thijs and Karimireddy, Sai Praneeth and Jaggi, Martin},
+      title = "{{PowerSGD}: Practical Low-Rank Gradient Compression for Distributed Optimization}",
+      booktitle = {NeurIPS 2019 - Advances in Neural Information Processing Systems},
+      year = 2019,
+      url = {https://arxiv.org/abs/1905.13727}
+    }
+**Rethinking-sparsification** \[[Paper](https://arxiv.org/abs/2108.00951)\] \[[Code](https://github.com/sands-lab/rethinking-sparsification)\] (`cnn-lstm` and `ncf`)
 
     @inproceedings{sda+2021rethinking-sparsification,
       author = {Sahu, Atal Narayan and Dutta, Aritra and Abdelmoniem, Ahmed M. and Banerjee, Trambak and Canini, Marco and Kalnis, Panos},
@@ -52,3 +48,7 @@ If you use this code, please cite the following [paper](https://arxiv.org/abs/21
       year = 2021,
       url = {https://arxiv.org/abs/2108.00951}
     }
+
+## Publication
+
+No publication yet.

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J topk
+#SBATCH -J stdio_sage
 #SBATCH -p cas_v100_4
 #SBATCH -N 2
 #SBATCH -n 2
@@ -17,9 +17,10 @@ nodes=( $( scontrol show hostnames $SLURM_JOB_NODELIST ) )
 nodes_array=($nodes)
 head_node=${nodes_array[0]}
 head_node_ip=$(srun --nodes=1 --ntasks=1 -w "$head_node" hostname --ip-address)
+master_port="$((RANDOM%55535+10000))"
 
 echo Node IP: $head_node_ip
 export LOGLEVEL=INFO
 
-hostip=$head_node_ip srun run.sh
+hostip=$head_node_ip port=$master_port srun run.sh
 #srun torchrun --rdzv_id $RANDOM --rdzv_backend=distributed_backend --rdzv_endpoint=$head_node_ip:29500 --nnodes=2 --nproc_per_node=1 a.py
