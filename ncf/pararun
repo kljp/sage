@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -J stdio_sage
 #SBATCH -p cas_v100_4
-#SBATCH -N 2
-#SBATCH -n 2
+#SBATCH -N 4
+#SBATCH -n 4
 #SBATCH -o %x.o%j
 #SBATCH -e %x.e%j
 #SBATCH --time 02:00:00

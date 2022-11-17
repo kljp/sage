@@ -1,0 +1,1737 @@
+==========================================
+SLURM_JOB_ID = 150916
+SLURM_NODELIST = gpu[10-12,22]
+==========================================
+Node IP: 10.151.0.10
+distributed
+Rank: 0
+World size: 4
+Available devices: 1
+Current cuda device: 0
+Reducer: <gradient_reducers.ThreshReducer object at 0x2b45c7ffead0>
+Current cuda device after: 0
+NeuMF(
+  (mf_user_embed): Embedding(138493, 64)
+  (mf_item_embed): Embedding(26744, 64)
+  (mlp_user_embed): Embedding(138493, 128)
+  (mlp_item_embed): Embedding(26744, 128)
+  (mlp): ModuleList(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (final): Linear(in_features=128, out_features=1, bias=True)
+)
+31832577 parameters
+[Iteration 0] [Rank 0] , d = 0.0001299297885936159, m = 0.0001299297885936159
+[Iteration 10] [Rank 0] , d = 0.0013029105372147534, m = 0.0005397672270825519
+[Iteration 20] [Rank 0] , d = 0.003746853420004293, m = 0.001765249121094675
+[Iteration 30] [Rank 0] , d = 0.006185832834080634, m = 0.0026558712417926967
+[Iteration 40] [Rank 0] , d = 0.006720128251005252, m = 0.003501390047456194
+[Iteration 50] [Rank 0] , d = 0.007383379611396212, m = 0.004054132664034033
+[Iteration 60] [Rank 0] , d = 0.008195597861901034, m = 0.004426101383961285
+[Iteration 70] [Rank 0] , d = 0.0063058985139657405, m = 0.004646193864344129
+[Iteration 80] [Rank 0] , d = 0.006538521841948266, m = 0.004815971316986931
+[Iteration 90] [Rank 0] , d = 0.0074120923354713, m = 0.004948862762353644
+[Epoch 0] [Rank 0] ###### Epoch stats: #######
+[Epoch 0] [Rank 0] Current ratio of transmitted gradients: 0.4965260668440117
+[Epoch 0] [Rank 0] Average ratio of transmitted gradients: 0.4965260668440117
+[Epoch 0] [Rank 0] Total bits transmitted: 950871168
+[Epoch 0] [Rank 0] New best hr!
+[Epoch 0] [Rank 0] {'best_epoch_stats/best_train_throughput': 16483716.795407355, 'best_epoch_stats/best_eval_throughput': 112409624.67777178, 'best_epoch_stats/mean_train_throughput': 16483716.795407355, 'best_epoch_stats/mean_eval_throughput': 112409624.67777178, 'best_epoch_stats/best_accuracy': 0.833255110366589, 'best_epoch_stats/best_epoch': 0, 'best_epoch_stats/time_to_target': 8.09817361831665, 'best_epoch_stats/time_to_best_model': 8.097936868667603}
+[Iteration 100] [Rank 0] , d = 0.006115024869020187, m = 0.005028130661103674
+[Iteration 110] [Rank 0] , d = 0.006343281601109455, m = 0.005099919669889927
+[Iteration 120] [Rank 0] , d = 0.007211920040278235, m = 0.0051619358058338964
+[Iteration 130] [Rank 0] , d = 0.005851207082605973, m = 0.005194724917056846
+[Iteration 140] [Rank 0] , d = 0.006341428153931741, m = 0.005227921470698321
+[Iteration 150] [Rank 0] , d = 0.007192757281322213, m = 0.005259029773136985
+[Iteration 160] [Rank 0] , d = 0.005626060372052191, m = 0.0052715585020171605
+[Iteration 170] [Rank 0] , d = 0.007610599669640319, m = 0.005297141011323309
+[Iteration 180] [Rank 0] , d = 0.0054080447209787635, m = 0.005301927537144909
+[Epoch 1] [Rank 0] ###### Epoch stats: #######
+[Epoch 1] [Rank 0] Current ratio of transmitted gradients: 0.5658104020761298
+[Epoch 1] [Rank 0] Average ratio of transmitted gradients: 0.5311682344600708
+[Epoch 1] [Rank 0] Total bits transmitted: 2034425152
+[Epoch 1] [Rank 0] New best hr!
+[Epoch 1] [Rank 0] {'best_epoch_stats/best_train_throughput': 17905870.084249668, 'best_epoch_stats/best_eval_throughput': 112829013.56406952, 'best_epoch_stats/mean_train_throughput': 17194793.43982851, 'best_epoch_stats/mean_eval_throughput': 112619319.12092066, 'best_epoch_stats/best_accuracy': 0.8355079318088279, 'best_epoch_stats/best_epoch': 1, 'best_epoch_stats/time_to_target': 13.772077083587646, 'best_epoch_stats/time_to_best_model': 13.771907329559326}
+[Iteration 190] [Rank 0] , d = 0.0065344065609265626, m = 0.0053174697228535964
+[Iteration 200] [Rank 0] , d = 0.0059050512938365, m = 0.0053199260375269225
+[Iteration 210] [Rank 0] , d = 0.005413887791742403, m = 0.005325552549872869
+[Iteration 220] [Rank 0] , d = 0.005208532127323528, m = 0.005328279114933735
+[Iteration 230] [Rank 0] , d = 0.005784891370874561, m = 0.005331732987429855
+[Iteration 240] [Rank 0] , d = 0.005173630774536413, m = 0.005332295055661317
+[Iteration 250] [Rank 0] , d = 0.006245080315049579, m = 0.005333533115639913
+[Iteration 260] [Rank 0] , d = 0.005778765570880422, m = 0.005327608555805713
+[Iteration 270] [Rank 0] , d = 0.005132289478165717, m = 0.005324875959154674
+[Iteration 280] [Rank 0] , d = 0.005222008887310631, m = 0.005322553841060578
+[Epoch 2] [Rank 0] ###### Epoch stats: #######
+[Epoch 2] [Rank 0] Current ratio of transmitted gradients: 0.5355435027215686
+[Epoch 2] [Rank 0] Average ratio of transmitted gradients: 0.5326266572139033
+[Epoch 2] [Rank 0] Total bits transmitted: 3060016576
+[Epoch 2] [Rank 0] New best hr!
+[Epoch 2] [Rank 0] {'best_epoch_stats/best_train_throughput': 17905870.084249668, 'best_epoch_stats/best_eval_throughput': 112829013.56406952, 'best_epoch_stats/mean_train_throughput': 17417612.470996726, 'best_epoch_stats/mean_eval_throughput': 112657780.54199891, 'best_epoch_stats/best_accuracy': 0.8400713393456709, 'best_epoch_stats/best_epoch': 2, 'best_epoch_stats/time_to_target': 19.4593186378479, 'best_epoch_stats/time_to_best_model': 19.459147453308105}
+[Iteration 290] [Rank 0] , d = 0.005214406612446112, m = 0.005320543532615944
+[Iteration 300] [Rank 0] , d = 0.004176570436003344, m = 0.005316686442470059
+[Iteration 310] [Rank 0] , d = 0.005760765143205339, m = 0.005317140960198416
+[Iteration 320] [Rank 0] , d = 0.0049395309716835055, m = 0.005314661966979145
+[Iteration 330] [Rank 0] , d = 0.005777917383188926, m = 0.005313862005270615
+[Iteration 340] [Rank 0] , d = 0.003834091094792608, m = 0.005312819692087262
+[Iteration 350] [Rank 0] , d = 0.006346423037003885, m = 0.0053123725145629045
+[Iteration 360] [Rank 0] , d = 0.005362839458457919, m = 0.005307869812589649
+[Iteration 370] [Rank 0] , d = 0.006568553969099014, m = 0.005309637590426726
+[Epoch 3] [Rank 0] ###### Epoch stats: #######
+[Epoch 3] [Rank 0] Current ratio of transmitted gradients: 0.524318517299686
+[Epoch 3] [Rank 0] Average ratio of transmitted gradients: 0.5305496222353491
+[Epoch 3] [Rank 0] Total bits transmitted: 4064111616
+[Epoch 3] [Rank 0] New best hr!
+[Epoch 3] [Rank 0] {'best_epoch_stats/best_train_throughput': 18065987.644683953, 'best_epoch_stats/best_eval_throughput': 112829013.56406952, 'best_epoch_stats/mean_train_throughput': 17579706.264418535, 'best_epoch_stats/mean_eval_throughput': 112691532.52457112, 'best_epoch_stats/best_accuracy': 0.8468009213462052, 'best_epoch_stats/best_epoch': 3, 'best_epoch_stats/time_to_target': 25.08415699005127, 'best_epoch_stats/time_to_best_model': 25.08399224281311}
+[Iteration 380] [Rank 0] , d = 0.007463894613370448, m = 0.005309350369652522
+[Iteration 390] [Rank 0] , d = 0.005656092499202939, m = 0.005306644874704233
+[Iteration 400] [Rank 0] , d = 0.003893652719350997, m = 0.005309642022657429
+[Iteration 410] [Rank 0] , d = 0.00855101991899682, m = 0.005317379365103205
+[Iteration 420] [Rank 0] , d = 0.005919784628181375, m = 0.005316748325938534
+[Iteration 430] [Rank 0] , d = 0.005235894033964011, m = 0.005320402814091367
+[Iteration 440] [Rank 0] , d = 0.004525803864387103, m = 0.005324068227067613
+[Iteration 450] [Rank 0] , d = 0.005852055270297469, m = 0.005331766338858342
+[Iteration 460] [Rank 0] , d = 0.0038476935122154893, m = 0.005335271211950011
+[Epoch 4] [Rank 0] ###### Epoch stats: #######
+[Epoch 4] [Rank 0] Current ratio of transmitted gradients: 0.548785657602514
+[Epoch 4] [Rank 0] Average ratio of transmitted gradients: 0.534196829308782
+[Epoch 4] [Rank 0] Total bits transmitted: 5115062400
+[Epoch 4] [Rank 0] New best hr!
+[Epoch 4] [Rank 0] {'best_epoch_stats/best_train_throughput': 18065987.644683953, 'best_epoch_stats/best_eval_throughput': 112829013.56406952, 'best_epoch_stats/mean_train_throughput': 17586452.121973496, 'best_epoch_stats/mean_eval_throughput': 112698043.98320189, 'best_epoch_stats/best_accuracy': 0.8646213166008391, 'best_epoch_stats/best_epoch': 4, 'best_epoch_stats/time_to_target': 30.850216150283813, 'best_epoch_stats/time_to_best_model': 30.8500497341156}
+[Iteration 470] [Rank 0] , d = 0.005772451284732618, m = 0.005342438200072521
+distributed
+Rank: 1
+World size: 4
+Available devices: 1
+Current cuda device: 0
+Reducer: <gradient_reducers.ThreshReducer object at 0x2b497336f650>
+Current cuda device after: 0
+NeuMF(
+  (mf_user_embed): Embedding(138493, 64)
+  (mf_item_embed): Embedding(26744, 64)
+  (mlp_user_embed): Embedding(138493, 128)
+  (mlp_item_embed): Embedding(26744, 128)
+  (mlp): ModuleList(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (final): Linear(in_features=128, out_features=1, bias=True)
+)
+31832577 parameters
+[Iteration 0] [Rank 1] , d = 0.00021248672389923066, m = 0.00021248672389923066
+[Iteration 10] [Rank 1] , d = 0.0003937789893667735, m = 0.0003359651455060131
+[Iteration 20] [Rank 1] , d = 0.00041837643242015874, m = 0.000375983502985756
+[Iteration 30] [Rank 1] , d = 0.001580582055923402, m = 0.0006916144730519911
+distributed
+Rank: 2
+World size: 4
+Available devices: 1
+Current cuda device: 0
+Reducer: <gradient_reducers.ThreshReducer object at 0x2b21643c7ad0>
+Current cuda device after: 0
+NeuMF(
+  (mf_user_embed): Embedding(138493, 64)
+  (mf_item_embed): Embedding(26744, 64)
+  (mlp_user_embed): Embedding(138493, 128)
+  (mlp_item_embed): Embedding(26744, 128)
+  (mlp): ModuleList(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (final): Linear(in_features=128, out_features=1, bias=True)
+)
+31832577 parameters
+[Iteration 0] [Rank 2] , d = 0.00021258096697606354, m = 0.00021258096697606354
+[Iteration 10] [Rank 2] , d = 0.0003944386909046038, m = 0.00033598228061089175
+[Iteration 20] [Rank 2] , d = 0.0004167743001139996, m = 0.00037602239695397284
+[Iteration 30] [Rank 2] , d = 0.0015622988990178206, m = 0.0006899454585622732
+[Iteration 40] [Rank 1] , d = 0.0019462766083939733, m = 0.0010588393571105996
+[Iteration 50] [Rank 1] , d = 0.001842357909006236, m = 0.0013138137836397146
+[Iteration 60] [Rank 1] , d = 0.001568990157472956, m = 0.0014779477403259452
+[Iteration 70] [Rank 1] , d = 0.0021506270133266306, m = 0.0015957259892133526
+[Iteration 80] [Rank 1] , d = 0.001884547393068428, m = 0.0016839360725133257
+[Iteration 90] [Rank 1] , d = 0.0017416120598718727, m = 0.001745559912716785
+[Epoch 0] [Rank 1] ###### Epoch stats: #######
+[Epoch 0] [Rank 1] Current ratio of transmitted gradients: 0.4965260668440117
+[Epoch 0] [Rank 1] Average ratio of transmitted gradients: 0.4965260668440117
+[Epoch 0] [Rank 1] Total bits transmitted: 950871168
+[Iteration 100] [Rank 1] , d = 0.00213052182360228, m = 0.0017980182520392725
+[Iteration 110] [Rank 1] , d = 0.001856588613608003, m = 0.0018383798889222624
+[Iteration 120] [Rank 1] , d = 0.0018513110013053608, m = 0.0018668234636766156
+[Iteration 40] [Rank 2] , d = 0.001970214349909528, m = 0.0010566602732852927
+[Iteration 50] [Rank 2] , d = 0.0018440228700302838, m = 0.0013111004453818785
+[Iteration 60] [Rank 2] , d = 0.0015680791410635714, m = 0.001475167312064629
+[Iteration 70] [Rank 2] , d = 0.0021535799630673946, m = 0.0015934438024044133
+[Iteration 80] [Rank 2] , d = 0.0018748717705135843, m = 0.0016816680333638656
+[Iteration 90] [Rank 2] , d = 0.0017432456065369763, m = 0.001743551465020763
+[Epoch 0] [Rank 2] ###### Epoch stats: #######
+[Epoch 0] [Rank 2] Current ratio of transmitted gradients: 0.4965260668440117
+[Epoch 0] [Rank 2] Average ratio of transmitted gradients: 0.4965260668440117
+[Epoch 0] [Rank 2] Total bits transmitted: 950871168
+[Iteration 100] [Rank 2] , d = 0.002134197303598763, m = 0.0017962885960977942
+[Iteration 110] [Rank 2] , d = 0.0018712277048760456, m = 0.0018368864333173154
+[Iteration 120] [Rank 2] , d = 0.0018529445479704644, m = 0.0018653934612876464
+[Iteration 130] [Rank 1] , d = 0.0020987304923506507, m = 0.001895511004339988
+[Iteration 140] [Rank 1] , d = 0.0018123571962144315, m = 0.0019185591179458656
+[Iteration 150] [Rank 1] , d = 0.001754617604474812, m = 0.0019340969909765234
+[Iteration 160] [Rank 1] , d = 0.0020587400134145597, m = 0.0019505495465711236
+[Iteration 170] [Rank 1] , d = 0.0017758537111211574, m = 0.001961241784382051
+[Iteration 180] [Rank 1] , d = 0.002050886423678485, m = 0.00197182828429529
+[Epoch 1] [Rank 1] ###### Epoch stats: #######
+[Epoch 1] [Rank 1] Current ratio of transmitted gradients: 0.5658104020761298
+[Epoch 1] [Rank 1] Average ratio of transmitted gradients: 0.5311682344600708
+[Epoch 1] [Rank 1] Total bits transmitted: 2034425152
+[Iteration 190] [Rank 1] , d = 0.001955857987871984, m = 0.001978749187157368
+[Iteration 200] [Rank 1] , d = 0.0019050609694590546, m = 0.0019855659688513363
+[Iteration 210] [Rank 1] , d = 0.0018759084443587461, m = 0.001991274625475715
+[Iteration 130] [Rank 2] , d = 0.00211889851079289, m = 0.001894148676300579
+[Iteration 140] [Rank 2] , d = 0.001848577952077207, m = 0.0019177577175974773
+[Iteration 150] [Rank 2] , d = 0.0017435283357674749, m = 0.001933189719325158
+[Iteration 160] [Rank 2] , d = 0.002072279602119552, m = 0.001950041843701725
+[Iteration 170] [Rank 2] , d = 0.0017769217993252636, m = 0.001960461385570382
+[Iteration 180] [Rank 2] , d = 0.0020574834390567876, m = 0.001971171880397349
+[Epoch 1] [Rank 2] ###### Epoch stats: #######
+[Epoch 1] [Rank 2] Current ratio of transmitted gradients: 0.5658104020761298
+[Epoch 1] [Rank 2] Average ratio of transmitted gradients: 0.5311682344600708
+[Epoch 1] [Rank 2] Total bits transmitted: 2034425152
+[Iteration 190] [Rank 2] , d = 0.0019612926719693477, m = 0.0019781352091367437
+[Iteration 200] [Rank 2] , d = 0.0019121292002215215, m = 0.001985176180735879
+[Iteration 210] [Rank 2] , d = 0.0018701910310308838, m = 0.0019908113009020913
+[Iteration 220] [Rank 1] , d = 0.00221845061428737, m = 0.001996073768884666
+[Iteration 230] [Rank 1] , d = 0.0018552063818144538, m = 0.0019989372734518056
+[Iteration 240] [Rank 1] , d = 0.0018625573418074195, m = 0.002001515956071722
+[Iteration 250] [Rank 1] , d = 0.0017351721162882918, m = 0.0020017897856664186
+[Iteration 260] [Rank 1] , d = 0.001788450869057821, m = 0.002002127848112606
+[Iteration 270] [Rank 1] , d = 0.0018082105008337841, m = 0.0020029733825208127
+[Iteration 280] [Rank 1] , d = 0.0021097883466990436, m = 0.0020037423026979554
+[Epoch 2] [Rank 1] ###### Epoch stats: #######
+[Epoch 2] [Rank 1] Current ratio of transmitted gradients: 0.5355435027215686
+[Epoch 2] [Rank 1] Average ratio of transmitted gradients: 0.5326266572139033
+[Epoch 2] [Rank 1] Total bits transmitted: 3060016576
+[Iteration 290] [Rank 1] , d = 0.0019257630320033468, m = 0.002004345565113449
+[Iteration 300] [Rank 1] , d = 0.0023537208439015165, m = 0.0020057411719762185
+[Iteration 220] [Rank 2] , d = 0.002205822041991762, m = 0.001995588481004866
+[Iteration 230] [Rank 2] , d = 0.0018449653007986126, m = 0.0019981215880624193
+[Iteration 240] [Rank 2] , d = 0.001878233106920624, m = 0.0020007806515123655
+[Iteration 250] [Rank 2] , d = 0.0017585443993428493, m = 0.0020011773934022186
+[Iteration 260] [Rank 2] , d = 0.0018132682126238162, m = 0.002001789391494402
+[Iteration 270] [Rank 2] , d = 0.0018238234372291002, m = 0.002002597685335062
+[Iteration 280] [Rank 2] , d = 0.002109097230802269, m = 0.002003309097570165
+[Epoch 2] [Rank 2] ###### Epoch stats: #######
+[Epoch 2] [Rank 2] Current ratio of transmitted gradients: 0.5355435027215686
+[Epoch 2] [Rank 2] Average ratio of transmitted gradients: 0.5326266572139033
+[Epoch 2] [Rank 2] Total bits transmitted: 3060016576
+[Iteration 290] [Rank 2] , d = 0.0019420042555775487, m = 0.0020039661098842773
+[Iteration 300] [Rank 2] , d = 0.002367920134144339, m = 0.002005477333107745
+[Iteration 310] [Rank 1] , d = 0.001861237938731759, m = 0.0020047739831586696
+[Iteration 320] [Rank 1] , d = 0.0020818295672386184, m = 0.0020054457981256704
+[Iteration 310] [Rank 2] , d = 0.0018424207377241246, m = 0.0020043987280349484
+[Iteration 320] [Rank 2] , d = 0.0020963744154298284, m = 0.002005245078966188
+[Iteration 330] [Rank 1] , d = 0.0018776676484596267, m = 0.0020049187697818065
+[Iteration 340] [Rank 1] , d = 0.002459461576108023, m = 0.0020059296201783774
+[Iteration 350] [Rank 1] , d = 0.00183792848439509, m = 0.002004991835252824
+[Iteration 360] [Rank 1] , d = 0.0019692719191411992, m = 0.0020053848567470945
+[Iteration 370] [Rank 1] , d = 0.0016981031727340203, m = 0.002006166940611176
+[Epoch 3] [Rank 1] ###### Epoch stats: #######
+[Epoch 3] [Rank 1] Current ratio of transmitted gradients: 0.524318517299686
+[Epoch 3] [Rank 1] Average ratio of transmitted gradients: 0.5305496222353491
+[Epoch 3] [Rank 1] Total bits transmitted: 4064111616
+[Iteration 380] [Rank 1] , d = 0.0016623850466143536, m = 0.002006043209583158
+[Iteration 390] [Rank 1] , d = 0.001967355643245597, m = 0.002007650624535644
+[Iteration 400] [Rank 1] , d = 0.0023288720859765766, m = 0.0020102488559521643
+[Iteration 410] [Rank 1] , d = 0.0016136927902506918, m = 0.002010801090193849
+[Iteration 330] [Rank 2] , d = 0.001885709724349367, m = 0.0020047203183481163
+[Iteration 340] [Rank 2] , d = 0.0024422465074065477, m = 0.002005900140428053
+[Iteration 350] [Rank 2] , d = 0.0018531644484830745, m = 0.002004933929012838
+[Iteration 360] [Rank 2] , d = 0.001991701771427428, m = 0.0020052925281187337
+[Iteration 370] [Rank 2] , d = 0.0017049200886249329, m = 0.0020060356946371544
+[Epoch 3] [Rank 2] ###### Epoch stats: #######
+[Epoch 3] [Rank 2] Current ratio of transmitted gradients: 0.524318517299686
+[Epoch 3] [Rank 2] Average ratio of transmitted gradients: 0.5305496222353491
+[Epoch 3] [Rank 2] Total bits transmitted: 4064111616
+[Iteration 380] [Rank 2] , d = 0.0016614112014870803, m = 0.002006085342752246
+[Iteration 390] [Rank 2] , d = 0.0019649681519658306, m = 0.0020077532233499003
+[Iteration 400] [Rank 2] , d = 0.0023348408141759935, m = 0.0020103125464105785
+[Iteration 410] [Rank 2] , d = 0.0016131901605075832, m = 0.0020108890656856918
+[Iteration 420] [Rank 1] , d = 0.0019172183263704977, m = 0.002012889152239111
+[Iteration 430] [Rank 1] , d = 0.0019635859201722816, m = 0.0020154825869225447
+[Iteration 440] [Rank 1] , d = 0.002467723552510373, m = 0.0020184811945915186
+[Iteration 450] [Rank 1] , d = 0.0019129459735540732, m = 0.002020119785629577
+[Iteration 460] [Rank 1] , d = 0.0026310153903028335, m = 0.002023584211134386
+[Epoch 4] [Rank 1] ###### Epoch stats: #######
+[Epoch 4] [Rank 1] Current ratio of transmitted gradients: 0.548785657602514
+[Epoch 4] [Rank 1] Average ratio of transmitted gradients: 0.534196829308782
+[Epoch 4] [Rank 1] Total bits transmitted: 5115062400
+[Iteration 470] [Rank 1] , d = 0.0022311420153008662, m = 0.0020257814152926826
+[Iteration 480] [Rank 1] , d = 0.0024807605114722567, m = 0.00202945216492187
+[Iteration 490] [Rank 1] , d = 0.0018435202402871749, m = 0.002032152717046451
+[Iteration 500] [Rank 1] , d = 0.0022853946131976685, m = 0.002036078472393198
+[Iteration 420] [Rank 2] , d = 0.0019107469684279724, m = 0.0020127951330175726
+[Iteration 430] [Rank 2] , d = 0.0019639000637617244, m = 0.0020153278475164254
+[Iteration 440] [Rank 2] , d = 0.0024916298796669838, m = 0.0020183928639677324
+[Iteration 450] [Rank 2] , d = 0.0019065688586883808, m = 0.0020200481803945595
+[Iteration 460] [Rank 2] , d = 0.002658063153353874, m = 0.00202369242372008
+[Epoch 4] [Rank 2] ###### Epoch stats: #######
+[Epoch 4] [Rank 2] Current ratio of transmitted gradients: 0.548785657602514
+[Epoch 4] [Rank 2] Average ratio of transmitted gradients: 0.534196829308782
+[Epoch 4] [Rank 2] Total bits transmitted: 5115062400
+[Iteration 470] [Rank 2] , d = 0.002235414368117291, m = 0.0020259099407060315
+[Iteration 480] [Rank 2] , d = 0.00247435198224762, m = 0.002029547975451128
+[Iteration 490] [Rank 2] , d = 0.0018492690679739814, m = 0.002032258348628159
+[Iteration 500] [Rank 2] , d = 0.0022901695957572017, m = 0.002036075901557439
+[Iteration 510] [Rank 1] , d = 0.0021897693045712257, m = 0.002039734326253254
+[Iteration 520] [Rank 1] , d = 0.0018494889684865915, m = 0.0020425422634541696
+[Iteration 530] [Rank 1] , d = 0.002601737207766748, m = 0.002045230064245967
+[Iteration 540] [Rank 1] , d = 0.0019356899694297448, m = 0.0020463543943127047
+[Iteration 550] [Rank 1] , d = 0.002262242230655721, m = 0.002048397049532228
+[Iteration 560] [Rank 1] , d = 0.0020081314811552955, m = 0.0020496243616073793
+[Epoch 5] [Rank 1] ###### Epoch stats: #######
+[Epoch 5] [Rank 1] Current ratio of transmitted gradients: 0.5612758730406435
+[Epoch 5] [Rank 1] Average ratio of transmitted gradients: 0.5387100032640922
+[Epoch 5] [Rank 1] Total bits transmitted: 6189932544
+[Iteration 570] [Rank 1] , d = 0.002002445482186378, m = 0.0020512822115913427
+[Iteration 580] [Rank 1] , d = 0.002542458312438858, m = 0.002052804754213737
+[Iteration 590] [Rank 1] , d = 0.0017527013285792098, m = 0.002053211033085774
+[Iteration 510] [Rank 2] , d = 0.0021696012861289866, m = 0.0020397592241306983
+[Iteration 520] [Rank 2] , d = 0.0018768822894860192, m = 0.002042550222562389
+[Iteration 530] [Rank 2] , d = 0.0025847420395778828, m = 0.002045322177535756
+[Iteration 540] [Rank 2] , d = 0.0019197314750860415, m = 0.0020463048049179974
+[Iteration 550] [Rank 2] , d = 0.0022698130911612967, m = 0.0020483442551649314
+[Iteration 560] [Rank 2] , d = 0.002001314565264383, m = 0.0020497980085362375
+[Epoch 5] [Rank 2] ###### Epoch stats: #######
+[Epoch 5] [Rank 2] Current ratio of transmitted gradients: 0.5612758730406435
+[Epoch 5] [Rank 2] Average ratio of transmitted gradients: 0.5387100032640922
+[Epoch 5] [Rank 2] Total bits transmitted: 6189932544
+[Iteration 570] [Rank 2] , d = 0.001977565309902494, m = 0.0020514304807635986
+[Iteration 580] [Rank 2] , d = 0.0025549298129397442, m = 0.0020530357930360643
+[Iteration 590] [Rank 2] , d = 0.0017524814280666, m = 0.0020533727824838624
+[Iteration 600] [Rank 1] , d = 0.002182701073808759, m = 0.0020544362462391846
+[Iteration 610] [Rank 1] , d = 0.002200136043022844, m = 0.0020553440749394784
+[Iteration 620] [Rank 1] , d = 0.001730145818857204, m = 0.0020559517740646473
+[Iteration 630] [Rank 1] , d = 0.00260701482006939, m = 0.0020571735769806016
+[Iteration 640] [Rank 1] , d = 0.0018679291971868944, m = 0.0020567359145373157
+[Iteration 650] [Rank 1] , d = 0.0021475798205090337, m = 0.00205736569553017
+[Epoch 6] [Rank 1] ###### Epoch stats: #######
+[Epoch 6] [Rank 1] Current ratio of transmitted gradients: 0.5406821566151784
+[Epoch 6] [Rank 1] Average ratio of transmitted gradients: 0.5389917394571045
+[Epoch 6] [Rank 1] Total bits transmitted: 7225364736
+[Iteration 660] [Rank 1] , d = 0.0017321877521885834, m = 0.0020576251601133193
+[Iteration 670] [Rank 1] , d = 0.002502624905297488, m = 0.0020582578896166273
+[Iteration 680] [Rank 1] , d = 0.0020716827292996103, m = 0.002057786926674248
+[Iteration 600] [Rank 2] , d = 0.0021958322758474755, m = 0.0020546391066835535
+[Iteration 610] [Rank 2] , d = 0.0021977171373841332, m = 0.002055501146734205
+[Iteration 620] [Rank 2] , d = 0.0017039148291387153, m = 0.0020559603738086467
+[Iteration 630] [Rank 2] , d = 0.0026173815585210083, m = 0.002057151771133988
+[Iteration 640] [Rank 2] , d = 0.0018519078741253026, m = 0.002056871373645157
+[Iteration 650] [Rank 2] , d = 0.0021597371774204773, m = 0.0020574716647041263
+[Epoch 6] [Rank 2] ###### Epoch stats: #######
+[Epoch 6] [Rank 2] Current ratio of transmitted gradients: 0.5406821566151784
+[Epoch 6] [Rank 2] Average ratio of transmitted gradients: 0.5389917394571045
+[Epoch 6] [Rank 2] Total bits transmitted: 7225364736
+[Iteration 660] [Rank 2] , d = 0.0017332558403926896, m = 0.002057687418525151
+[Iteration 670] [Rank 2] , d = 0.002506394628370804, m = 0.0020584281638692113
+[Iteration 680] [Rank 2] , d = 0.0021071181261887784, m = 0.0020578491095756585
+[Iteration 690] [Rank 1] , d = 0.0018866835694766402, m = 0.0020577876718933306
+[Iteration 700] [Rank 1] , d = 0.0026572463800213224, m = 0.002058315762721079
+[Iteration 690] [Rank 2] , d = 0.0018718874064138759, m = 0.002057750756611914
+[Iteration 700] [Rank 2] , d = 0.00262558070620547, m = 0.0020581525514582096
+distributed
+Rank: 3
+World size: 4
+Available devices: 1
+Current cuda device: 0
+Reducer: <gradient_reducers.ThreshReducer object at 0x2b59d96eb350>
+Current cuda device after: 0
+NeuMF(
+  (mf_user_embed): Embedding(138493, 64)
+  (mf_item_embed): Embedding(26744, 64)
+  (mlp_user_embed): Embedding(138493, 128)
+  (mlp_item_embed): Embedding(26744, 128)
+  (mlp): ModuleList(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (final): Linear(in_features=128, out_features=1, bias=True)
+)
+31832577 parameters
+[Iteration 0] [Rank 3] , d = 0.00021220399466873198, m = 0.00021220399466873198
+[Iteration 10] [Rank 3] , d = 0.0003941873760330494, m = 0.0003358566231751146
+[Iteration 20] [Rank 3] , d = 0.0004188790621632675, m = 0.0003760343643288088
+[Iteration 30] [Rank 3] , d = 0.0015923624405275137, m = 0.000690824047246296
+[Iteration 710] [Rank 1] , d = 0.002216879896340155, m = 0.002057714473772562
+[Iteration 710] [Rank 2] , d = 0.0022257701599213914, m = 0.0020575517906929147
+[Iteration 40] [Rank 3] , d = 0.001977659552979327, m = 0.0010599258342077463
+[Iteration 50] [Rank 3] , d = 0.001833404816707111, m = 0.001315273011411068
+[Iteration 60] [Rank 3] , d = 0.0015587176620981706, m = 0.0014792104945576074
+[Iteration 70] [Rank 3] , d = 0.002179433980478552, m = 0.0015964905527662504
+[Iteration 80] [Rank 3] , d = 0.0018722957930801518, m = 0.0016848005491316815
+[Iteration 90] [Rank 3] , d = 0.001736145961415565, m = 0.0017462772647814687
+[Epoch 0] [Rank 3] ###### Epoch stats: #######
+[Epoch 0] [Rank 3] Current ratio of transmitted gradients: 0.4965260668440117
+[Epoch 0] [Rank 3] Average ratio of transmitted gradients: 0.4965260668440117
+[Epoch 0] [Rank 3] Total bits transmitted: 950871168
+[Iteration 100] [Rank 3] , d = 0.002157381100499655, m = 0.0017989836992686101
+[Iteration 110] [Rank 3] , d = 0.0018596986351434885, m = 0.001839597407590536
+[Iteration 120] [Rank 3] , d = 0.0018381797992666443, m = 0.001867586235466519
+[Iteration 130] [Rank 3] , d = 0.0021242389518134207, m = 0.0018964930028123308
+[Iteration 140] [Rank 3] , d = 0.0018247658679974293, m = 0.0019195646002289546
+[Iteration 150] [Rank 3] , d = 0.0017590470290859582, m = 0.0019348324198431993
+[Iteration 160] [Rank 3] , d = 0.0020710544421207243, m = 0.001951813925738571
+[Iteration 170] [Rank 3] , d = 0.001780345964450192, m = 0.0019623686596906154
+[Iteration 180] [Rank 3] , d = 0.0020535252298298063, m = 0.0019731329347714476
+[Epoch 1] [Rank 3] ###### Epoch stats: #######
+[Epoch 1] [Rank 3] Current ratio of transmitted gradients: 0.5658104020761298
+[Epoch 1] [Rank 3] Average ratio of transmitted gradients: 0.5311682344600708
+[Epoch 1] [Rank 3] Total bits transmitted: 2034425152
+[Iteration 190] [Rank 3] , d = 0.0019693975765769766, m = 0.0019798766501446107
+[Iteration 200] [Rank 3] , d = 0.0019198257181628744, m = 0.001986484330906844
+[Iteration 210] [Rank 3] , d = 0.0018755314720514144, m = 0.0019919512997003705
+[Iteration 220] [Rank 3] , d = 0.0022280005794064364, m = 0.001996761899706611
+[Iteration 230] [Rank 3] , d = 0.0018560545695059498, m = 0.001999236865801394
+[Iteration 240] [Rank 3] , d = 0.0018825682884549373, m = 0.002002008418511938
+[Iteration 250] [Rank 3] , d = 0.0017470781583281806, m = 0.0020024029288714744
+[Iteration 260] [Rank 3] , d = 0.0017995087234062136, m = 0.0020028207694323115
+[Iteration 270] [Rank 3] , d = 0.0018102524341651635, m = 0.0020037821573634517
+[Iteration 280] [Rank 3] , d = 0.002117139306692009, m = 0.002004465727312651
+[Epoch 2] [Rank 3] ###### Epoch stats: #######
+[Epoch 2] [Rank 3] Current ratio of transmitted gradients: 0.5355435027215686
+[Epoch 2] [Rank 3] Average ratio of transmitted gradients: 0.5326266572139033
+[Epoch 2] [Rank 3] Total bits transmitted: 3060016576
+[Iteration 290] [Rank 3] , d = 0.0019348103673793046, m = 0.0020051209923996976
+[Iteration 300] [Rank 3] , d = 0.002371187227474546, m = 0.0020064521175347906
+[Iteration 310] [Rank 3] , d = 0.0018457820741311643, m = 0.0020054113613096024
+[Iteration 320] [Rank 3] , d = 0.00210077242568203, m = 0.0020063897947187504
+[Iteration 330] [Rank 3] , d = 0.0019003488156174098, m = 0.0020058397514712252
+[Iteration 340] [Rank 3] , d = 0.0024511995997056725, m = 0.0020068399917182295
+[Iteration 350] [Rank 3] , d = 0.0018399704177264693, m = 0.00200583313147527
+[Iteration 360] [Rank 3] , d = 0.001993586632964086, m = 0.002006336163594688
+[Iteration 370] [Rank 3] , d = 0.0016902181686390015, m = 0.002007027914200793
+[Epoch 3] [Rank 3] ###### Epoch stats: #######
+[Epoch 3] [Rank 3] Current ratio of transmitted gradients: 0.524318517299686
+[Epoch 3] [Rank 3] Average ratio of transmitted gradients: 0.5305496222353491
+[Epoch 3] [Rank 3] Total bits transmitted: 4064111616
+[Iteration 380] [Rank 3] , d = 0.0016787519276243328, m = 0.0020070973633340918
+[Iteration 390] [Rank 3] , d = 0.0019878378052772794, m = 0.002008758804210636
+[Iteration 400] [Rank 3] , d = 0.0023314794777689533, m = 0.002011194341982344
+[Iteration 410] [Rank 3] , d = 0.0016245935728043633, m = 0.002011876821794299
+[Iteration 420] [Rank 3] , d = 0.0019289672966156652, m = 0.002013874488604579
+[Iteration 430] [Rank 3] , d = 0.0019659419970931035, m = 0.002016382670260376
+[Iteration 440] [Rank 3] , d = 0.0024610637084141822, m = 0.0020195341811083357
+[Iteration 450] [Rank 3] , d = 0.0019196372320092086, m = 0.0020212034068759154
+[Iteration 460] [Rank 3] , d = 0.0026558013195098844, m = 0.002024694003433233
+[Epoch 4] [Rank 3] ###### Epoch stats: #######
+[Epoch 4] [Rank 3] Current ratio of transmitted gradients: 0.548785657602514
+[Epoch 4] [Rank 3] Average ratio of transmitted gradients: 0.534196829308782
+[Epoch 4] [Rank 3] Total bits transmitted: 5115062400
+[Iteration 470] [Rank 3] , d = 0.002228471794790601, m = 0.002026856106514916
+[Iteration 480] [Rank 3] , d = 0.002482582544291026, m = 0.002030551994037514
+[Iteration 490] [Rank 3] , d = 0.0018596986351434885, m = 0.002033203082689611
+[Iteration 500] [Rank 3] , d = 0.002293562346523186, m = 0.002037050749937695
+[Iteration 510] [Rank 3] , d = 0.002214775134290887, m = 0.0020407882134457892
+[Iteration 520] [Rank 3] , d = 0.0018615834966801462, m = 0.002043555783529981
+[Iteration 530] [Rank 3] , d = 0.0026073917923767217, m = 0.002046300400558629
+[Iteration 540] [Rank 3] , d = 0.0019233441263646358, m = 0.002047312677428529
+[Iteration 550] [Rank 3] , d = 0.002288096248066878, m = 0.002049417873664534
+[Iteration 560] [Rank 3] , d = 0.0020270115108808186, m = 0.0020506857301625207
+[Epoch 5] [Rank 3] ###### Epoch stats: #######
+[Epoch 5] [Rank 3] Current ratio of transmitted gradients: 0.5612758730406435
+[Epoch 5] [Rank 3] Average ratio of transmitted gradients: 0.5387100032640922
+[Epoch 5] [Rank 3] Total bits transmitted: 6189932544
+[Iteration 570] [Rank 3] , d = 0.001982120391949417, m = 0.002052414063791982
+[Iteration 580] [Rank 3] , d = 0.0025527308078136433, m = 0.002053928209549622
+[Iteration 590] [Rank 3] , d = 0.0017442508660231938, m = 0.0020542880512599434
+[Iteration 600] [Rank 3] , d = 0.0022161887804433805, m = 0.0020556109655452065
+[Iteration 610] [Rank 3] , d = 0.002204628296351879, m = 0.0020564727810309827
+[Iteration 620] [Rank 3] , d = 0.0017271300403985514, m = 0.002057130495445913
+[Iteration 630] [Rank 3] , d = 0.0025825744488107262, m = 0.002058335310841094
+[Iteration 640] [Rank 3] , d = 0.0018344100761933286, m = 0.002057995674438515
+[Iteration 650] [Rank 3] , d = 0.002148333765123697, m = 0.0020585670655459652
+[Epoch 6] [Rank 3] ###### Epoch stats: #######
+[Epoch 6] [Rank 3] Current ratio of transmitted gradients: 0.5406821566151784
+[Epoch 6] [Rank 3] Average ratio of transmitted gradients: 0.5389917394571045
+[Epoch 6] [Rank 3] Total bits transmitted: 7225364736
+[Iteration 660] [Rank 3] , d = 0.0017389418393616075, m = 0.0020588062639688262
+[Iteration 670] [Rank 3] , d = 0.0024793782796787077, m = 0.002059416147798875
+[Iteration 680] [Rank 3] , d = 0.0020771802421148625, m = 0.0020588801094617187
+[Iteration 690] [Rank 3] , d = 0.0018755314720514144, m = 0.002058823391032947
+[Iteration 700] [Rank 3] , d = 0.002636481488759141, m = 0.002059412934975059
+[Iteration 710] [Rank 3] , d = 0.002212104913780622, m = 0.002058952932958519
+[Iteration 480] [Rank 0] , d = 0.0038808356609017236, m = 0.005349975311125489
+[Iteration 490] [Rank 0] , d = 0.008124381510174309, m = 0.0053607705254127445
+[Iteration 500] [Rank 0] , d = 0.0051999560073317345, m = 0.005362336515198255
+[Iteration 510] [Rank 0] , d = 0.004918860323498158, m = 0.005368374902113621
+[Iteration 520] [Rank 0] , d = 0.006526207413242101, m = 0.005375022863359891
+[Iteration 530] [Rank 0] , d = 0.003709815890808966, m = 0.00537763313676913
+[Iteration 540] [Rank 0] , d = 0.007499832640002724, m = 0.005384495855547962
+[Iteration 550] [Rank 0] , d = 0.004754594640578424, m = 0.00538389295132623
+[Iteration 560] [Rank 0] , d = 0.005919533313309821, m = 0.0053873929438076175
+[Epoch 5] [Rank 0] ###### Epoch stats: #######
+[Epoch 5] [Rank 0] Current ratio of transmitted gradients: 0.5612758730406435
+[Epoch 5] [Rank 0] Average ratio of transmitted gradients: 0.5387100032640922
+[Epoch 5] [Rank 0] Total bits transmitted: 6189932544
+[Epoch 5] [Rank 0] New best hr!
+[Epoch 5] [Rank 0] {'best_epoch_stats/best_train_throughput': 18065987.644683953, 'best_epoch_stats/best_eval_throughput': 112908486.51902944, 'best_epoch_stats/mean_train_throughput': 17523863.064969655, 'best_epoch_stats/mean_eval_throughput': 112733117.73917313, 'best_epoch_stats/best_accuracy': 0.8772717754687963, 'best_epoch_stats/best_epoch': 5, 'best_epoch_stats/time_to_target': 36.747962474823, 'best_epoch_stats/time_to_best_model': 36.74787354469299}
+[Iteration 570] [Rank 0] , d = 0.005000537656753332, m = 0.005388579426891687
+[Iteration 580] [Rank 0] , d = 0.003453757451053994, m = 0.005391247068544159
+[Iteration 590] [Rank 0] , d = 0.007433297027758702, m = 0.0053935321907744235
+[Iteration 600] [Rank 0] , d = 0.004678446234497446, m = 0.005392072009154809
+[Iteration 610] [Rank 0] , d = 0.004409822051164755, m = 0.005391667299962922
+[Iteration 620] [Rank 0] , d = 0.006470164196885474, m = 0.005392952372615488
+[Iteration 630] [Rank 0] , d = 0.00350182142023877, m = 0.005391018238001032
+[Iteration 640] [Rank 0] , d = 0.007393212305745777, m = 0.005393620727404025
+[Iteration 650] [Rank 0] , d = 0.004850377020999588, m = 0.005390851174249776
+[Epoch 6] [Rank 0] ###### Epoch stats: #######
+[Epoch 6] [Rank 0] Current ratio of transmitted gradients: 0.5406821566151784
+[Epoch 6] [Rank 0] Average ratio of transmitted gradients: 0.5389917394571045
+[Epoch 6] [Rank 0] Total bits transmitted: 7225364736
+[Epoch 6] [Rank 0] New best hr!
+[Epoch 6] [Rank 0] {'best_epoch_stats/best_train_throughput': 18065987.644683953, 'best_epoch_stats/best_eval_throughput': 112908486.51902944, 'best_epoch_stats/mean_train_throughput': 17584357.46451088, 'best_epoch_stats/mean_eval_throughput': 112710044.5405025, 'best_epoch_stats/best_accuracy': 0.8872072956755938, 'best_epoch_stats/best_epoch': 6, 'best_epoch_stats/time_to_target': 42.40934658050537, 'best_epoch_stats/time_to_best_model': 42.40917253494263}
+[Iteration 660] [Rank 0] , d = 0.00605175635010637, m = 0.005389757096675694
+[Iteration 670] [Rank 0] , d = 0.0035487858868604952, m = 0.005387616164671361
+[Iteration 680] [Rank 0] , d = 0.0055638285269835365, m = 0.005386682818507395
+[Iteration 690] [Rank 0] , d = 0.005139483366363961, m = 0.005384704852450872
+[Iteration 700] [Rank 0] , d = 0.0030940630411417838, m = 0.005382041115650121
+[Iteration 710] [Rank 0] , d = 0.0046617652098980234, m = 0.005379992935575188
+[Iteration 720] [Rank 0] , d = 0.004226236537494279, m = 0.005377865586827901
+[Iteration 730] [Rank 0] , d = 0.005369876274861442, m = 0.005375480364434805
+[Iteration 740] [Rank 0] , d = 0.004368323682999337, m = 0.005371481713942223
+[Iteration 750] [Rank 0] , d = 0.004919802754266486, m = 0.005369962319250719
+[Epoch 7] [Rank 0] ###### Epoch stats: #######
+[Epoch 7] [Rank 0] Current ratio of transmitted gradients: 0.5234075343098321
+[Epoch 7] [Rank 0] Average ratio of transmitted gradients: 0.5370437138136954
+[Epoch 7] [Rank 0] Total bits transmitted: 8227715200
+[Epoch 7] [Rank 0] New best hr!
+[Epoch 7] [Rank 0] {'best_epoch_stats/best_train_throughput': 18065987.644683953, 'best_epoch_stats/best_eval_throughput': 112908486.51902944, 'best_epoch_stats/mean_train_throughput': 17620716.827389717, 'best_epoch_stats/mean_eval_throughput': 112714453.84161724, 'best_epoch_stats/best_accuracy': 0.8967095809896529, 'best_epoch_stats/best_epoch': 7, 'best_epoch_stats/time_to_target': 48.09284830093384, 'best_epoch_stats/time_to_best_model': 48.09275960922241}
+[Iteration 760] [Rank 0] , d = 0.0031177808821447285, m = 0.005367446429925593
+[Iteration 770] [Rank 0] , d = 0.006618942600845668, m = 0.005365245203476733
+[Iteration 780] [Rank 0] , d = 0.004669932943223541, m = 0.005359775009865689
+[Iteration 790] [Rank 0] , d = 0.005274533695465497, m = 0.00535675897298155
+[Iteration 800] [Rank 0] , d = 0.007970042764680975, m = 0.005356375630548999
+[Iteration 810] [Rank 0] , d = 0.004962180724482344, m = 0.005349792815661591
+[Iteration 820] [Rank 0] , d = 0.007406846137527603, m = 0.005348843462355258
+[Iteration 830] [Rank 0] , d = 0.004993689326503474, m = 0.005343326869805545
+[Iteration 840] [Rank 0] , d = 0.003107571215487832, m = 0.0053390861315560515
+[Epoch 8] [Rank 0] ###### Epoch stats: #######
+[Epoch 8] [Rank 0] Current ratio of transmitted gradients: 0.510069532214576
+[Epoch 8] [Rank 0] Average ratio of transmitted gradients: 0.5340465825249044
+[Epoch 8] [Rank 0] Total bits transmitted: 9204522752
+[Epoch 8] [Rank 0] New best hr!
+[Epoch 8] [Rank 0] {'best_epoch_stats/best_train_throughput': 18179619.94812937, 'best_epoch_stats/best_eval_throughput': 112908486.51902944, 'best_epoch_stats/mean_train_throughput': 17682817.174138565, 'best_epoch_stats/mean_eval_throughput': 112716390.89757293, 'best_epoch_stats/best_accuracy': 0.9047388676684021, 'best_epoch_stats/best_epoch': 8, 'best_epoch_stats/time_to_target': 53.683316707611084, 'best_epoch_stats/time_to_best_model': 53.68315243721008}
+[Iteration 850] [Rank 0] , d = 0.005944570557388426, m = 0.005336698798864389
+[Iteration 860] [Rank 0] , d = 0.0033460061998750526, m = 0.005333818975825697
+[Iteration 870] [Rank 0] , d = 0.004820376308207783, m = 0.005329644147010399
+[Iteration 880] [Rank 0] , d = 0.0032155109528204393, m = 0.005327372219318428
+[Iteration 890] [Rank 0] , d = 0.005235988277040844, m = 0.005323475221770506
+[Iteration 900] [Rank 0] , d = 0.00885517374229551, m = 0.005323546650246
+[Iteration 910] [Rank 0] , d = 0.005195212439131146, m = 0.005317261499568834
+[Iteration 920] [Rank 0] , d = 0.005623013179234594, m = 0.005313345982450827
+[Iteration 930] [Rank 0] , d = 0.004334961633800493, m = 0.005308946624143358
+[Epoch 9] [Rank 0] ###### Epoch stats: #######
+[Epoch 9] [Rank 0] Current ratio of transmitted gradients: 0.500910976640143
+[Epoch 9] [Rank 0] Average ratio of transmitted gradients: 0.5307330219364282
+[Epoch 9] [Rank 0] Total bits transmitted: 10163791232
+[Epoch 9] [Rank 0] New best hr!
+[Epoch 9] [Rank 0] {'best_epoch_stats/best_train_throughput': 18179619.94812937, 'best_epoch_stats/best_eval_throughput': 112908486.51902944, 'best_epoch_stats/mean_train_throughput': 17711639.68779076, 'best_epoch_stats/mean_eval_throughput': 112712051.74733421, 'best_epoch_stats/best_accuracy': 0.9082336291364906, 'best_epoch_stats/best_epoch': 9, 'best_epoch_stats/time_to_target': 59.33730673789978, 'best_epoch_stats/time_to_best_model': 59.33714413642883}
+[Iteration 940] [Rank 0] , d = 0.0046150834725067974, m = 0.005306372298483615
+[Iteration 950] [Rank 0] , d = 0.0051128754043381405, m = 0.005303167867126736
+[Iteration 960] [Rank 0] , d = 0.0061312346782354445, m = 0.00530129542767287
+[Iteration 970] [Rank 0] , d = 0.0054168093271242225, m = 0.0052965681991767495
+[Iteration 980] [Rank 0] , d = 0.004756825060063469, m = 0.0052926433208612695
+[Iteration 990] [Rank 0] , d = 0.00619092196022961, m = 0.005290426000927789
+[Iteration 1000] [Rank 0] , d = 0.005040936522355699, m = 0.005285827110431506
+[Iteration 1010] [Rank 0] , d = 0.004430932500375323, m = 0.005282442718649994
+[Iteration 1020] [Rank 0] , d = 0.0036425891626681683, m = 0.005279330831147886
+[Iteration 1030] [Rank 0] , d = 0.005678867909437555, m = 0.005276704211332999
+[Epoch 10] [Rank 0] ###### Epoch stats: #######
+[Iteration 720] [Rank 3] , d = 0.002227780678893826, m = 0.0020588118176635794
+[Iteration 730] [Rank 3] , d = 0.0020524885559846445, m = 0.0020578801366592757
+[Iteration 740] [Rank 3] , d = 0.002267833986547806, m = 0.0020576434360752216
+[Iteration 750] [Rank 3] , d = 0.001820744830052559, m = 0.002056672898399983
+[Epoch 7] [Rank 3] ###### Epoch stats: #######
+[Epoch 7] [Rank 3] Current ratio of transmitted gradients: 0.5234075343098321
+[Epoch 7] [Rank 3] Average ratio of transmitted gradients: 0.5370437138136954
+[Epoch 7] [Rank 3] Total bits transmitted: 8227715200
+[Iteration 760] [Rank 3] , d = 0.0024455764294546434, m = 0.0020563023252090718
+[Iteration 770] [Rank 3] , d = 0.001816629549030856, m = 0.002055287978741621
+[Iteration 780] [Rank 3] , d = 0.0021074322697782213, m = 0.00205475783113005
+[Iteration 790] [Rank 3] , d = 0.0019770940945183293, m = 0.0020540081213473857
+[Iteration 800] [Rank 3] , d = 0.0016819561922366512, m = 0.0020530244041572516
+[Iteration 810] [Rank 3] , d = 0.0020551273621359652, m = 0.002052629358937499
+[Iteration 820] [Rank 3] , d = 0.0016207924353721032, m = 0.0020515982018819994
+[Iteration 830] [Rank 3] , d = 0.0019786648124655443, m = 0.002050937911472572
+[Iteration 840] [Rank 3] , d = 0.0025106669811872286, m = 0.0020508765249803683
+[Epoch 8] [Rank 3] ###### Epoch stats: #######
+[Epoch 8] [Rank 3] Current ratio of transmitted gradients: 0.510069532214576
+[Epoch 8] [Rank 3] Average ratio of transmitted gradients: 0.5340465825249044
+[Epoch 8] [Rank 3] Total bits transmitted: 9204522752
+[Iteration 850] [Rank 3] , d = 0.0019414702114754956, m = 0.0020495420663059474
+[Iteration 860] [Rank 3] , d = 0.0022411003670862084, m = 0.0020489912001465465
+[Iteration 870] [Rank 3] , d = 0.0020543420031623578, m = 0.0020481109235887087
+[Iteration 880] [Rank 3] , d = 0.0023829676120786574, m = 0.0020474386532123344
+[Iteration 890] [Rank 3] , d = 0.001982748679128303, m = 0.002046433129795734
+[Iteration 900] [Rank 3] , d = 0.0015128212836805516, m = 0.0020454158623609783
+[Iteration 910] [Rank 3] , d = 0.0019311348873828217, m = 0.0020446776566726945
+[Iteration 920] [Rank 3] , d = 0.00162025839127005, m = 0.0020440543975150344
+[Iteration 930] [Rank 3] , d = 0.002127977260527792, m = 0.0020433154956877174
+[Epoch 9] [Rank 3] ###### Epoch stats: #######
+[Epoch 9] [Rank 3] Current ratio of transmitted gradients: 0.500910976640143
+[Epoch 9] [Rank 3] Average ratio of transmitted gradients: 0.5307330219364282
+[Epoch 9] [Rank 3] Total bits transmitted: 10163791232
+[Iteration 940] [Rank 3] , d = 0.0018649448330871861, m = 0.0020424709809551333
+[Iteration 950] [Rank 3] , d = 0.0016929512178671554, m = 0.0020419750850593924
+[Iteration 960] [Rank 3] , d = 0.001823917680305933, m = 0.0020411250245597856
+[Iteration 970] [Rank 3] , d = 0.0017918122054648607, m = 0.002040351484143296
+[Iteration 980] [Rank 3] , d = 0.001757130753190356, m = 0.002039505715541232
+[Iteration 990] [Rank 3] , d = 0.001712836507078896, m = 0.0020387750946673352
+[Iteration 1000] [Rank 3] , d = 0.0019619523735071778, m = 0.002038137340755163
+[Iteration 1010] [Rank 3] , d = 0.0020472737723998906, m = 0.0020375107738041494
+[Iteration 1020] [Rank 3] , d = 0.0021367104523143067, m = 0.0020367974682947987
+[Iteration 1030] [Rank 3] , d = 0.0019421927417312146, m = 0.0020359174968764293
+[Epoch 10] [Rank 3] ###### Epoch stats: #######
+[Epoch 10] [Rank 3] Current ratio of transmitted gradients: 0.4958444086744512
+[Epoch 10] [Rank 3] Average ratio of transmitted gradients: 0.5275613298217031
+[Epoch 10] [Rank 3] Total bits transmitted: 11113356992
+[Iteration 1040] [Rank 3] , d = 0.002076080739551812, m = 0.0020353374929078807
+[Iteration 1050] [Rank 3] , d = 0.0023343067700739403, m = 0.002034664120455583
+[Iteration 1060] [Rank 3] , d = 0.001664238493792067, m = 0.002033655040828307
+[Iteration 1070] [Rank 3] , d = 0.00196364874889017, m = 0.002033021978233159
+[Iteration 1080] [Rank 3] , d = 0.0020565410082884587, m = 0.0020325969025318255
+[Iteration 1090] [Rank 3] , d = 0.001924192314056132, m = 0.002031776386712592
+[Iteration 720] [Rank 2] , d = 0.002233843650170076, m = 0.002057498427322358
+[Iteration 730] [Rank 2] , d = 0.0020513262247037053, m = 0.00205642050779259
+[Iteration 740] [Rank 2] , d = 0.0022619909157841666, m = 0.002056100995290505
+[Iteration 750] [Rank 2] , d = 0.0018235721223575458, m = 0.00205513208893032
+[Epoch 7] [Rank 2] ###### Epoch stats: #######
+[Epoch 7] [Rank 2] Current ratio of transmitted gradients: 0.5234075343098321
+[Epoch 7] [Rank 2] Average ratio of transmitted gradients: 0.5370437138136954
+[Epoch 7] [Rank 2] Total bits transmitted: 8227715200
+[Iteration 760] [Rank 2] , d = 0.002443691567917985, m = 0.0020548177181064753
+[Iteration 770] [Rank 2] , d = 0.0018120116382660443, m = 0.0020537243504162653
+[Iteration 780] [Rank 2] , d = 0.0020912852892808523, m = 0.002053208029273295
+[Iteration 790] [Rank 2] , d = 0.0019835340381019104, m = 0.0020524805733220046
+[Iteration 800] [Rank 2] , d = 0.0016642699081510115, m = 0.0020514849044743523
+[Iteration 1100] [Rank 3] , d = 0.0015533143923597515, m = 0.0020310163993913937
+[Iteration 1110] [Rank 3] , d = 0.0019604444842778517, m = 0.0020306356986656707
+[Iteration 1120] [Rank 3] , d = 0.001499061794462949, m = 0.002029811704447986
+[Epoch 11] [Rank 3] ###### Epoch stats: #######
+[Epoch 11] [Rank 3] Current ratio of transmitted gradients: 0.49744607310717937
+[Epoch 11] [Rank 3] Average ratio of transmitted gradients: 0.5250517250954928
+[Epoch 11] [Rank 3] Total bits transmitted: 12065990016
+[Iteration 1130] [Rank 3] , d = 0.001968612217603369, m = 0.0020293794480414932
+[Iteration 1140] [Rank 3] , d = 0.001974738017597507, m = 0.0020288562853827525
+[Iteration 1150] [Rank 3] , d = 0.0016184049440923366, m = 0.0020284902237854632
+[Iteration 1160] [Rank 3] , d = 0.0017437796506390294, m = 0.0020278729299431386
+[Iteration 1170] [Rank 3] , d = 0.0018681490976995045, m = 0.002027552234893529
+[Iteration 1180] [Rank 3] , d = 0.0019150507356033412, m = 0.0020270902728764463
+[Iteration 1190] [Rank 3] , d = 0.00171242812041262, m = 0.00202635283802477
+[Iteration 1200] [Rank 3] , d = 0.0016974748855551342, m = 0.002025740000970212
+[Iteration 1210] [Rank 3] , d = 0.0017963987018707283, m = 0.0020250655846034906
+[Iteration 1220] [Rank 3] , d = 0.0017844298311129507, m = 0.002024682731777231
+[Epoch 12] [Rank 3] ###### Epoch stats: #######
+[Epoch 12] [Rank 3] Current ratio of transmitted gradients: 0.49293988383380455
+[Epoch 12] [Rank 3] Average ratio of transmitted gradients: 0.5225815834599783
+[Epoch 12] [Rank 3] Total bits transmitted: 13009993472
+[Iteration 1230] [Rank 3] , d = 0.0016613169584102476, m = 0.0020239594438613085
+[Iteration 1240] [Rank 3] , d = 0.0019092076648397017, m = 0.0020236986249838685
+[Iteration 1250] [Rank 3] , d = 0.0016143839061474666, m = 0.002023329100138479
+[Iteration 1260] [Rank 3] , d = 0.001939176963272562, m = 0.0020228435155184936
+[Iteration 1270] [Rank 3] , d = 0.001566979638500521, m = 0.002022303484653608
+[Iteration 810] [Rank 2] , d = 0.0020621013498215994, m = 0.0020511072538392013
+[Iteration 820] [Rank 2] , d = 0.0016151378507621296, m = 0.0020501921319086374
+[Iteration 830] [Rank 2] , d = 0.00197125102375469, m = 0.0020495622196117446
+[Iteration 840] [Rank 2] , d = 0.002513777002722714, m = 0.002049492462861499
+[Epoch 8] [Rank 2] ###### Epoch stats: #######
+[Epoch 8] [Rank 2] Current ratio of transmitted gradients: 0.510069532214576
+[Epoch 8] [Rank 2] Average ratio of transmitted gradients: 0.5340465825249044
+[Epoch 8] [Rank 2] Total bits transmitted: 9204522752
+[Iteration 850] [Rank 2] , d = 0.001939396863785172, m = 0.002048133403629896
+[Iteration 860] [Rank 2] , d = 0.002256776132199413, m = 0.002047624110001031
+[Iteration 870] [Rank 2] , d = 0.0020570436380315674, m = 0.0020467284753931387
+[Iteration 880] [Rank 2] , d = 0.0023816482090029973, m = 0.0020460413025899567
+[Iteration 890] [Rank 2] , d = 0.0019896598380960487, m = 0.002045045574132143
+[Iteration 1280] [Rank 3] , d = 0.0016575158209779874, m = 0.002021773773478759
+[Iteration 1290] [Rank 3] , d = 0.0018733010525663694, m = 0.0020213086002314486
+[Iteration 1300] [Rank 3] , d = 0.0016649296096888416, m = 0.0020206885320587513
+[Iteration 1310] [Rank 3] , d = 0.001556110270305794, m = 0.0020201712319083136
+[Epoch 13] [Rank 3] ###### Epoch stats: #######
+[Epoch 13] [Rank 3] Current ratio of transmitted gradients: 0.4934882983340981
+[Epoch 13] [Rank 3] Average ratio of transmitted gradients: 0.5205034916652725
+[Epoch 13] [Rank 3] Total bits transmitted: 13955047168
+[Iteration 1320] [Rank 3] , d = 0.0018700653735951066, m = 0.002019878192230064
+[Iteration 1330] [Rank 3] , d = 0.0016686050896853246, m = 0.0020195096156320706
+[Iteration 1340] [Rank 3] , d = 0.0016272637933146285, m = 0.002018952615073316
+[Iteration 1350] [Rank 3] , d = 0.0019494494586473473, m = 0.0020187640673980413
+[Iteration 1360] [Rank 3] , d = 0.0016143210774295779, m = 0.002018532819257215
+[Iteration 900] [Rank 2] , d = 0.001557052701074123, m = 0.0020441387170023364
+[Iteration 910] [Rank 2] , d = 0.0019195115745734314, m = 0.002043317666659072
+[Iteration 920] [Rank 2] , d = 0.0016343320240770956, m = 0.0020425313980131587
+[Iteration 930] [Rank 2] , d = 0.0021045107343964017, m = 0.0020417165014431863
+[Epoch 9] [Rank 2] ###### Epoch stats: #######
+[Epoch 9] [Rank 2] Current ratio of transmitted gradients: 0.500910976640143
+[Epoch 9] [Rank 2] Average ratio of transmitted gradients: 0.5307330219364282
+[Epoch 9] [Rank 2] Total bits transmitted: 10163791232
+[Iteration 940] [Rank 2] , d = 0.0018571854864279445, m = 0.0020408749913078893
+[Iteration 950] [Rank 2] , d = 0.0017393502260278832, m = 0.0020404199917092056
+[Iteration 960] [Rank 2] , d = 0.0018413840638789628, m = 0.0020396650577552307
+[Iteration 970] [Rank 2] , d = 0.0017684713367692474, m = 0.0020388153511082378
+[Iteration 980] [Rank 2] , d = 0.0017688168947176347, m = 0.0020379517775370136
+[Iteration 1370] [Rank 3] , d = 0.0015399318754494805, m = 0.002017909939335919
+[Iteration 1380] [Rank 3] , d = 0.0018765995602555206, m = 0.0020176490537710057
+[Iteration 1390] [Rank 3] , d = 0.0016113052989709252, m = 0.0020172701688547117
+[Iteration 1400] [Rank 3] , d = 0.0016407719676606767, m = 0.002016749374844957
+[Epoch 14] [Rank 3] ###### Epoch stats: #######
+[Epoch 14] [Rank 3] Current ratio of transmitted gradients: 0.4918825232990826
+[Epoch 14] [Rank 3] Average ratio of transmitted gradients: 0.5185954271075266
+[Epoch 14] [Rank 3] Total bits transmitted: 14897025728
+[Iteration 1410] [Rank 3] , d = 0.0018219385756924424, m = 0.00201663119145191
+[Iteration 1420] [Rank 3] , d = 0.0016842808547985293, m = 0.0020163472976832786
+[Iteration 1430] [Rank 3] , d = 0.001864819175651409, m = 0.002015998132766682
+[Iteration 1440] [Rank 3] , d = 0.0016866369317193514, m = 0.002015669989885247
+[Iteration 1450] [Rank 3] , d = 0.0016232113410108143, m = 0.0020152608735745617
+[Iteration 990] [Rank 2] , d = 0.0017095065850308005, m = 0.002037169950893864
+[Iteration 1000] [Rank 2] , d = 0.001991104898607486, m = 0.0020364992121755616
+[Iteration 1010] [Rank 2] , d = 0.002049158633936549, m = 0.002035908113264451
+[Iteration 1020] [Rank 2] , d = 0.002121223173354768, m = 0.0020352491496162476
+[Iteration 1030] [Rank 2] , d = 0.001926422733541177, m = 0.0020343354441653594
+[Epoch 10] [Rank 2] ###### Epoch stats: #######
+[Epoch 10] [Rank 2] Current ratio of transmitted gradients: 0.4958444086744512
+[Epoch 10] [Rank 2] Average ratio of transmitted gradients: 0.5275613298217031
+[Epoch 10] [Rank 2] Total bits transmitted: 11113356992
+[Iteration 1040] [Rank 2] , d = 0.0021065212533688364, m = 0.002033691784872306
+[Iteration 1050] [Rank 2] , d = 0.0023333643393056115, m = 0.0020329922548483546
+[Iteration 1060] [Rank 2] , d = 0.0016816734630061524, m = 0.0020320259946180128
+[Iteration 1070] [Rank 2] , d = 0.0019349360248150818, m = 0.0020313412073683294
+[Iteration 1460] [Rank 3] , d = 0.0018167866208255775, m = 0.0020148093653932744
+[Iteration 1080] [Rank 2] , d = 0.0020724366739142733, m = 0.0020309797459670356
+[Iteration 1090] [Rank 2] , d = 0.0019354700689171347, m = 0.002030168783528151
+[Iteration 1470] [Rank 3] , d = 0.0017312453214202545, m = 0.0020143859711066036
+[Iteration 1480] [Rank 3] , d = 0.001695338709146922, m = 0.0020139752306896864
+[Iteration 1100] [Rank 2] , d = 0.0015695870302928976, m = 0.0020294364939568163
+[Iteration 1110] [Rank 2] , d = 0.0019573658771013104, m = 0.0020289726603926602
+[Iteration 1120] [Rank 2] , d = 0.0015435131123691305, m = 0.002028263853688008
+[Epoch 11] [Rank 2] ###### Epoch stats: #######
+[Epoch 11] [Rank 2] Current ratio of transmitted gradients: 0.49744607310717937
+[Epoch 11] [Rank 2] Average ratio of transmitted gradients: 0.5250517250954928
+[Epoch 11] [Rank 2] Total bits transmitted: 12065990016
+[Iteration 1130] [Rank 2] , d = 0.001962926218634451, m = 0.002027845282964627
+[Iteration 1140] [Rank 2] , d = 0.001974895089392229, m = 0.002027383857761064
+[Iteration 1150] [Rank 2] , d = 0.0016356200127938118, m = 0.002026959353765314
+[Iteration 1160] [Rank 2] , d = 0.0017574763111387432, m = 0.002026387525926798
+[Iteration 1170] [Rank 2] , d = 0.0019229671540573043, m = 0.0020260937340799245
+[Iteration 1180] [Rank 2] , d = 0.001933082577637368, m = 0.0020256586186621316
+[Iteration 1190] [Rank 2] , d = 0.0016978832722214102, m = 0.002024905799279136
+[Iteration 1200] [Rank 2] , d = 0.0017163863296396015, m = 0.0020242819666685635
+[Iteration 1210] [Rank 2] , d = 0.00177886948957981, m = 0.0020235746606844392
+[Iteration 1220] [Rank 2] , d = 0.0017913724044396405, m = 0.0020232028864883155
+[Epoch 12] [Rank 2] ###### Epoch stats: #######
+[Epoch 12] [Rank 2] Current ratio of transmitted gradients: 0.49293988383380455
+[Epoch 12] [Rank 2] Average ratio of transmitted gradients: 0.5225815834599783
+[Epoch 12] [Rank 2] Total bits transmitted: 13009993472
+[Iteration 1230] [Rank 2] , d = 0.001650196275343966, m = 0.0020224619920591142
+[Iteration 1240] [Rank 2] , d = 0.001931291959177543, m = 0.0020221973932697673
+[Iteration 1250] [Rank 2] , d = 0.0016318188753615518, m = 0.0020217832675867116
+[Iteration 1260] [Rank 2] , d = 0.0019567375899224243, m = 0.002021405455351904
+[Iteration 1270] [Rank 2] , d = 0.001565817307219582, m = 0.002020872512406993
+[Iteration 1280] [Rank 2] , d = 0.0016311277594647773, m = 0.0020201865268212106
+[Iteration 1290] [Rank 2] , d = 0.00184575065977222, m = 0.0020197347676150206
+[Iteration 1300] [Rank 2] , d = 0.0016825216506976485, m = 0.002019132784828319
+[Iteration 1310] [Rank 2] , d = 0.0015593145349181124, m = 0.002018521510802097
+[Epoch 13] [Rank 2] ###### Epoch stats: #######
+[Epoch 13] [Rank 2] Current ratio of transmitted gradients: 0.4934882983340981
+[Epoch 13] [Rank 2] Average ratio of transmitted gradients: 0.5205034916652725
+[Epoch 13] [Rank 2] Total bits transmitted: 13955047168
+[Iteration 1320] [Rank 2] , d = 0.0018473527920783793, m = 0.0020182226483794682
+[Iteration 1330] [Rank 2] , d = 0.0016635473778952926, m = 0.0020178172053973054
+[Iteration 1340] [Rank 2] , d = 0.0016523638661111225, m = 0.002017202336304833
+[Iteration 1350] [Rank 2] , d = 0.0019418785981417715, m = 0.0020170577398717178
+[Iteration 1360] [Rank 2] , d = 0.0016274836938272386, m = 0.0020168185554626183
+[Iteration 1370] [Rank 2] , d = 0.0015364448816066634, m = 0.002016152018389006
+[Iteration 1380] [Rank 2] , d = 0.0018918041099845607, m = 0.0020159160775889175
+[Iteration 1390] [Rank 2] , d = 0.0016547513573908891, m = 0.0020156275885853028
+[Iteration 1400] [Rank 2] , d = 0.001651892650726958, m = 0.0020150559144274565
+[Epoch 14] [Rank 2] ###### Epoch stats: #######
+[Epoch 14] [Rank 2] Current ratio of transmitted gradients: 0.4918825232990826
+[Epoch 14] [Rank 2] Average ratio of transmitted gradients: 0.5185954271075266
+[Epoch 14] [Rank 2] Total bits transmitted: 14897025728
+[Iteration 1410] [Rank 2] , d = 0.0018525989900220771, m = 0.0020148967225408084
+[Iteration 1420] [Rank 2] , d = 0.0017010561224747843, m = 0.0020145521472434437
+[Iteration 1430] [Rank 2] , d = 0.001893092098701277, m = 0.002014202992044138
+[Iteration 1440] [Rank 2] , d = 0.0017026582547809434, m = 0.0020138813988614893
+[Iteration 1450] [Rank 2] , d = 0.0016427510722741674, m = 0.0020134540391568752
+[Iteration 1460] [Rank 2] , d = 0.0018018333859680918, m = 0.0020130325081858234
+[Iteration 1470] [Rank 2] , d = 0.0017463556280724617, m = 0.002012634818136461
+[Iteration 1480] [Rank 2] , d = 0.0017024383542683333, m = 0.0020122065662214225
+[Iteration 720] [Rank 1] , d = 0.0022131730019847276, m = 0.00205757410934938
+[Iteration 730] [Rank 1] , d = 0.002070426154941838, m = 0.0020566155260701353
+[Iteration 740] [Rank 1] , d = 0.0022683994450088036, m = 0.002056291516382398
+[Iteration 750] [Rank 1] , d = 0.0018405358761874667, m = 0.0020553693907389586
+[Epoch 7] [Rank 1] ###### Epoch stats: #######
+[Epoch 7] [Rank 1] Current ratio of transmitted gradients: 0.5234075343098321
+[Epoch 7] [Rank 1] Average ratio of transmitted gradients: 0.5370437138136954
+[Epoch 7] [Rank 1] Total bits transmitted: 8227715200
+[Iteration 760] [Rank 1] , d = 0.002438728099204786, m = 0.002055023500733721
+[Iteration 770] [Rank 1] , d = 0.0018277816464560817, m = 0.002054032993437017
+[Iteration 780] [Rank 1] , d = 0.0020978508903002104, m = 0.002053510467896724
+[Iteration 790] [Rank 1] , d = 0.001972319111958796, m = 0.002052831929622353
+[Iteration 800] [Rank 1] , d = 0.0016724062271175847, m = 0.002051831325239085
+[Iteration 810] [Rank 1] , d = 0.0020427501047119117, m = 0.0020514153159806063
+[Iteration 820] [Rank 1] , d = 0.0016403949953533452, m = 0.0020504420310295387
+[Iteration 830] [Rank 1] , d = 0.001960381655559963, m = 0.002049803932501137
+[Iteration 840] [Rank 1] , d = 0.002543212257053521, m = 0.002049675458039221
+[Epoch 8] [Rank 1] ###### Epoch stats: #######
+[Epoch 8] [Rank 1] Current ratio of transmitted gradients: 0.510069532214576
+[Epoch 8] [Rank 1] Average ratio of transmitted gradients: 0.5340465825249044
+[Epoch 8] [Rank 1] Total bits transmitted: 9204522752
+[Iteration 850] [Rank 1] , d = 0.0019172183263704977, m = 0.00204834082699406
+[Iteration 860] [Rank 1] , d = 0.002246535051183572, m = 0.0020476826698687454
+[Iteration 870] [Rank 1] , d = 0.002063703482127759, m = 0.002046768113028589
+[Iteration 880] [Rank 1] , d = 0.0023835016561807106, m = 0.0020461345829111766
+[Iteration 890] [Rank 1] , d = 0.0019713766811904673, m = 0.0020451740169038944
+[Iteration 900] [Rank 1] , d = 0.0015078578149673525, m = 0.0020442483011645545
+[Iteration 910] [Rank 1] , d = 0.0019277107222578933, m = 0.0020435125322379863
+[Iteration 920] [Rank 1] , d = 0.0016388871061240188, m = 0.0020427959812730143
+[Iteration 930] [Rank 1] , d = 0.002120469228740105, m = 0.002042037427294869
+[Epoch 9] [Rank 1] ###### Epoch stats: #######
+[Epoch 9] [Rank 1] Current ratio of transmitted gradients: 0.500910976640143
+[Epoch 9] [Rank 1] Average ratio of transmitted gradients: 0.5307330219364282
+[Epoch 9] [Rank 1] Total bits transmitted: 10163791232
+[Iteration 940] [Rank 1] , d = 0.001862086126423255, m = 0.0020412011865270636
+[Iteration 950] [Rank 1] , d = 0.0017045431163176014, m = 0.002040683826078171
+[Iteration 960] [Rank 1] , d = 0.0018192997695411213, m = 0.002039808792340327
+[Iteration 970] [Rank 1] , d = 0.001773277733687725, m = 0.002039045248569266
+[Iteration 980] [Rank 1] , d = 0.0017494656496079473, m = 0.0020382457147447098
+[Iteration 990] [Rank 1] , d = 0.0017128993357967846, m = 0.002037475313678638
+[Iteration 1000] [Rank 1] , d = 0.001987712147841502, m = 0.0020369058727781595
+[Iteration 1010] [Rank 1] , d = 0.0020395144257406494, m = 0.002036260880046938
+[Iteration 1020] [Rank 1] , d = 0.002146448903587039, m = 0.0020355782465636203
+[Iteration 1030] [Rank 1] , d = 0.0019099930238133092, m = 0.0020347096741911153
+[Epoch 10] [Rank 1] ###### Epoch stats: #######
+[Epoch 10] [Rank 1] Current ratio of transmitted gradients: 0.4958444086744512
+[Epoch 10] [Rank 1] Average ratio of transmitted gradients: 0.5275613298217031
+[Epoch 10] [Rank 1] Total bits transmitted: 11113356992
+[Iteration 1040] [Rank 1] , d = 0.0020914109467166293, m = 0.0020340603679464128
+[Iteration 1050] [Rank 1] , d = 0.002371941172089209, m = 0.0020334655326404803
+[Iteration 1060] [Rank 1] , d = 0.001680668203519935, m = 0.002032512250995904
+[Iteration 1070] [Rank 1] , d = 0.0019575857776139203, m = 0.0020318619348326985
+[Iteration 1080] [Rank 1] , d = 0.002043064248301355, m = 0.0020314632248659777
+[Iteration 1090] [Rank 1] , d = 0.0019337108648162541, m = 0.0020307167351786646
+[Iteration 1100] [Rank 1] , d = 0.0015507698292852633, m = 0.0020299548166131127
+[Iteration 1110] [Rank 1] , d = 0.0019370093725054054, m = 0.0020294868549177746
+[Iteration 1120] [Rank 1] , d = 0.001524161867259443, m = 0.002028749641299337
+[Epoch 11] [Rank 1] ###### Epoch stats: #######
+[Epoch 11] [Rank 1] Current ratio of transmitted gradients: 0.49744607310717937
+[Epoch 11] [Rank 1] Average ratio of transmitted gradients: 0.5250517250954928
+[Epoch 11] [Rank 1] Total bits transmitted: 12065990016
+[Iteration 1130] [Rank 1] , d = 0.001963774406325947, m = 0.0020284028531162178
+[Iteration 1140] [Rank 1] , d = 0.0019485384422379627, m = 0.0020279269324588534
+[Iteration 1150] [Rank 1] , d = 0.0016283004671597905, m = 0.0020275101285381182
+[Iteration 1160] [Rank 1] , d = 0.0017491515060185042, m = 0.00202693899539247
+[Iteration 1170] [Rank 1] , d = 0.0019435749735247636, m = 0.002026684731797725
+[Iteration 1180] [Rank 1] , d = 0.00192337554072358, m = 0.0020262278010945533
+[Iteration 1190] [Rank 1] , d = 0.001674228259936354, m = 0.0020254537965263457
+[Iteration 1200] [Rank 1] , d = 0.0016975691286319672, m = 0.002024870390830771
+[Iteration 1210] [Rank 1] , d = 0.001759455415752234, m = 0.002024100533421449
+[Iteration 1220] [Rank 1] , d = 0.0017856549911117784, m = 0.0020237626847044578
+[Epoch 12] [Rank 1] ###### Epoch stats: #######
+[Epoch 12] [Rank 1] Current ratio of transmitted gradients: 0.49293988383380455
+[Epoch 12] [Rank 1] Average ratio of transmitted gradients: 0.5225815834599783
+[Epoch 12] [Rank 1] Total bits transmitted: 13009993472
+[Iteration 1230] [Rank 1] , d = 0.001663484549177404, m = 0.002023047049405304
+[Iteration 1240] [Rank 1] , d = 0.0019120977858625772, m = 0.002022761307592253
+[Iteration 1250] [Rank 1] , d = 0.0016656207255856164, m = 0.0020224882198638084
+[Iteration 1260] [Rank 1] , d = 0.0019444859899341482, m = 0.0020219878541492126
+[Iteration 1270] [Rank 1] , d = 0.0015821213595116725, m = 0.0020214601166316563
+[Iteration 1280] [Rank 1] , d = 0.0016503533471386876, m = 0.0020208978254013694
+[Iteration 1290] [Rank 1] , d = 0.0018634683582168042, m = 0.0020204475888628273
+[Iteration 1300] [Rank 1] , d = 0.0016877992630002906, m = 0.0020198972572373756
+[Iteration 1310] [Rank 1] , d = 0.0015687388426014017, m = 0.002019313794832716
+[Epoch 13] [Rank 1] ###### Epoch stats: #######
+[Epoch 13] [Rank 1] Current ratio of transmitted gradients: 0.4934882983340981
+[Epoch 13] [Rank 1] Average ratio of transmitted gradients: 0.5205034916652725
+[Epoch 13] [Rank 1] Total bits transmitted: 13955047168
+[Iteration 1320] [Rank 1] , d = 0.0018445254997733924, m = 0.0020190448675017295
+[Iteration 1330] [Rank 1] , d = 0.0016795058722389958, m = 0.0020185868689924845
+[Iteration 1340] [Rank 1] , d = 0.001602195134877079, m = 0.002017988866581913
+[Iteration 1350] [Rank 1] , d = 0.0019462766083939733, m = 0.0020178747689836604
+[Iteration 1360] [Rank 1] , d = 0.0015993678425720922, m = 0.002017653355697699
+[Iteration 1370] [Rank 1] , d = 0.0015148003882940423, m = 0.002016990582425687
+[Iteration 1380] [Rank 1] , d = 0.0018801807971751707, m = 0.002016765994093799
+[Iteration 1390] [Rank 1] , d = 0.0016155148230694613, m = 0.0020164235394599535
+[Iteration 1400] [Rank 1] , d = 0.0016239024569075888, m = 0.0020158975995036143
+[Epoch 14] [Rank 1] ###### Epoch stats: #######
+[Epoch 14] [Rank 1] Current ratio of transmitted gradients: 0.4918825232990826
+[Epoch 14] [Rank 1] Average ratio of transmitted gradients: 0.5185954271075266
+[Epoch 14] [Rank 1] Total bits transmitted: 14897025728
+[Iteration 1410] [Rank 1] , d = 0.001842043765416793, m = 0.0020157815343431963
+[Iteration 1420] [Rank 1] , d = 0.001704071900933437, m = 0.0020154642911210294
+[Iteration 1430] [Rank 1] , d = 0.0018774163335880723, m = 0.0020150905629361593
+[Iteration 1440] [Rank 1] , d = 0.001701778652730503, m = 0.002014766625412008
+[Iteration 1450] [Rank 1] , d = 0.0016405520671480666, m = 0.0020144135518888238
+[Iteration 1460] [Rank 1] , d = 0.0017881053111094337, m = 0.0020139948282642322
+[Iteration 1470] [Rank 1] , d = 0.0017461357275598516, m = 0.0020135908311837095
+[Iteration 1480] [Rank 1] , d = 0.0016922601019703808, m = 0.002013133597378279
+[Epoch 10] [Rank 0] Current ratio of transmitted gradients: 0.4958444086744512
+[Epoch 10] [Rank 0] Average ratio of transmitted gradients: 0.5275613298217031
+[Epoch 10] [Rank 0] Total bits transmitted: 11113356992
+[Iteration 1040] [Rank 0] , d = 0.003981173123369811, m = 0.005272920880466668
+[Iteration 1050] [Rank 0] , d = 0.0033068639086304575, m = 0.005269819479215886
+[Iteration 1060] [Rank 0] , d = 0.006529380263495475, m = 0.005267867781676952
+[Iteration 1070] [Rank 0] , d = 0.005000192098804945, m = 0.005263752440001177
+[Iteration 1080] [Rank 0] , d = 0.004775076802610106, m = 0.005260964029182788
+[Iteration 1090] [Rank 0] , d = 0.005059722309004389, m = 0.0052582169449769825
+[Iteration 1100] [Rank 0] , d = 0.0073130114473609845, m = 0.005257338228639219
+[Iteration 1110] [Rank 0] , d = 0.004995291458809634, m = 0.00525308354138692
+[Iteration 1120] [Rank 0] , d = 0.007046397783000729, m = 0.005252187577438434
+[Epoch 11] [Rank 0] ###### Epoch stats: #######
+[Epoch 11] [Rank 0] Current ratio of transmitted gradients: 0.49744607310717937
+[Epoch 11] [Rank 0] Average ratio of transmitted gradients: 0.5250517250954928
+[Epoch 11] [Rank 0] Total bits transmitted: 12065990016
+[Epoch 11] [Rank 0] New best hr!
+[Epoch 11] [Rank 0] {'best_epoch_stats/best_train_throughput': 18179619.94812937, 'best_epoch_stats/best_eval_throughput': 112909138.39929332, 'best_epoch_stats/mean_train_throughput': 17773972.57951368, 'best_epoch_stats/mean_eval_throughput': 112732475.82830487, 'best_epoch_stats/best_accuracy': 0.914385564613374, 'best_epoch_stats/best_epoch': 11, 'best_epoch_stats/time_to_target': 70.57473802566528, 'best_epoch_stats/time_to_best_model': 70.57456421852112}
+[Iteration 1130] [Rank 0] , d = 0.004960515763458296, m = 0.005248046002382406
+[Iteration 1140] [Rank 0] , d = 0.0056278824048709595, m = 0.005246730583652286
+[Iteration 1150] [Rank 0] , d = 0.0062492584247891714, m = 0.00524422588070424
+[Iteration 1160] [Rank 0] , d = 0.0060278814373087046, m = 0.005242016181125714
+[Iteration 1170] [Rank 0] , d = 0.005261716637016224, m = 0.005238725243003761
+[Iteration 1180] [Rank 0] , d = 0.0056264059300005775, m = 0.005236848860237222
+[Iteration 1190] [Rank 0] , d = 0.005073890184888267, m = 0.005233889370564777
+[Iteration 1200] [Rank 0] , d = 0.005046339792094118, m = 0.005230991929185931
+[Iteration 1210] [Rank 0] , d = 0.005613526042833415, m = 0.005229149596783988
+[Iteration 1220] [Rank 0] , d = 0.004917666577858274, m = 0.005225875889410292
+[Epoch 12] [Rank 0] ###### Epoch stats: #######
+[Epoch 12] [Rank 0] Current ratio of transmitted gradients: 0.49293988383380455
+[Epoch 12] [Rank 0] Average ratio of transmitted gradients: 0.5225815834599783
+[Epoch 12] [Rank 0] Total bits transmitted: 13009993472
+[Iteration 1230] [Rank 0] , d = 0.006199435251503515, m = 0.005224676300688902
+[Iteration 1240] [Rank 0] , d = 0.0053106916226103845, m = 0.005221757572439077
+[Iteration 1250] [Rank 0] , d = 0.005682543389434038, m = 0.005219527479402207
+[Iteration 1260] [Rank 0] , d = 0.005161661903778635, m = 0.005217362327447655
+[Iteration 1270] [Rank 0] , d = 0.006773846804800001, m = 0.005216021078163061
+[Iteration 1280] [Rank 0] , d = 0.006478708902518323, m = 0.005213621866555231
+[Iteration 1290] [Rank 0] , d = 0.00539588736406732, m = 0.005210681005742096
+[Iteration 1300] [Rank 0] , d = 0.005161410588907081, m = 0.005208285714154406
+[Iteration 1310] [Rank 0] , d = 0.0069317353728540415, m = 0.005207218499122393
+[Epoch 13] [Rank 0] ###### Epoch stats: #######
+[Epoch 13] [Rank 0] Current ratio of transmitted gradients: 0.4934882983340981
+[Epoch 13] [Rank 0] Average ratio of transmitted gradients: 0.5205034916652725
+[Epoch 13] [Rank 0] Total bits transmitted: 13955047168
+[Iteration 1320] [Rank 0] , d = 0.005204448260660769, m = 0.005203663805355318
+[Iteration 1330] [Rank 0] , d = 0.00504153339517564, m = 0.005201571049971731
+[Iteration 1340] [Rank 0] , d = 0.006535348991694892, m = 0.0052007207513643456
+[Iteration 1350] [Rank 0] , d = 0.005111932973569812, m = 0.005198006177831424
+[Iteration 1360] [Rank 0] , d = 0.006099097789035428, m = 0.005196285051372246
+[Iteration 1370] [Rank 0] , d = 0.0067217932120293, m = 0.005194927235246546
+[Iteration 1380] [Rank 0] , d = 0.005177180597097118, m = 0.005191837249469506
+[Iteration 1390] [Rank 0] , d = 0.005969105171723923, m = 0.005189902599445169
+[Iteration 1400] [Rank 0] , d = 0.006291070936544032, m = 0.005188633518961739
+[Epoch 14] [Rank 0] ###### Epoch stats: #######
+[Epoch 14] [Rank 0] Current ratio of transmitted gradients: 0.4918825232990826
+[Epoch 14] [Rank 0] Average ratio of transmitted gradients: 0.5185954271075266
+[Epoch 14] [Rank 0] Total bits transmitted: 14897025728
+[Epoch 14] [Rank 0] New best hr!
+[Epoch 14] [Rank 0] {'best_epoch_stats/best_train_throughput': 18197361.420116894, 'best_epoch_stats/best_eval_throughput': 112931741.56958205, 'best_epoch_stats/mean_train_throughput': 17801588.82334982, 'best_epoch_stats/mean_eval_throughput': 112753493.6660069, 'best_epoch_stats/best_accuracy': 0.9163784451199699, 'best_epoch_stats/best_epoch': 14, 'best_epoch_stats/time_to_target': 87.59254145622253, 'best_epoch_stats/time_to_best_model': 87.59237122535706}
+[Iteration 1410] [Rank 0] , d = 0.005165337383775118, m = 0.0051857914265046375
+[Iteration 1420] [Rank 0] , d = 0.005018569498787358, m = 0.0051840630387867
+[Iteration 1430] [Rank 0] , d = 0.005552739258276199, m = 0.005182909864900052
+[Iteration 1440] [Rank 0] , d = 0.006381952676969885, m = 0.005181493803840436
+[Iteration 1450] [Rank 0] , d = 0.0062579916165756855, m = 0.005179709615368208
+[Iteration 1460] [Rank 0] , d = 0.005830253705190126, m = 0.00517761850595013
+[Iteration 1470] [Rank 0] , d = 0.005514822127030432, m = 0.005175433288168175
+[Iteration 1480] [Rank 0] , d = 0.005072382295658941, m = 0.005173436794581952
+[Iteration 1490] [Rank 0] , d = 0.006519076353761745, m = 0.005172314573997671
+[Iteration 1500] [Rank 0] , d = 0.006344349689313561, m = 0.005170398067476515
+[Epoch 15] [Rank 0] ###### Epoch stats: #######
+[Epoch 15] [Rank 0] Current ratio of transmitted gradients: 0.4916352856102848
+[Epoch 15] [Rank 0] Average ratio of transmitted gradients: 0.5169104182639489
+[Epoch 15] [Rank 0] Total bits transmitted: 15838530816
+[Epoch 15] [Rank 0] New best hr!
+[Epoch 15] [Rank 0] {'best_epoch_stats/best_train_throughput': 18237136.328127686, 'best_epoch_stats/best_eval_throughput': 112931741.56958205, 'best_epoch_stats/mean_train_throughput': 17828810.542398434, 'best_epoch_stats/mean_eval_throughput': 112763194.30010736, 'best_epoch_stats/best_accuracy': 0.9179669730600103, 'best_epoch_stats/best_epoch': 15, 'best_epoch_stats/time_to_target': 93.16555428504944, 'best_epoch_stats/time_to_best_model': 93.16547417640686}
+[Iteration 1510] [Rank 0] , d = 0.005961722797372013, m = 0.005168324658536798
+[Iteration 1520] [Rank 0] , d = 0.005921857975871699, m = 0.005166488727259232
+[Iteration 1530] [Rank 0] , d = 0.0057472569688592915, m = 0.005164566695779063
+[Iteration 1540] [Rank 0] , d = 0.005526633925993488, m = 0.005162614343924141
+[Iteration 1550] [Rank 0] , d = 0.0053818765599781635, m = 0.005160797573441046
+[Iteration 1560] [Rank 0] , d = 0.005175798365303569, m = 0.00515891009850785
+[Iteration 1570] [Rank 0] , d = 0.005499868892172946, m = 0.005157173349785305
+[Iteration 1580] [Rank 0] , d = 0.006369795320058442, m = 0.005155795624937032
+[Iteration 1590] [Rank 0] , d = 0.0061719476874272546, m = 0.0051539487802584735
+[Epoch 16] [Rank 0] ###### Epoch stats: #######
+[Epoch 16] [Rank 0] Current ratio of transmitted gradients: 0.48801765482160253
+[Epoch 16] [Rank 0] Average ratio of transmitted gradients: 0.5152108439438109
+[Epoch 16] [Rank 0] Total bits transmitted: 16773107968
+[Epoch 16] [Rank 0] New best hr!
+[Epoch 16] [Rank 0] {'best_epoch_stats/best_train_throughput': 18247101.24296072, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 17853415.87772563, 'best_epoch_stats/mean_eval_throughput': 112778253.26364261, 'best_epoch_stats/best_accuracy': 0.918371325626566, 'best_epoch_stats/best_epoch': 16, 'best_epoch_stats/time_to_target': 98.73544931411743, 'best_epoch_stats/time_to_best_model': 98.7353732585907}
+[Iteration 1490] [Rank 1] , d = 0.0015663827656805793, m = 0.0020126702766163906
+[Iteration 1500] [Rank 1] , d = 0.0016274208651093501, m = 0.002012167755378184
+[Epoch 15] [Rank 1] ###### Epoch stats: #######
+[Epoch 15] [Rank 1] Current ratio of transmitted gradients: 0.4916352856102848
+[Epoch 15] [Rank 1] Average ratio of transmitted gradients: 0.5169104182639489
+[Epoch 15] [Rank 1] Total bits transmitted: 15838530816
+[Iteration 1510] [Rank 1] , d = 0.001763256553184494, m = 0.0020117835303228348
+[Iteration 1520] [Rank 1] , d = 0.0017395072978226048, m = 0.0020114418854064115
+[Iteration 1530] [Rank 1] , d = 0.0017729950044572263, m = 0.002011139790752644
+[Iteration 1540] [Rank 1] , d = 0.0017238629470683446, m = 0.0020106740260457893
+[Iteration 1550] [Rank 1] , d = 0.0017112029604137925, m = 0.002010259960944295
+[Iteration 1560] [Rank 1] , d = 0.0016953072947879777, m = 0.00200984421776431
+[Iteration 1570] [Rank 1] , d = 0.0016485313143199181, m = 0.002009379037132492
+[Iteration 1600] [Rank 0] , d = 0.006482258725079028, m = 0.005152244188990157
+[Iteration 1610] [Rank 0] , d = 0.0056452545453671565, m = 0.005150408660307564
+[Iteration 1620] [Rank 0] , d = 0.005491921059360039, m = 0.005148588627414732
+[Iteration 1630] [Rank 0] , d = 0.005042570069020802, m = 0.005146836965086028
+[Iteration 1640] [Rank 0] , d = 0.0061865239499774086, m = 0.0051456757471871045
+[Iteration 1650] [Rank 0] , d = 0.006229844350961595, m = 0.005144025072096924
+[Iteration 1660] [Rank 0] , d = 0.006228210804296492, m = 0.0051423572222762375
+[Iteration 1670] [Rank 0] , d = 0.006249069938635506, m = 0.005140626484314645
+[Iteration 1680] [Rank 0] , d = 0.005928706306121556, m = 0.005138794063193424
+[Iteration 1690] [Rank 0] , d = 0.006095265237244223, m = 0.005137093720107465
+[Epoch 17] [Rank 0] ###### Epoch stats: #######
+[Epoch 17] [Rank 0] Current ratio of transmitted gradients: 0.4868722338232442
+[Epoch 17] [Rank 0] Average ratio of transmitted gradients: 0.5136364767148907
+[Iteration 1580] [Rank 1] , d = 0.001571094919522224, m = 0.002008889518975489
+[Iteration 1590] [Rank 1] , d = 0.0015737023113146008, m = 0.0020084475202685973
+[Epoch 16] [Rank 1] ###### Epoch stats: #######
+[Epoch 16] [Rank 1] Current ratio of transmitted gradients: 0.48801765482160253
+[Epoch 16] [Rank 1] Average ratio of transmitted gradients: 0.5152108439438109
+[Epoch 16] [Rank 1] Total bits transmitted: 16773107968
+[Iteration 1600] [Rank 1] , d = 0.0015459320180078414, m = 0.0020079379326002514
+[Iteration 1610] [Rank 1] , d = 0.0017436225788443078, m = 0.0020075309618517276
+[Iteration 1620] [Rank 1] , d = 0.0017763563408642663, m = 0.0020072003680832178
+[Iteration 1630] [Rank 1] , d = 0.0017044802875997127, m = 0.0020067903519012846
+[Iteration 1640] [Rank 1] , d = 0.0015980484394964316, m = 0.002006389276415013
+[Iteration 1650] [Rank 1] , d = 0.001578163150284691, m = 0.002005910061665271
+[Iteration 1660] [Rank 1] , d = 0.001576372531824866, m = 0.0020054223567700456
+[Epoch 17] [Rank 0] Total bits transmitted: 17705491584
+[Epoch 17] [Rank 0] New best hr!
+[Epoch 17] [Rank 0] {'best_epoch_stats/best_train_throughput': 18555281.74967927, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 17892408.4261675, 'best_epoch_stats/mean_eval_throughput': 112790744.07164392, 'best_epoch_stats/best_accuracy': 0.9206530293949875, 'best_epoch_stats/best_epoch': 17, 'best_epoch_stats/time_to_target': 104.21486377716064, 'best_epoch_stats/time_to_best_model': 104.21478033065796}
+[Iteration 1700] [Rank 0] , d = 0.0060207503778283485, m = 0.005135324943694692
+[Iteration 1710] [Rank 0] , d = 0.006222776120199128, m = 0.005133782899531299
+[Iteration 1720] [Rank 0] , d = 0.006182628569468315, m = 0.005132183698845496
+[Iteration 1730] [Rank 0] , d = 0.006014247605526879, m = 0.005130543340695929
+[Iteration 1740] [Rank 0] , d = 0.005608374087966551, m = 0.005128851599707755
+[Iteration 1490] [Rank 2] , d = 0.0015486650672359955, m = 0.0020117194813272683
+[Iteration 1500] [Rank 2] , d = 0.00161959868973222, m = 0.002011292339118408
+[Epoch 15] [Rank 2] ###### Epoch stats: #######
+[Epoch 15] [Rank 2] Current ratio of transmitted gradients: 0.4916352856102848
+[Epoch 15] [Rank 2] Average ratio of transmitted gradients: 0.5169104182639489
+[Epoch 15] [Rank 2] Total bits transmitted: 15838530816
+[Iteration 1510] [Rank 2] , d = 0.0017386591101311087, m = 0.002010870767516258
+[Iteration 1520] [Rank 2] , d = 0.0017533296157580959, m = 0.002010421032336361
+[Iteration 1530] [Rank 2] , d = 0.0017577276260102976, m = 0.002010008791755244
+[Iteration 1540] [Rank 2] , d = 0.0017138103522061693, m = 0.0020096035119437435
+[Iteration 1550] [Rank 2] , d = 0.0017295803603962067, m = 0.002009143566327492
+[Iteration 1560] [Rank 2] , d = 0.0016849405563363594, m = 0.00200868876906553
+[Iteration 1570] [Rank 2] , d = 0.0016815478055703752, m = 0.0020082861533808993
+[Iteration 1670] [Rank 1] , d = 0.0016045826261568456, m = 0.0020049639700269596
+[Iteration 1680] [Rank 1] , d = 0.0016672542722507198, m = 0.002004493395645574
+[Iteration 1690] [Rank 1] , d = 0.0016265412630589097, m = 0.0020040290742617682
+[Epoch 17] [Rank 1] ###### Epoch stats: #######
+[Epoch 17] [Rank 1] Current ratio of transmitted gradients: 0.4868722338232442
+[Epoch 17] [Rank 1] Average ratio of transmitted gradients: 0.5136364767148907
+[Epoch 17] [Rank 1] Total bits transmitted: 17705491584
+[Iteration 1700] [Rank 1] , d = 0.0015574296733814545, m = 0.002003577340985093
+[Iteration 1710] [Rank 1] , d = 0.0016187190876817796, m = 0.0020031500010533596
+[Iteration 1720] [Rank 1] , d = 0.001635305869204369, m = 0.0020027408793803284
+[Iteration 1730] [Rank 1] , d = 0.0016590865389252024, m = 0.002002296322962709
+[Iteration 1740] [Rank 1] , d = 0.0017750055234296614, m = 0.0020019261799173217
+[Iteration 1750] [Rank 1] , d = 0.0017223550578390181, m = 0.0020015356319296614
+[Iteration 1750] [Rank 0] , d = 0.005204856647327045, m = 0.005127033897178193
+[Iteration 1760] [Rank 0] , d = 0.005108697294598549, m = 0.005125445714682403
+[Iteration 1770] [Rank 0] , d = 0.005346880964114216, m = 0.005123855317018995
+[Iteration 1780] [Rank 0] , d = 0.00533170782874412, m = 0.005122231556444244
+[Epoch 18] [Rank 0] ###### Epoch stats: #######
+[Epoch 18] [Rank 0] Current ratio of transmitted gradients: 0.4849067309587857
+[Epoch 18] [Rank 0] Average ratio of transmitted gradients: 0.5121243848329903
+[Epoch 18] [Rank 0] Total bits transmitted: 18634111168
+[Epoch 18] [Rank 0] New best hr!
+[Iteration 1580] [Rank 2] , d = 0.0015710006764453912, m = 0.0020078744040041055
+[Iteration 1590] [Rank 2] , d = 0.001572037350290553, m = 0.0020074043108151253
+[Epoch 16] [Rank 2] ###### Epoch stats: #######
+[Epoch 16] [Rank 2] Current ratio of transmitted gradients: 0.48801765482160253
+[Epoch 16] [Rank 2] Average ratio of transmitted gradients: 0.5152108439438109
+[Epoch 16] [Rank 2] Total bits transmitted: 16773107968
+[Iteration 1600] [Rank 2] , d = 0.0015513981164641494, m = 0.0020069778226705108
+[Iteration 1610] [Rank 2] , d = 0.0016987942886307948, m = 0.0020065788981266453
+[Iteration 1620] [Rank 2] , d = 0.0017777385726578153, m = 0.002006282413770987
+[Iteration 1630] [Rank 2] , d = 0.0016755790773709588, m = 0.0020058348430521873
+[Iteration 1640] [Rank 2] , d = 0.0016247192302401405, m = 0.0020054624283938932
+[Iteration 1650] [Rank 2] , d = 0.0015637753738882026, m = 0.00200497075140261
+[Iteration 1660] [Rank 2] , d = 0.0015322981862260162, m = 0.0020045163522842673
+[Iteration 1760] [Rank 1] , d = 0.0016505732476512977, m = 0.002001131894602488
+[Iteration 1770] [Rank 1] , d = 0.001654091655853059, m = 0.00200067224716628
+[Iteration 1780] [Rank 1] , d = 0.0016756419060888472, m = 0.0020002551905320964
+[Epoch 18] [Rank 1] ###### Epoch stats: #######
+[Epoch 18] [Rank 1] Current ratio of transmitted gradients: 0.4849067309587857
+[Epoch 18] [Rank 1] Average ratio of transmitted gradients: 0.5121243848329903
+[Epoch 18] [Rank 1] Total bits transmitted: 18634111168
+[Iteration 1790] [Rank 1] , d = 0.0016450757348360455, m = 0.001999811534648915
+[Iteration 1800] [Rank 1] , d = 0.0016240909430612544, m = 0.0019994396111990584
+[Iteration 1810] [Rank 1] , d = 0.0016633903061005712, m = 0.0019990999310176756
+[Iteration 1820] [Rank 1] , d = 0.0016565105614917699, m = 0.0019987721930869715
+[Iteration 1830] [Rank 1] , d = 0.0016259129758800237, m = 0.0019983918460536303
+[Iteration 1840] [Rank 1] , d = 0.0015887497892489195, m = 0.0019979925437313244
+[Epoch 18] [Rank 0] {'best_epoch_stats/best_train_throughput': 18555281.74967927, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 17916184.788871203, 'best_epoch_stats/mean_eval_throughput': 112765283.01488455, 'best_epoch_stats/best_accuracy': 0.9233679680561473, 'best_epoch_stats/best_epoch': 18, 'best_epoch_stats/time_to_target': 109.75678586959839, 'best_epoch_stats/time_to_best_model': 109.75661635398865}
+[Iteration 1790] [Rank 0] , d = 0.005276418557002155, m = 0.0051205323693038225
+[Iteration 1800] [Rank 0] , d = 0.005607682972069776, m = 0.005119200191010142
+[Iteration 1810] [Rank 0] , d = 0.005670103303292096, m = 0.005117770684290978
+[Iteration 1820] [Rank 0] , d = 0.005461857517850346, m = 0.005116278850822159
+[Iteration 1830] [Rank 0] , d = 0.005633913961788265, m = 0.005114887639004672
+[Iteration 1840] [Rank 0] , d = 0.0058868937943666955, m = 0.005113468215986203
+[Iteration 1670] [Rank 2] , d = 0.0015844146077146064, m = 0.0020040533484120262
+[Iteration 1680] [Rank 2] , d = 0.0016686365040442688, m = 0.002003612018244682
+[Iteration 1690] [Rank 2] , d = 0.001627515108186183, m = 0.0020031674922752945
+[Epoch 17] [Rank 2] ###### Epoch stats: #######
+[Epoch 17] [Rank 2] Current ratio of transmitted gradients: 0.4868722338232442
+[Epoch 17] [Rank 2] Average ratio of transmitted gradients: 0.5136364767148907
+[Epoch 17] [Rank 2] Total bits transmitted: 17705491584
+[Iteration 1700] [Rank 2] , d = 0.001564654975938643, m = 0.002002728783930173
+[Iteration 1710] [Rank 2] , d = 0.0016500392035492446, m = 0.0020022859868408737
+[Iteration 1720] [Rank 2] , d = 0.0016424369286847245, m = 0.0020018481895347894
+[Iteration 1730] [Rank 2] , d = 0.0016748565471152398, m = 0.0020013995346627473
+[Iteration 1740] [Rank 2] , d = 0.0017736861203540009, m = 0.0020010685011558637
+[Iteration 1750] [Rank 2] , d = 0.0016953072947879777, m = 0.0020006221217476372
+[Iteration 1850] [Rank 1] , d = 0.0015563929995362927, m = 0.0019975757813463055
+[Iteration 1850] [Rank 0] , d = 0.006141350101815508, m = 0.005112171016680861
+[Iteration 1860] [Rank 0] , d = 0.006082856565461226, m = 0.005110703458436858
+[Iteration 1870] [Rank 0] , d = 0.005992477454778481, m = 0.005109268041954825
+[Epoch 19] [Rank 0] ###### Epoch stats: #######
+[Epoch 19] [Rank 0] Current ratio of transmitted gradients: 0.4848166653233018
+[Epoch 19] [Rank 0] Average ratio of transmitted gradients: 0.5107589988575059
+[Epoch 19] [Rank 0] Total bits transmitted: 19562558272
+[Iteration 1880] [Rank 0] , d = 0.005666773381244001, m = 0.005107776073950293
+[Iteration 1760] [Rank 2] , d = 0.0016867311747961844, m = 0.002000208676363735
+[Iteration 1770] [Rank 2] , d = 0.001679411629162163, m = 0.001999746649953366
+[Iteration 1780] [Rank 2] , d = 0.0016451699779128784, m = 0.0019993009418971235
+[Epoch 18] [Rank 2] ###### Epoch stats: #######
+[Epoch 18] [Rank 2] Current ratio of transmitted gradients: 0.4849067309587857
+[Epoch 18] [Rank 2] Average ratio of transmitted gradients: 0.5121243848329903
+[Epoch 18] [Rank 2] Total bits transmitted: 18634111168
+[Iteration 1790] [Rank 2] , d = 0.0016585839091820935, m = 0.001998845933379097
+[Iteration 1800] [Rank 2] , d = 0.001632698477411992, m = 0.001998473807170881
+[Iteration 1810] [Rank 2] , d = 0.0016555053020055523, m = 0.0019980786434432934
+[Iteration 1820] [Rank 2] , d = 0.0016275465225451273, m = 0.0019976599246669083
+[Iteration 1830] [Rank 2] , d = 0.0016266040917767984, m = 0.0019973084538581643
+[Iteration 1840] [Rank 2] , d = 0.0016175881707597849, m = 0.0019969016583607046
+[Iteration 1860] [Rank 1] , d = 0.001622771539985594, m = 0.0019971847502485577
+[Iteration 1870] [Rank 1] , d = 0.0016096403379468776, m = 0.001996778422499597
+[Epoch 19] [Rank 1] ###### Epoch stats: #######
+[Epoch 19] [Rank 1] Current ratio of transmitted gradients: 0.4848166653233018
+[Epoch 19] [Rank 1] Average ratio of transmitted gradients: 0.5107589988575059
+[Epoch 19] [Rank 1] Total bits transmitted: 19562558272
+[Iteration 1880] [Rank 1] , d = 0.0016555367163644966, m = 0.001996396840266834
+[Iteration 1890] [Rank 1] , d = 0.001732030680393862, m = 0.0019960997318419316
+[Iteration 1900] [Rank 1] , d = 0.0016871395614624603, m = 0.0019957667993899205
+[Iteration 1910] [Rank 1] , d = 0.0016686365040442688, m = 0.001995399427232495
+[Iteration 1920] [Rank 1] , d = 0.0017391303255152731, m = 0.0019950394939175884
+[Iteration 1930] [Rank 1] , d = 0.0016853489430026353, m = 0.0019946889336989277
+[Iteration 1940] [Rank 1] , d = 0.0016702700507093724, m = 0.0019943281639706505
+[Iteration 1890] [Rank 0] , d = 0.005661495768941358, m = 0.005106433201445823
+[Iteration 1900] [Rank 0] , d = 0.005791519800611807, m = 0.00510522674330552
+[Iteration 1910] [Rank 0] , d = 0.00588334397180599, m = 0.005103947923536261
+[Iteration 1920] [Rank 0] , d = 0.00577706919549743, m = 0.00510253324463795
+[Iteration 1930] [Rank 0] , d = 0.005527639185479705, m = 0.005101185960317405
+[Iteration 1940] [Rank 0] , d = 0.005575734569023425, m = 0.005099850680953465
+[Iteration 1950] [Rank 0] , d = 0.005619400527955999, m = 0.005098475857620592
+[Iteration 1960] [Rank 0] , d = 0.0055157331434398165, m = 0.005097135240590079
+[Iteration 1970] [Rank 0] , d = 0.0055050836757577, m = 0.005095866672669083
+[Epoch 20] [Rank 0] ###### Epoch stats: #######
+[Epoch 20] [Rank 0] Current ratio of transmitted gradients: 0.4849406852020702
+[Epoch 20] [Rank 0] Average ratio of transmitted gradients: 0.5095295553501041
+[Epoch 20] [Rank 0] Total bits transmitted: 20491242880
+[Iteration 1850] [Rank 2] , d = 0.001588278573864755, m = 0.0019965334559714147
+[Iteration 1950] [Rank 1] , d = 0.0016732230004501364, m = 0.001993946843432529
+[Iteration 1960] [Rank 1] , d = 0.001717171688613209, m = 0.0019936220201741306
+[Iteration 1970] [Rank 1] , d = 0.0016905323122284445, m = 0.001993299998853855
+[Epoch 20] [Rank 1] ###### Epoch stats: #######
+[Epoch 20] [Rank 1] Current ratio of transmitted gradients: 0.4849406852020702
+[Epoch 20] [Rank 1] Average ratio of transmitted gradients: 0.5095295553501041
+[Epoch 20] [Rank 1] Total bits transmitted: 20491242880
+[Iteration 1980] [Rank 1] , d = 0.0016727203707070275, m = 0.0019929608196064957
+[Iteration 1990] [Rank 1] , d = 0.001658740980976815, m = 0.0019926770997037383
+[Iteration 2000] [Rank 1] , d = 0.0016437877461193294, m = 0.0019923237788743867
+[Iteration 2010] [Rank 1] , d = 0.0016561964179023269, m = 0.0019920022932759423
+[Iteration 2020] [Rank 1] , d = 0.00165673046200438, m = 0.0019917343671279216
+[Iteration 2030] [Rank 1] , d = 0.0016289601686976206, m = 0.001991383559902775
+[Iteration 1980] [Rank 0] , d = 0.005611546938219925, m = 0.005094662830628753
+[Iteration 1990] [Rank 0] , d = 0.0054779730839887705, m = 0.00509341093499953
+[Iteration 2000] [Rank 0] , d = 0.00566523407765573, m = 0.005092316613877669
+[Iteration 2010] [Rank 0] , d = 0.005549723479817546, m = 0.005091049829350292
+[Iteration 2020] [Rank 0] , d = 0.005515638900362984, m = 0.005089925000113919
+[Iteration 2030] [Rank 0] , d = 0.005538665625469154, m = 0.005088666255753951
+[Iteration 2040] [Rank 0] , d = 0.0057282512816979915, m = 0.005087538977354508
+[Iteration 2050] [Rank 0] , d = 0.005569545940311399, m = 0.00508633753110146
+[Iteration 2060] [Rank 0] , d = 0.00566589377919356, m = 0.005085144039839115
+[Epoch 21] [Rank 0] ###### Epoch stats: #######
+[Epoch 21] [Rank 0] Current ratio of transmitted gradients: 0.48458807573268586
+[Epoch 21] [Rank 0] Average ratio of transmitted gradients: 0.5083958517311307
+[Epoch 21] [Rank 0] Total bits transmitted: 21419252224
+[Epoch 21] [Rank 0] New best hr!
+[Iteration 1860] [Rank 2] , d = 0.0016020694774413018, m = 0.0019961253554323377
+[Iteration 1870] [Rank 2] , d = 0.0016005930025709198, m = 0.0019957096794798843
+[Epoch 19] [Rank 2] ###### Epoch stats: #######
+[Epoch 19] [Rank 2] Current ratio of transmitted gradients: 0.4848166653233018
+[Epoch 19] [Rank 2] Average ratio of transmitted gradients: 0.5107589988575059
+[Epoch 19] [Rank 2] Total bits transmitted: 19562558272
+[Iteration 1880] [Rank 2] , d = 0.0016856002578741897, m = 0.0019953728256901886
+[Iteration 1890] [Rank 2] , d = 0.0017424288332044246, m = 0.001995086730900785
+[Iteration 1900] [Rank 2] , d = 0.0016998937911938453, m = 0.0019947833366104066
+[Iteration 1910] [Rank 2] , d = 0.0016621651461017435, m = 0.001994423593022316
+[Iteration 1920] [Rank 2] , d = 0.0017161978434859359, m = 0.0019940654525527775
+[Iteration 1930] [Rank 2] , d = 0.0016982288301697975, m = 0.0019937452502606654
+[Iteration 1940] [Rank 2] , d = 0.0016644898086636216, m = 0.001993362702479611
+[Iteration 2040] [Rank 1] , d = 0.0016146038066600765, m = 0.001991072391441342
+[Iteration 2050] [Rank 1] , d = 0.0016098288241005432, m = 0.00199077274268936
+[Iteration 2060] [Rank 1] , d = 0.001610205796407875, m = 0.0019904112829752054
+[Epoch 21] [Rank 1] ###### Epoch stats: #######
+[Epoch 21] [Rank 1] Current ratio of transmitted gradients: 0.48458807573268586
+[Epoch 21] [Rank 1] Average ratio of transmitted gradients: 0.5083958517311307
+[Epoch 21] [Rank 1] Total bits transmitted: 21419252224
+[Iteration 2070] [Rank 1] , d = 0.001633106864078268, m = 0.001990062475828451
+[Iteration 2080] [Rank 1] , d = 0.0016408662107375096, m = 0.001989823974724972
+[Iteration 2090] [Rank 1] , d = 0.0016019752343644689, m = 0.0019895604118753385
+[Iteration 2100] [Rank 1] , d = 0.001620666777936326, m = 0.0019892692743311772
+[Iteration 2110] [Rank 1] , d = 0.001633012621001435, m = 0.0019889553737009393
+[Iteration 2120] [Rank 1] , d = 0.0016244679153685861, m = 0.0019886457660008806
+[Epoch 21] [Rank 0] {'best_epoch_stats/best_train_throughput': 18570263.28102057, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 17992663.584075756, 'best_epoch_stats/mean_eval_throughput': 112734637.34424433, 'best_epoch_stats/best_accuracy': 0.9253897308889258, 'best_epoch_stats/best_epoch': 21, 'best_epoch_stats/time_to_target': 126.26493215560913, 'best_epoch_stats/time_to_best_model': 126.26486325263977}
+[Iteration 2070] [Rank 0] , d = 0.005899019736919194, m = 0.0050838265875778115
+[Iteration 2080] [Rank 0] , d = 0.005772576942168396, m = 0.0050826332191361125
+[Iteration 2090] [Rank 0] , d = 0.005983053147095191, m = 0.005081690681202767
+[Iteration 2100] [Rank 0] , d = 0.0059829903183773025, m = 0.005080588994153144
+[Iteration 2110] [Rank 0] , d = 0.005807446880596566, m = 0.005079448130537094
+[Iteration 2120] [Rank 0] , d = 0.005905019879477555, m = 0.0050783646204550165
+[Iteration 1950] [Rank 2] , d = 0.0016684480178906032, m = 0.0019929729338985743
+[Iteration 1960] [Rank 2] , d = 0.001682144678390317, m = 0.001992611233939399
+[Iteration 1970] [Rank 2] , d = 0.001684594998387972, m = 0.001992303808251575
+[Epoch 20] [Rank 2] ###### Epoch stats: #######
+[Epoch 20] [Rank 2] Current ratio of transmitted gradients: 0.4849406852020702
+[Epoch 20] [Rank 2] Average ratio of transmitted gradients: 0.5095295553501041
+[Epoch 20] [Rank 2] Total bits transmitted: 20491242880
+[Iteration 1980] [Rank 2] , d = 0.001680354059930492, m = 0.001992028379270339
+[Iteration 1990] [Rank 2] , d = 0.0016957785101721422, m = 0.001991752624505714
+[Iteration 2000] [Rank 2] , d = 0.0016430338015046661, m = 0.001991412778164331
+[Iteration 2010] [Rank 2] , d = 0.0016393583215081832, m = 0.0019910555041753675
+[Iteration 2020] [Rank 2] , d = 0.0016771183809592292, m = 0.0019907570246078905
+[Iteration 2030] [Rank 2] , d = 0.0016168342261451217, m = 0.0019904167215232123
+[Iteration 2130] [Rank 1] , d = 0.0016829300373639245, m = 0.0019883652303989583
+[Iteration 2140] [Rank 1] , d = 0.0016186876733228354, m = 0.0019880487407392933
+[Iteration 2150] [Rank 1] , d = 0.0016086664928196043, m = 0.0019877328716794047
+[Iteration 2160] [Rank 1] , d = 0.0016130330887128618, m = 0.001987396216206634
+[Epoch 22] [Rank 1] ###### Epoch stats: #######
+[Epoch 22] [Rank 1] Current ratio of transmitted gradients: 0.4840145297452369
+[Epoch 22] [Rank 1] Average ratio of transmitted gradients: 0.5073357942534831
+[Epoch 22] [Rank 1] Total bits transmitted: 22346163200
+[Iteration 2170] [Rank 1] , d = 0.0016473061543210907, m = 0.0019871338834350056
+[Iteration 2180] [Rank 1] , d = 0.0016377247748430798, m = 0.001986890174791577
+[Iteration 2190] [Rank 1] , d = 0.0016379132609967457, m = 0.001986604042532957
+[Iteration 2200] [Rank 1] , d = 0.0016391070066366289, m = 0.001986327389768287
+[Iteration 2210] [Rank 1] , d = 0.0016037658528242939, m = 0.0019860349109214167
+[Iteration 2130] [Rank 0] , d = 0.005889187042569629, m = 0.005077275535368852
+[Iteration 2140] [Rank 0] , d = 0.005862924638492196, m = 0.005076140999496591
+[Iteration 2150] [Rank 0] , d = 0.005712167129918511, m = 0.005075000947549296
+[Iteration 2160] [Rank 0] , d = 0.00570192604890267, m = 0.005073804998334168
+[Epoch 22] [Rank 0] ###### Epoch stats: #######
+[Epoch 22] [Rank 0] Current ratio of transmitted gradients: 0.4840145297452369
+[Epoch 22] [Rank 0] Average ratio of transmitted gradients: 0.5073357942534831
+[Epoch 22] [Rank 0] Total bits transmitted: 22346163200
+[Iteration 2170] [Rank 0] , d = 0.0055508858110984854, m = 0.0050725227269595215
+[Iteration 2180] [Rank 0] , d = 0.005561849422370046, m = 0.005071582893127349
+[Iteration 2190] [Rank 0] , d = 0.0057097482242798, m = 0.0050706355655390205
+[Iteration 2200] [Rank 0] , d = 0.005633065774096769, m = 0.005069636458032054
+[Iteration 2210] [Rank 0] , d = 0.005864086969773135, m = 0.005068640648014516
+[Iteration 2040] [Rank 2] , d = 0.0016095146805111004, m = 0.001990127036259392
+[Iteration 2050] [Rank 2] , d = 0.0015992735994952592, m = 0.001989823480714747
+[Iteration 2060] [Rank 2] , d = 0.001612750359482363, m = 0.001989488911060042
+[Epoch 21] [Rank 2] ###### Epoch stats: #######
+[Epoch 21] [Rank 2] Current ratio of transmitted gradients: 0.48458807573268586
+[Epoch 21] [Rank 2] Average ratio of transmitted gradients: 0.5083958517311307
+[Epoch 21] [Rank 2] Total bits transmitted: 21419252224
+[Iteration 2070] [Rank 2] , d = 0.001631630389207886, m = 0.001989137049162671
+[Iteration 2080] [Rank 2] , d = 0.0015923310261685695, m = 0.0019888694975085715
+[Iteration 2090] [Rank 2] , d = 0.001562644456966208, m = 0.0019885434490004945
+[Iteration 2100] [Rank 2] , d = 0.0015921111256559594, m = 0.001988225872041691
+[Iteration 2110] [Rank 2] , d = 0.0016248763020348619, m = 0.0019879534476189855
+[Iteration 2120] [Rank 2] , d = 0.001631850289720496, m = 0.001987640699059058
+[Iteration 2220] [Rank 1] , d = 0.001644698762528714, m = 0.001985740299223566
+[Iteration 2220] [Rank 0] , d = 0.005673244739186525, m = 0.005067506662681469
+[Iteration 2230] [Rank 0] , d = 0.005675600816107348, m = 0.005066526946400907
+[Iteration 2130] [Rank 2] , d = 0.0016526780097005655, m = 0.001987386933307158
+[Iteration 2140] [Rank 2] , d = 0.001628363295877679, m = 0.001987099281723445
+[Iteration 2150] [Rank 2] , d = 0.0016042684825674025, m = 0.001986804490475605
+[Iteration 2160] [Rank 2] , d = 0.0016604059420008627, m = 0.0019864677409147445
+[Epoch 22] [Rank 2] ###### Epoch stats: #######
+[Epoch 22] [Rank 2] Current ratio of transmitted gradients: 0.4840145297452369
+[Epoch 22] [Rank 2] Average ratio of transmitted gradients: 0.5073357942534831
+[Epoch 22] [Rank 2] Total bits transmitted: 22346163200
+[Iteration 2170] [Rank 2] , d = 0.0016579242076442634, m = 0.0019862077603509365
+[Iteration 2180] [Rank 2] , d = 0.0016446673481697695, m = 0.001985936336333066
+[Iteration 2190] [Rank 2] , d = 0.0016299654281838381, m = 0.001985684982556539
+[Iteration 2200] [Rank 2] , d = 0.0016287088538260663, m = 0.0019854150317188553
+[Iteration 2210] [Rank 2] , d = 0.0015905718220676887, m = 0.0019851265656560743
+[Iteration 2230] [Rank 1] , d = 0.0016421227850952815, m = 0.0019854474555865416
+[Iteration 2240] [Rank 1] , d = 0.0016117765143550899, m = 0.001985125586811009
+[Iteration 2240] [Rank 0] , d = 0.005729005226312654, m = 0.005065436680424226
+[Iteration 2220] [Rank 2] , d = 0.0016332639358729894, m = 0.0019848698626412
+[Iteration 2230] [Rank 2] , d = 0.0016507617338049633, m = 0.00198462755630702
+[Iteration 1490] [Rank 3] , d = 0.0015560788559468497, m = 0.0020135241740941215
+[Iteration 1500] [Rank 3] , d = 0.0016267297492125756, m = 0.002013058554418656
+[Epoch 15] [Rank 3] ###### Epoch stats: #######
+[Epoch 15] [Rank 3] Current ratio of transmitted gradients: 0.4916352856102848
+[Epoch 15] [Rank 3] Average ratio of transmitted gradients: 0.5169104182639489
+[Epoch 15] [Rank 3] Total bits transmitted: 15838530816
+[Iteration 1510] [Rank 3] , d = 0.0017599580454953428, m = 0.0020126459802580327
+[Iteration 1520] [Rank 3] , d = 0.0017641989839528229, m = 0.0020122342460024245
+[Iteration 1530] [Rank 3] , d = 0.0017652670721569291, m = 0.002011812316571554
+[Iteration 1540] [Rank 3] , d = 0.0017002079347832881, m = 0.002011394680817386
+[Iteration 1550] [Rank 3] , d = 0.0017211927265580792, m = 0.0020110024416471776
+[Iteration 1560] [Rank 3] , d = 0.0016999252055527896, m = 0.002010565359428885
+[Iteration 1570] [Rank 3] , d = 0.0016423426856078916, m = 0.0020100918491333056
+[Iteration 2240] [Rank 2] , d = 0.0016062790015398377, m = 0.0019843220044252494
+[Iteration 1580] [Rank 3] , d = 0.0015628329431198738, m = 0.002009662717552079
+[Iteration 1590] [Rank 3] , d = 0.0015696812733697306, m = 0.0020091759148012467
+[Epoch 16] [Rank 3] ###### Epoch stats: #######
+[Epoch 16] [Rank 3] Current ratio of transmitted gradients: 0.48801765482160253
+[Epoch 16] [Rank 3] Average ratio of transmitted gradients: 0.5152108439438109
+[Epoch 16] [Rank 3] Total bits transmitted: 16773107968
+[Iteration 1600] [Rank 3] , d = 0.0015372930692981596, m = 0.002008686461622735
+[Iteration 1610] [Rank 3] , d = 0.0017123652916947315, m = 0.0020083156383283924
+[Iteration 1620] [Rank 3] , d = 0.0017740316783023881, m = 0.002008021773144195
+[Iteration 1630] [Rank 3] , d = 0.0016815792199293197, m = 0.0020076363053403907
+[Iteration 1640] [Rank 3] , d = 0.0015843517789967177, m = 0.0020072604170719966
+[Iteration 1650] [Rank 3] , d = 0.0015744876702882082, m = 0.002006827300058523
+[Iteration 1660] [Rank 3] , d = 0.0015556704692805737, m = 0.002006374470953046
+[Iteration 1670] [Rank 3] , d = 0.0016223317389603739, m = 0.002005935389988276
+[Iteration 1680] [Rank 3] , d = 0.0016649924384067303, m = 0.0020055059247246656
+[Iteration 1690] [Rank 3] , d = 0.0016031375656454078, m = 0.0020050075637354212
+[Epoch 17] [Rank 3] ###### Epoch stats: #######
+[Epoch 17] [Rank 3] Current ratio of transmitted gradients: 0.4868722338232442
+[Epoch 17] [Rank 3] Average ratio of transmitted gradients: 0.5136364767148907
+[Epoch 17] [Rank 3] Total bits transmitted: 17705491584
+[Iteration 1700] [Rank 3] , d = 0.0015854826959187125, m = 0.0020046094162556607
+[Iteration 1710] [Rank 3] , d = 0.001624562158445419, m = 0.002004184600192169
+[Iteration 1720] [Rank 3] , d = 0.0016306251297216684, m = 0.0020037756366027737
+[Iteration 1730] [Rank 3] , d = 0.0016594006825146454, m = 0.0020033321801434245
+[Iteration 1740] [Rank 3] , d = 0.0017690996239481333, m = 0.0020029875738496474
+[Iteration 1750] [Rank 3] , d = 0.001697129327606747, m = 0.002002566797946041
+[Iteration 1760] [Rank 3] , d = 0.001682804379928147, m = 0.0020021663742590336
+[Iteration 1770] [Rank 3] , d = 0.001682804379928147, m = 0.002001762738721794
+[Iteration 1780] [Rank 3] , d = 0.0016455783645791542, m = 0.0020012959918112787
+[Epoch 18] [Rank 3] ###### Epoch stats: #######
+[Epoch 18] [Rank 3] Current ratio of transmitted gradients: 0.4849067309587857
+[Epoch 18] [Rank 3] Average ratio of transmitted gradients: 0.5121243848329903
+[Epoch 18] [Rank 3] Total bits transmitted: 18634111168
+[Iteration 1790] [Rank 3] , d = 0.0016695475204536534, m = 0.0020008977768795444
+[Iteration 1800] [Rank 3] , d = 0.0016526465953416213, m = 0.0020005476607004107
+[Iteration 1810] [Rank 3] , d = 0.0016356200127938118, m = 0.0020001084689764722
+[Iteration 1820] [Rank 3] , d = 0.001595472462062999, m = 0.0019997188503890415
+[Iteration 1830] [Rank 3] , d = 0.0016379760897146341, m = 0.001999363409307753
+[Iteration 1840] [Rank 3] , d = 0.0016282376384419018, m = 0.001998987633224099
+[Iteration 1850] [Rank 3] , d = 0.0015594401923538896, m = 0.0019985520194636466
+[Iteration 1860] [Rank 3] , d = 0.0015662885226037464, m = 0.001998103379702482
+[Iteration 1870] [Rank 3] , d = 0.001617179784093509, m = 0.001997722868085178
+[Epoch 19] [Rank 3] ###### Epoch stats: #######
+[Epoch 19] [Rank 3] Current ratio of transmitted gradients: 0.4848166653233018
+[Epoch 19] [Rank 3] Average ratio of transmitted gradients: 0.5107589988575059
+[Epoch 19] [Rank 3] Total bits transmitted: 19562558272
+[Iteration 1880] [Rank 3] , d = 0.0016793802148032187, m = 0.0019973616335160938
+[Iteration 1890] [Rank 3] , d = 0.001729831675267761, m = 0.001997059024362949
+[Iteration 1900] [Rank 3] , d = 0.001715600970665994, m = 0.0019967571035921614
+[Iteration 1910] [Rank 3] , d = 0.0016773382814718393, m = 0.0019964091580455773
+[Iteration 1920] [Rank 3] , d = 0.0017241456762988432, m = 0.001996069234036468
+[Iteration 1930] [Rank 3] , d = 0.0016822703358260942, m = 0.0019957541423890356
+[Iteration 1940] [Rank 3] , d = 0.0016721863266049746, m = 0.0019953634135687313
+[Iteration 1950] [Rank 3] , d = 0.0016664689132771123, m = 0.001995011051134071
+[Iteration 1960] [Rank 3] , d = 0.0017205016106613047, m = 0.0019946802243091567
+[Iteration 1970] [Rank 3] , d = 0.0016736313871164121, m = 0.0019943488973633056
+[Epoch 20] [Rank 3] ###### Epoch stats: #######
+[Epoch 20] [Rank 3] Current ratio of transmitted gradients: 0.4849406852020702
+[Epoch 20] [Rank 3] Average ratio of transmitted gradients: 0.5095295553501041
+[Epoch 20] [Rank 3] Total bits transmitted: 20491242880
+[Iteration 1980] [Rank 3] , d = 0.0016926370742777123, m = 0.0019940231989922174
+[Iteration 1990] [Rank 3] , d = 0.0016597148261040882, m = 0.0019937149569124978
+[Iteration 2000] [Rank 3] , d = 0.0016821132640313726, m = 0.0019934148194986727
+[Iteration 2010] [Rank 3] , d = 0.0016463008948348731, m = 0.001993101249094805
+[Iteration 2020] [Rank 3] , d = 0.0016780608117275583, m = 0.0019928290510609517
+[Iteration 2030] [Rank 3] , d = 0.001634897482538093, m = 0.0019924992259346087
+[Iteration 2040] [Rank 3] , d = 0.0016157975522999599, m = 0.001992168292358146
+[Iteration 2050] [Rank 3] , d = 0.0016086979071785485, m = 0.001991824779090361
+[Iteration 2060] [Rank 3] , d = 0.0016245307440864746, m = 0.001991490711442805
+[Epoch 21] [Rank 3] ###### Epoch stats: #######
+[Epoch 21] [Rank 3] Current ratio of transmitted gradients: 0.48458807573268586
+[Epoch 21] [Rank 3] Average ratio of transmitted gradients: 0.5083958517311307
+[Epoch 21] [Rank 3] Total bits transmitted: 21419252224
+[Iteration 2070] [Rank 3] , d = 0.0016258815615210794, m = 0.0019911470068935434
+[Iteration 2080] [Rank 3] , d = 0.0016404264097122894, m = 0.0019908682266615305
+[Iteration 2090] [Rank 3] , d = 0.0015638067882471469, m = 0.001990586884692419
+[Iteration 2100] [Rank 3] , d = 0.00158312661899789, m = 0.001990285972172748
+[Iteration 2110] [Rank 3] , d = 0.00160527374205362, m = 0.0019899369570881157
+[Iteration 2120] [Rank 3] , d = 0.0016449814917592126, m = 0.0019896378287903448
+[Iteration 2130] [Rank 3] , d = 0.0016892757378706726, m = 0.001989369045207949
+[Iteration 2140] [Rank 3] , d = 0.0016371907307410267, m = 0.0019890927509597367
+[Iteration 2150] [Rank 3] , d = 0.0015980170251374873, m = 0.0019887822952853137
+[Iteration 2160] [Rank 3] , d = 0.001636782344074751, m = 0.001988427860265499
+[Epoch 22] [Rank 3] ###### Epoch stats: #######
+[Epoch 22] [Rank 3] Current ratio of transmitted gradients: 0.4840145297452369
+[Epoch 22] [Rank 3] Average ratio of transmitted gradients: 0.5073357942534831
+[Epoch 22] [Rank 3] Total bits transmitted: 22346163200
+[Iteration 2170] [Rank 3] , d = 0.001639641050738682, m = 0.001988113386330291
+[Iteration 2180] [Rank 3] , d = 0.0016193159605017212, m = 0.001987844517377812
+[Iteration 2190] [Rank 3] , d = 0.0016279863235703475, m = 0.001987573672314943
+[Iteration 2200] [Rank 3] , d = 0.0016338293943339867, m = 0.001987311425650804
+[Iteration 2210] [Rank 3] , d = 0.001589535148222527, m = 0.001987024768704743
+[Iteration 2220] [Rank 3] , d = 0.0016341435379234298, m = 0.0019867298303139513
+[Iteration 2230] [Rank 3] , d = 0.0016459239225275414, m = 0.001986453348710659
+[Iteration 2240] [Rank 3] , d = 0.001583220862074723, m = 0.0019861406308677517
+[Iteration 2250] [Rank 0] , d = 0.0058898153297485155, m = 0.005064415859851602
+[Epoch 23] [Rank 0] ###### Epoch stats: #######
+[Epoch 23] [Rank 0] Current ratio of transmitted gradients: 0.4836813704427734
+[Epoch 23] [Rank 0] Average ratio of transmitted gradients: 0.5063501932613701
+[Epoch 23] [Rank 0] Total bits transmitted: 23272436160
+[Epoch 23] [Rank 0] New best hr!
+[Epoch 23] [Rank 0] {'best_epoch_stats/best_train_throughput': 18585851.181669533, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 18025535.67385054, 'best_epoch_stats/mean_eval_throughput': 112746725.53356011, 'best_epoch_stats/best_accuracy': 0.9257652011292989, 'best_epoch_stats/best_epoch': 23, 'best_epoch_stats/time_to_target': 137.32334685325623, 'best_epoch_stats/time_to_best_model': 137.32319831848145}
+[Iteration 2260] [Rank 0] , d = 0.005759822712437011, m = 0.005063260432807808
+[Iteration 2270] [Rank 0] , d = 0.005795917810864009, m = 0.005062310846648269
+[Iteration 2280] [Rank 0] , d = 0.005853217601578409, m = 0.005061415461695585
+[Iteration 2290] [Rank 0] , d = 0.005925879013816569, m = 0.005060399753964517
+[Iteration 2300] [Rank 0] , d = 0.005800221578039378, m = 0.0050593976939619706
+[Iteration 2310] [Rank 0] , d = 0.005711664500175402, m = 0.00505836046731834
+[Iteration 2320] [Rank 0] , d = 0.005657820288944876, m = 0.005057346227593043
+[Iteration 2330] [Rank 0] , d = 0.005610667336169484, m = 0.005056325825172162
+[Iteration 2340] [Rank 0] , d = 0.005694166702243428, m = 0.005055336335779094
+[Epoch 24] [Rank 0] ###### Epoch stats: #######
+[Epoch 24] [Rank 0] Current ratio of transmitted gradients: 0.48300666353561755
+[Epoch 24] [Rank 0] Average ratio of transmitted gradients: 0.5054164520723401
+[Epoch 24] [Rank 0] Total bits transmitted: 24197417024
+[Epoch 24] [Rank 0] New best hr!
+[Epoch 24] [Rank 0] {'best_epoch_stats/best_train_throughput': 18668486.200254545, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 18051253.6949067, 'best_epoch_stats/mean_eval_throughput': 112755135.05128711, 'best_epoch_stats/best_accuracy': 0.9265450239362278, 'best_epoch_stats/best_epoch': 24, 'best_epoch_stats/time_to_target': 142.77045392990112, 'best_epoch_stats/time_to_best_model': 142.77038526535034}
+[Iteration 2350] [Rank 0] , d = 0.005500811322941275, m = 0.005054265537312247
+[Iteration 2360] [Rank 0] , d = 0.005807918095980731, m = 0.005053416471868843
+[Iteration 2370] [Rank 0] , d = 0.005734722639640517, m = 0.005052436973355523
+[Iteration 2380] [Rank 0] , d = 0.005701297761723784, m = 0.005051490480359366
+[Iteration 2390] [Rank 0] , d = 0.0056076201433518874, m = 0.005050516088708856
+[Iteration 2400] [Rank 0] , d = 0.005602468188485023, m = 0.005049517444125809
+[Iteration 2410] [Rank 0] , d = 0.005651254687925517, m = 0.005048610811804165
+[Iteration 2420] [Rank 0] , d = 0.005699350071469237, m = 0.0050476524088378
+[Iteration 2430] [Rank 0] , d = 0.005714743107351943, m = 0.005046680969348275
+[Iteration 2440] [Rank 0] , d = 0.0058184419062270705, m = 0.005045702908114016
+[Epoch 25] [Rank 0] ###### Epoch stats: #######
+[Epoch 25] [Rank 0] Current ratio of transmitted gradients: 0.4819524110172593
+[Epoch 25] [Rank 0] Average ratio of transmitted gradients: 0.5045139889548369
+[Epoch 25] [Rank 0] Total bits transmitted: 25120378944
+[Epoch 25] [Rank 0] New best hr!
+[Epoch 25] [Rank 0] {'best_epoch_stats/best_train_throughput': 18668486.200254545, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 18058275.262310598, 'best_epoch_stats/mean_eval_throughput': 112760373.05113417, 'best_epoch_stats/best_accuracy': 0.927498140700252, 'best_epoch_stats/best_epoch': 25, 'best_epoch_stats/time_to_target': 148.3444538116455, 'best_epoch_stats/time_to_best_model': 148.34437918663025}
+[Iteration 2450] [Rank 0] , d = 0.005833929185186609, m = 0.00504477345754583
+[Iteration 2460] [Rank 0] , d = 0.005655935427408217, m = 0.005043815946412794
+[Iteration 2470] [Rank 0] , d = 0.005621976505389432, m = 0.005042928747009027
+[Iteration 2480] [Rank 0] , d = 0.005631023840765389, m = 0.005042034771383267
+[Iteration 2490] [Rank 0] , d = 0.005674941114569518, m = 0.005041215833966259
+[Iteration 2500] [Rank 0] , d = 0.005745309278604745, m = 0.005040340139403812
+[Iteration 2510] [Rank 0] , d = 0.005703339695055164, m = 0.005039397956898524
+[Iteration 2520] [Rank 0] , d = 0.0057777603113942045, m = 0.005038495784921325
+[Iteration 2530] [Rank 0] , d = 0.005904046034350282, m = 0.005037580833334405
+[Epoch 26] [Rank 0] ###### Epoch stats: #######
+[Epoch 26] [Rank 0] Current ratio of transmitted gradients: 0.4814693651191945
+[Epoch 26] [Rank 0] Average ratio of transmitted gradients: 0.5036604843683317
+[Epoch 26] [Rank 0] Total bits transmitted: 26042415808
+[Epoch 26] [Rank 0] New best hr!
+[Epoch 26] [Rank 0] {'best_epoch_stats/best_train_throughput': 18668486.200254545, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 18074338.384541016, 'best_epoch_stats/mean_eval_throughput': 112768629.03230435, 'best_epoch_stats/best_accuracy': 0.9286245514213715, 'best_epoch_stats/best_epoch': 26, 'best_epoch_stats/time_to_target': 153.84231615066528, 'best_epoch_stats/time_to_best_model': 153.84224796295166}
+[Iteration 2540] [Rank 0] , d = 0.006077233395210196, m = 0.005036648097651586
+[Iteration 2550] [Rank 0] , d = 0.005872097631303932, m = 0.005035718943373269
+[Iteration 2560] [Rank 0] , d = 0.005769341263197133, m = 0.005034868681301829
+[Iteration 2570] [Rank 0] , d = 0.005935428978935636, m = 0.0050341011317426125
+[Iteration 2580] [Rank 0] , d = 0.005908883845627704, m = 0.005033307811230965
+[Iteration 2590] [Rank 0] , d = 0.005878568989246456, m = 0.005032409518368575
+[Iteration 2600] [Rank 0] , d = 0.005869176095922112, m = 0.005031580611256308
+[Iteration 2610] [Rank 0] , d = 0.005777508996522651, m = 0.005030622758788206
+[Iteration 2620] [Rank 0] , d = 0.005823279717504492, m = 0.005029737740867877
+[Iteration 2630] [Rank 0] , d = 0.005629076150510843, m = 0.005028811057406538
+[Epoch 27] [Rank 0] ###### Epoch stats: #######
+[Epoch 27] [Rank 0] Current ratio of transmitted gradients: 0.4808245352725666
+[Epoch 27] [Rank 0] Average ratio of transmitted gradients: 0.5028449147577686
+[Epoch 27] [Rank 0] Total bits transmitted: 26963217792
+[Epoch 27] [Rank 0] New best hr!
+[Epoch 27] [Rank 0] {'best_epoch_stats/best_train_throughput': 18668486.200254545, 'best_epoch_stats/best_eval_throughput': 113019196.68020658, 'best_epoch_stats/mean_train_throughput': 18094668.111650817, 'best_epoch_stats/mean_eval_throughput': 112753278.37102695, 'best_epoch_stats/best_accuracy': 0.9288844923570144, 'best_epoch_stats/best_epoch': 27, 'best_epoch_stats/time_to_target': 159.29720282554626, 'best_epoch_stats/time_to_best_model': 159.29712867736816}
+[Iteration 2640] [Rank 0] , d = 0.0057369216447666176, m = 0.0050278840286900085
+[Iteration 2650] [Rank 0] , d = 0.0055244663352263315, m = 0.0050270415638995385
+[Iteration 2660] [Rank 0] , d = 0.005505460648065031, m = 0.005026268318795612
+[Iteration 2670] [Rank 0] , d = 0.005451333707604006, m = 0.005025449843221071
+[Iteration 2680] [Rank 0] , d = 0.00558914850029264, m = 0.005024734528648628
+[Iteration 2690] [Rank 0] , d = 0.0056482389094668645, m = 0.005023974367844696
+[Iteration 2700] [Rank 0] , d = 0.0055305293065025804, m = 0.00502315811196974
+[Iteration 2710] [Rank 0] , d = 0.0058186932210986244, m = 0.005022435075633165
+[Iteration 2720] [Rank 0] , d = 0.005745843322706798, m = 0.005021631908115475
+[Epoch 28] [Rank 0] ###### Epoch stats: #######
+[Epoch 28] [Rank 0] Current ratio of transmitted gradients: 0.48122877791702423
+[Epoch 28] [Rank 0] Average ratio of transmitted gradients: 0.5020995307287774
+[Epoch 28] [Rank 0] Total bits transmitted: 27884793920
+[Iteration 2730] [Rank 0] , d = 0.005569011896209346, m = 0.00502073920608402
+[Iteration 2740] [Rank 0] , d = 0.005698941684802962, m = 0.005020041641433134
+[Iteration 2750] [Rank 0] , d = 0.005686375941225242, m = 0.005019269533119018
+[Iteration 2760] [Rank 0] , d = 0.00563614438127331, m = 0.005018556505235066
+[Iteration 2770] [Rank 0] , d = 0.005634322348454541, m = 0.005017809069505324
+[Iteration 2780] [Rank 0] , d = 0.005697370966855747, m = 0.005017118699874515
+[Iteration 2790] [Rank 0] , d = 0.005632720216148381, m = 0.005016343210104809
+[Iteration 2800] [Rank 0] , d = 0.005648992854081528, m = 0.005015564924521715
+[Iteration 2810] [Rank 0] , d = 0.005742576229376591, m = 0.005014801284407923
+[Epoch 29] [Rank 0] ###### Epoch stats: #######
+[Epoch 29] [Rank 0] Current ratio of transmitted gradients: 0.4806599106638862
+[Epoch 29] [Rank 0] Average ratio of transmitted gradients: 0.5013848767266145
+[Epoch 29] [Rank 0] Total bits transmitted: 28805280640
+[Iteration 2250] [Rank 1] , d = 0.0016352744548454245, m = 0.0019847995162184558
+[Epoch 23] [Rank 1] ###### Epoch stats: #######
+[Epoch 23] [Rank 1] Current ratio of transmitted gradients: 0.4836813704427734
+[Epoch 23] [Rank 1] Average ratio of transmitted gradients: 0.5063501932613701
+[Epoch 23] [Rank 1] Total bits transmitted: 23272436160
+[Iteration 2260] [Rank 1] , d = 0.0016285203676724006, m = 0.001984501450302072
+[Iteration 2270] [Rank 1] , d = 0.0016322900907457163, m = 0.0019842434548339454
+[Iteration 2280] [Rank 1] , d = 0.0016200384907574402, m = 0.001983982680871294
+[Iteration 2290] [Rank 1] , d = 0.0016150436076852966, m = 0.0019837307103630765
+[Iteration 2300] [Rank 1] , d = 0.0016266040917767984, m = 0.0019834329824370196
+[Iteration 2310] [Rank 1] , d = 0.0016604687707187514, m = 0.0019831583299812394
+[Iteration 2320] [Rank 1] , d = 0.0016324157481814934, m = 0.0019828708310410397
+[Iteration 2330] [Rank 1] , d = 0.0016563849040559927, m = 0.001982597469730034
+[Iteration 2250] [Rank 2] , d = 0.0016135043040970262, m = 0.0019840213304925113
+[Epoch 23] [Rank 2] ###### Epoch stats: #######
+[Epoch 23] [Rank 2] Current ratio of transmitted gradients: 0.4836813704427734
+[Epoch 23] [Rank 2] Average ratio of transmitted gradients: 0.5063501932613701
+[Epoch 23] [Rank 2] Total bits transmitted: 23272436160
+[Iteration 2260] [Rank 2] , d = 0.0016571702630296002, m = 0.0019837520907110455
+[Iteration 2270] [Rank 2] , d = 0.0016551283296982208, m = 0.0019835052796464882
+[Iteration 2280] [Rank 2] , d = 0.0016140069338401349, m = 0.0019832417372013175
+[Iteration 2290] [Rank 2] , d = 0.0016322272620278276, m = 0.001982958501267347
+[Iteration 2300] [Rank 2] , d = 0.001637850432278857, m = 0.0019826704913692024
+[Iteration 2310] [Rank 2] , d = 0.0016481543420125866, m = 0.0019824033794546034
+[Iteration 2320] [Rank 2] , d = 0.0016487826291914727, m = 0.0019821290407108774
+[Iteration 2330] [Rank 2] , d = 0.0016484684856020297, m = 0.001981824994551854
+[Iteration 2340] [Rank 1] , d = 0.0016573901635422103, m = 0.001982292614026597
+[Epoch 24] [Rank 1] ###### Epoch stats: #######
+[Epoch 24] [Rank 1] Current ratio of transmitted gradients: 0.48300666353561755
+[Epoch 24] [Rank 1] Average ratio of transmitted gradients: 0.5054164520723401
+[Epoch 24] [Rank 1] Total bits transmitted: 24197417024
+[Iteration 2350] [Rank 1] , d = 0.0016194416179374984, m = 0.001981995937105003
+[Iteration 2360] [Rank 1] , d = 0.0016582697655926507, m = 0.001981741370590291
+[Iteration 2370] [Rank 1] , d = 0.0016400808517639022, m = 0.0019814584247619077
+[Iteration 2380] [Rank 1] , d = 0.001618656258963891, m = 0.0019811997704777397
+[Iteration 2390] [Rank 1] , d = 0.001646834938936926, m = 0.0019808912640976372
+[Iteration 2400] [Rank 1] , d = 0.0016313790743363317, m = 0.0019806359751732097
+[Iteration 2410] [Rank 1] , d = 0.0015906660651445216, m = 0.0019803348029141235
+[Iteration 2420] [Rank 1] , d = 0.0016354943553580346, m = 0.0019800768496215423
+[Iteration 2340] [Rank 2] , d = 0.001655034086621388, m = 0.001981520472969928
+[Epoch 24] [Rank 2] ###### Epoch stats: #######
+[Epoch 24] [Rank 2] Current ratio of transmitted gradients: 0.48300666353561755
+[Epoch 24] [Rank 2] Average ratio of transmitted gradients: 0.5054164520723401
+[Epoch 24] [Rank 2] Total bits transmitted: 24197417024
+[Iteration 2350] [Rank 2] , d = 0.001619284546142777, m = 0.0019812383980783587
+[Iteration 2360] [Rank 2] , d = 0.0016379760897146341, m = 0.0019809881444743022
+[Iteration 2370] [Rank 2] , d = 0.0016506989050870749, m = 0.0019807259706956185
+[Iteration 2380] [Rank 2] , d = 0.0016355257697169788, m = 0.0019804626215283103
+[Iteration 2390] [Rank 2] , d = 0.001606750216924002, m = 0.0019801482245092846
+[Iteration 2400] [Rank 2] , d = 0.001629745527671228, m = 0.0019798655187213943
+[Iteration 2410] [Rank 2] , d = 0.0016275465225451273, m = 0.0019796039467457624
+[Iteration 2420] [Rank 2] , d = 0.0016225830538319282, m = 0.001979334972480569
+[Iteration 2250] [Rank 3] , d = 0.0016164886681967344, m = 0.0019858368878503557
+[Epoch 23] [Rank 3] ###### Epoch stats: #######
+[Epoch 23] [Rank 3] Current ratio of transmitted gradients: 0.4836813704427734
+[Epoch 23] [Rank 3] Average ratio of transmitted gradients: 0.5063501932613701
+[Epoch 23] [Rank 3] Total bits transmitted: 23272436160
+[Iteration 2260] [Rank 3] , d = 0.0016234940702413128, m = 0.001985528967993964
+[Iteration 2270] [Rank 3] , d = 0.0016534005399562845, m = 0.001985260098739982
+[Iteration 2280] [Rank 3] , d = 0.0016249391307527506, m = 0.00198498306500325
+[Iteration 2290] [Rank 3] , d = 0.0016031061512864636, m = 0.001984688142139123
+[Iteration 2300] [Rank 3] , d = 0.0016385415481756315, m = 0.001984408479514502
+[Iteration 2310] [Rank 3] , d = 0.001618970402553334, m = 0.0019841265474388435
+[Iteration 2320] [Rank 3] , d = 0.0016266983348536311, m = 0.0019838308300290626
+[Iteration 2330] [Rank 3] , d = 0.0016632018199469053, m = 0.001983545789848366
+[Iteration 2430] [Rank 1] , d = 0.0016201013194753287, m = 0.001979796000757975
+[Iteration 2440] [Rank 1] , d = 0.0016274522794682944, m = 0.0019795214811330897
+[Epoch 25] [Rank 1] ###### Epoch stats: #######
+[Epoch 25] [Rank 1] Current ratio of transmitted gradients: 0.4819524110172593
+[Epoch 25] [Rank 1] Average ratio of transmitted gradients: 0.5045139889548369
+[Epoch 25] [Rank 1] Total bits transmitted: 25120378944
+[Iteration 2450] [Rank 1] , d = 0.0016004673451351426, m = 0.0019792171848145514
+[Iteration 2460] [Rank 1] , d = 0.001648405656884141, m = 0.0019789725480874156
+[Iteration 2470] [Rank 1] , d = 0.0016405206527891224, m = 0.0019787139490488356
+[Iteration 2480] [Rank 1] , d = 0.0016175253420418962, m = 0.0019784330096968223
+[Iteration 2490] [Rank 1] , d = 0.0016623850466143536, m = 0.001978218756313049
+[Iteration 2500] [Rank 1] , d = 0.0016075669902565538, m = 0.001977941415520192
+[Iteration 2510] [Rank 1] , d = 0.0016119650005087555, m = 0.001977686851319116
+[Iteration 2430] [Rank 2] , d = 0.0016311905881826658, m = 0.0019790701106777633
+[Iteration 2440] [Rank 2] , d = 0.0016525523522647884, m = 0.0019787699817163705
+[Epoch 25] [Rank 2] ###### Epoch stats: #######
+[Epoch 25] [Rank 2] Current ratio of transmitted gradients: 0.4819524110172593
+[Epoch 25] [Rank 2] Average ratio of transmitted gradients: 0.5045139889548369
+[Epoch 25] [Rank 2] Total bits transmitted: 25120378944
+[Iteration 2450] [Rank 2] , d = 0.0016085722497427713, m = 0.0019784782232213434
+[Iteration 2460] [Rank 2] , d = 0.0016175567564008406, m = 0.001978183768127129
+[Iteration 2470] [Rank 2] , d = 0.0016490967727809155, m = 0.001977941303292115
+[Iteration 2480] [Rank 2] , d = 0.0016317560466436632, m = 0.001977686320393589
+[Iteration 2490] [Rank 2] , d = 0.0016613483727691918, m = 0.0019774440411447127
+[Iteration 2500] [Rank 2] , d = 0.001664741123535176, m = 0.001977180160566895
+[Iteration 2510] [Rank 2] , d = 0.001602195134877079, m = 0.0019768900450581922
+[Iteration 2340] [Rank 3] , d = 0.0016406777245838438, m = 0.0019832664725730757
+[Epoch 24] [Rank 3] ###### Epoch stats: #######
+[Epoch 24] [Rank 3] Current ratio of transmitted gradients: 0.48300666353561755
+[Epoch 24] [Rank 3] Average ratio of transmitted gradients: 0.5054164520723401
+[Epoch 24] [Rank 3] Total bits transmitted: 24197417024
+[Iteration 2350] [Rank 3] , d = 0.0016263527769052439, m = 0.0019830056595414067
+[Iteration 2360] [Rank 3] , d = 0.0016639871789205128, m = 0.0019827295191635038
+[Iteration 2370] [Rank 3] , d = 0.0016053993994893973, m = 0.001982463882989324
+[Iteration 2380] [Rank 3] , d = 0.0016235568989592015, m = 0.001982177019596866
+[Iteration 2390] [Rank 3] , d = 0.0016111482271762038, m = 0.0019819196869108368
+[Iteration 2400] [Rank 3] , d = 0.0016297769420301725, m = 0.001981621870539792
+[Iteration 2410] [Rank 3] , d = 0.0016238396281897, m = 0.0019813352153901656
+[Iteration 2420] [Rank 3] , d = 0.0016196301040911642, m = 0.001981066875544188
+[Iteration 2520] [Rank 1] , d = 0.0016058077861556732, m = 0.001977424387655249
+[Iteration 2530] [Rank 1] , d = 0.0015850428948934923, m = 0.001977128313952389
+[Epoch 26] [Rank 1] ###### Epoch stats: #######
+[Epoch 26] [Rank 1] Current ratio of transmitted gradients: 0.4814693651191945
+[Epoch 26] [Rank 1] Average ratio of transmitted gradients: 0.5036604843683317
+[Epoch 26] [Rank 1] Total bits transmitted: 26042415808
+[Iteration 2540] [Rank 1] , d = 0.0016173682702471748, m = 0.0019768622266308823
+[Iteration 2550] [Rank 1] , d = 0.0016214835512688777, m = 0.00197661579828101
+[Iteration 2560] [Rank 1] , d = 0.0015718802784958315, m = 0.0019763564642720347
+[Iteration 2570] [Rank 1] , d = 0.0016033888805169622, m = 0.001976121116920999
+[Iteration 2580] [Rank 1] , d = 0.0015988652128289833, m = 0.0019758781969476894
+[Iteration 2590] [Rank 1] , d = 0.0016136927902506918, m = 0.001975619462559007
+[Iteration 2600] [Rank 1] , d = 0.0016324157481814934, m = 0.0019753510988256375
+[Iteration 2520] [Rank 2] , d = 0.0016473689830389792, m = 0.0019766289476755307
+[Iteration 2530] [Rank 2] , d = 0.0015778490066952482, m = 0.001976340919437539
+[Epoch 26] [Rank 2] ###### Epoch stats: #######
+[Epoch 26] [Rank 2] Current ratio of transmitted gradients: 0.4814693651191945
+[Epoch 26] [Rank 2] Average ratio of transmitted gradients: 0.5036604843683317
+[Epoch 26] [Rank 2] Total bits transmitted: 26042415808
+[Iteration 2540] [Rank 2] , d = 0.001601566847698193, m = 0.0019760390245432457
+[Iteration 2550] [Rank 2] , d = 0.001624782058958029, m = 0.001975770073494952
+[Iteration 2560] [Rank 2] , d = 0.0015943101307820601, m = 0.0019755244069522655
+[Iteration 2570] [Rank 2] , d = 0.0016189389881943897, m = 0.0019752669909259366
+[Iteration 2580] [Rank 2] , d = 0.0016183735297333923, m = 0.0019750197000884115
+[Iteration 2590] [Rank 2] , d = 0.0016239652856254773, m = 0.001974772487308992
+[Iteration 2600] [Rank 2] , d = 0.0016094518517932117, m = 0.0019745324775896113
+[Iteration 2430] [Rank 3] , d = 0.0016348346538202043, m = 0.0019807809849956568
+[Iteration 2440] [Rank 3] , d = 0.0016237453851128672, m = 0.0019804641049433595
+[Epoch 25] [Rank 3] ###### Epoch stats: #######
+[Epoch 25] [Rank 3] Current ratio of transmitted gradients: 0.4819524110172593
+[Epoch 25] [Rank 3] Average ratio of transmitted gradients: 0.5045139889548369
+[Epoch 25] [Rank 3] Total bits transmitted: 25120378944
+[Iteration 2450] [Rank 3] , d = 0.0016404264097122894, m = 0.0019802396062047335
+[Iteration 2460] [Rank 3] , d = 0.0016332639358729894, m = 0.001980002916084009
+[Iteration 2470] [Rank 3] , d = 0.0016456097789380986, m = 0.001979759839976243
+[Iteration 2480] [Rank 3] , d = 0.0016605630137955843, m = 0.0019794755586981885
+[Iteration 2490] [Rank 3] , d = 0.001643881989196162, m = 0.001979219513620964
+[Iteration 2500] [Rank 3] , d = 0.0016347718251023158, m = 0.0019789792951944015
+[Iteration 2510] [Rank 3] , d = 0.0016040171676958482, m = 0.0019786886453423956
+[Iteration 2610] [Rank 1] , d = 0.0016064046589756148, m = 0.0019750994571827393
+[Iteration 2610] [Rank 2] , d = 0.0016130016743539173, m = 0.001974251101049634
+[Iteration 2520] [Rank 3] , d = 0.001615389165633684, m = 0.0019784020832533285
+[Iteration 2530] [Rank 3] , d = 0.001580267912333959, m = 0.001978111840312364
+[Epoch 26] [Rank 3] ###### Epoch stats: #######
+[Epoch 26] [Rank 3] Current ratio of transmitted gradients: 0.4814693651191945
+[Epoch 26] [Rank 3] Average ratio of transmitted gradients: 0.5036604843683317
+[Epoch 26] [Rank 3] Total bits transmitted: 26042415808
+[Iteration 2540] [Rank 3] , d = 0.0016183735297333923, m = 0.001977829086668501
+[Iteration 2550] [Rank 3] , d = 0.0016045512117979013, m = 0.0019776091988775086
+[Iteration 2560] [Rank 3] , d = 0.0016024464497486333, m = 0.001977347175757582
+[Iteration 2570] [Rank 3] , d = 0.0016135043040970262, m = 0.00197711872748123
+[Iteration 2580] [Rank 3] , d = 0.0015863622979691528, m = 0.0019768766282838184
+[Iteration 2590] [Rank 3] , d = 0.0016590237102073137, m = 0.0019766179323728894
+[Iteration 2600] [Rank 3] , d = 0.0016390755922776846, m = 0.0019763668539204324
+[Iteration 2610] [Rank 3] , d = 0.0016334524220266552, m = 0.0019760922519903358
+[Iteration 2620] [Rank 1] , d = 0.0016079439625638855, m = 0.0019748226122352115
+[Iteration 2630] [Rank 1] , d = 0.0016380075040735784, m = 0.0019745492329417596
+[Epoch 27] [Rank 1] ###### Epoch stats: #######
+[Epoch 27] [Rank 1] Current ratio of transmitted gradients: 0.4808245352725666
+[Epoch 27] [Rank 1] Average ratio of transmitted gradients: 0.5028449147577686
+[Epoch 27] [Rank 1] Total bits transmitted: 26963217792
+[Iteration 2640] [Rank 1] , d = 0.001648939700986194, m = 0.001974272190590699
+[Iteration 2650] [Rank 1] , d = 0.001631536146131053, m = 0.001973997712336725
+[Iteration 2660] [Rank 1] , d = 0.0016551283296982208, m = 0.0019737584586221562
+[Iteration 2670] [Rank 1] , d = 0.0016639557645615685, m = 0.0019735383913213537
+[Iteration 2680] [Rank 1] , d = 0.0016073785041028881, m = 0.00197330083118126
+[Iteration 2690] [Rank 1] , d = 0.0016008757318014184, m = 0.0019730684103769288
+[Iteration 2700] [Rank 1] , d = 0.0016075041615386653, m = 0.0019728279408330845
+[Iteration 2620] [Rank 2] , d = 0.0015899121205298584, m = 0.0019739766778437786
+[Iteration 2630] [Rank 2] , d = 0.0016124676302518644, m = 0.0019736999109423517
+[Epoch 27] [Rank 2] ###### Epoch stats: #######
+[Epoch 27] [Rank 2] Current ratio of transmitted gradients: 0.4808245352725666
+[Epoch 27] [Rank 2] Average ratio of transmitted gradients: 0.5028449147577686
+[Epoch 27] [Rank 2] Total bits transmitted: 26963217792
+[Iteration 2640] [Rank 2] , d = 0.0016492224302166929, m = 0.001973448672865291
+[Iteration 2650] [Rank 2] , d = 0.0016541230702120033, m = 0.0019732164416142784
+[Iteration 2660] [Rank 2] , d = 0.0016434736025298863, m = 0.001972986640524045
+[Iteration 2670] [Rank 2] , d = 0.0016552225727750538, m = 0.001972747916194188
+[Iteration 2680] [Rank 2] , d = 0.001628771682543955, m = 0.0019725067075897847
+[Iteration 2690] [Rank 2] , d = 0.0016019752343644689, m = 0.0019722650036147885
+[Iteration 2700] [Rank 2] , d = 0.0016090434651269358, m = 0.0019720043752067006
+[Iteration 2710] [Rank 1] , d = 0.0016024778641075775, m = 0.0019725553627703628
+[Iteration 2720] [Rank 1] , d = 0.0016056193000020074, m = 0.0019723012516084525
+[Epoch 28] [Rank 1] ###### Epoch stats: #######
+[Epoch 28] [Rank 1] Current ratio of transmitted gradients: 0.48122877791702423
+[Epoch 28] [Rank 1] Average ratio of transmitted gradients: 0.5020995307287774
+[Epoch 28] [Rank 1] Total bits transmitted: 27884793920
+[Iteration 2730] [Rank 1] , d = 0.0016438191604782736, m = 0.0019720576515491295
+[Iteration 2740] [Rank 1] , d = 0.0016217034517814878, m = 0.001971804482641149
+[Iteration 2750] [Rank 1] , d = 0.0016194102035785541, m = 0.0019715730009501812
+[Iteration 2760] [Rank 1] , d = 0.0016349603112559815, m = 0.0019713808910103913
+[Iteration 2770] [Rank 1] , d = 0.0016293685553638965, m = 0.0019711357281825266
+[Iteration 2780] [Rank 1] , d = 0.001618027971785005, m = 0.0019708953671234933
+[Iteration 2790] [Rank 1] , d = 0.0016703014650683167, m = 0.0019706786318486524
+[Iteration 2710] [Rank 2] , d = 0.001597137423087047, m = 0.0019717788800044027
+[Iteration 2720] [Rank 2] , d = 0.001575712830287036, m = 0.0019715535413759315
+[Epoch 28] [Rank 2] ###### Epoch stats: #######
+[Epoch 28] [Rank 2] Current ratio of transmitted gradients: 0.48122877791702423
+[Epoch 28] [Rank 2] Average ratio of transmitted gradients: 0.5020995307287774
+[Epoch 28] [Rank 2] Total bits transmitted: 27884793920
+[Iteration 2730] [Rank 2] , d = 0.0016576728927727089, m = 0.00197133165892722
+[Iteration 2740] [Rank 2] , d = 0.0016100801389720978, m = 0.0019710930809306725
+[Iteration 2750] [Rank 2] , d = 0.0016152949225568512, m = 0.0019708423858648886
+[Iteration 2760] [Rank 2] , d = 0.001592205368732792, m = 0.0019705838355641215
+[Iteration 2770] [Rank 2] , d = 0.0016092947799984903, m = 0.001970355176025293
+[Iteration 2780] [Rank 2] , d = 0.0016117136856372012, m = 0.0019701204457146615
+[Iteration 2790] [Rank 2] , d = 0.0016566990476454357, m = 0.0019698918884371473
+[Iteration 2620] [Rank 3] , d = 0.0016151064364031853, m = 0.0019757935208810067
+[Iteration 2630] [Rank 3] , d = 0.0016032946374401294, m = 0.0019755160573000957
+[Epoch 27] [Rank 3] ###### Epoch stats: #######
+[Epoch 27] [Rank 3] Current ratio of transmitted gradients: 0.4808245352725666
+[Epoch 27] [Rank 3] Average ratio of transmitted gradients: 0.5028449147577686
+[Epoch 27] [Rank 3] Total bits transmitted: 26963217792
+[Iteration 2640] [Rank 3] , d = 0.001648719800473584, m = 0.001975259215236979
+[Iteration 2650] [Rank 3] , d = 0.0016279234948524588, m = 0.001974961283511069
+[Iteration 2660] [Rank 3] , d = 0.0016448558343234354, m = 0.001974719813560863
+[Iteration 2670] [Rank 3] , d = 0.0016490653584219713, m = 0.0019744572407382425
+[Iteration 2680] [Rank 3] , d = 0.0016482485850894196, m = 0.0019742515695887076
+[Iteration 2690] [Rank 3] , d = 0.0016002788589814768, m = 0.001973965336436532
+[Iteration 2700] [Rank 3] , d = 0.0016037030241064052, m = 0.001973692295114331
+[Iteration 2800] [Rank 1] , d = 0.0016328869635656579, m = 0.001970418032941584
+[Iteration 2810] [Rank 1] , d = 0.0015949070036020017, m = 0.00197019283705255
+[Epoch 29] [Rank 1] ###### Epoch stats: #######
+[Epoch 29] [Rank 1] Current ratio of transmitted gradients: 0.4806599106638862
+[Epoch 29] [Rank 1] Average ratio of transmitted gradients: 0.5013848767266145
+[Epoch 29] [Rank 1] Total bits transmitted: 28805280640
+[Iteration 2800] [Rank 2] , d = 0.0016158603810178486, m = 0.0019696390555353533
+[Iteration 2810] [Rank 2] , d = 0.0015857654251492112, m = 0.0019694064722830256
+[Epoch 29] [Rank 2] ###### Epoch stats: #######
+[Epoch 29] [Rank 2] Current ratio of transmitted gradients: 0.4806599106638862
+[Epoch 29] [Rank 2] Average ratio of transmitted gradients: 0.5013848767266145
+[Epoch 29] [Rank 2] Total bits transmitted: 28805280640
+[Iteration 2710] [Rank 3] , d = 0.0016239024569075888, m = 0.0019734621380674672
+[Iteration 2720] [Rank 3] , d = 0.0016032003943632965, m = 0.001973226664822535
+[Epoch 28] [Rank 3] ###### Epoch stats: #######
+[Epoch 28] [Rank 3] Current ratio of transmitted gradients: 0.48122877791702423
+[Epoch 28] [Rank 3] Average ratio of transmitted gradients: 0.5020995307287774
+[Epoch 28] [Rank 3] Total bits transmitted: 27884793920
+[Iteration 2730] [Rank 3] , d = 0.0016158917953767928, m = 0.0019729923753894047
+[Iteration 2740] [Rank 3] , d = 0.0016372849738178596, m = 0.0019727669470831046
+[Iteration 2750] [Rank 3] , d = 0.0016197243471679972, m = 0.001972527947217376
+[Iteration 2760] [Rank 3] , d = 0.0015998076435973123, m = 0.001972264168119839
+[Iteration 2770] [Rank 3] , d = 0.0016239652856254773, m = 0.0019720076778719764
+[Iteration 2780] [Rank 3] , d = 0.001644196132785605, m = 0.0019718054120712123
+[Iteration 2790] [Rank 3] , d = 0.0016529921532900086, m = 0.001971552639869563
+[Iteration 2800] [Rank 3] , d = 0.0016334838363855995, m = 0.001971308693384704
+[Iteration 2810] [Rank 3] , d = 0.0016015982620571374, m = 0.00197108450865391
+[Epoch 29] [Rank 3] ###### Epoch stats: #######
+[Epoch 29] [Rank 3] Current ratio of transmitted gradients: 0.4806599106638862
+[Epoch 29] [Rank 3] Average ratio of transmitted gradients: 0.5013848767266145
+[Epoch 29] [Rank 3] Total bits transmitted: 28805280640

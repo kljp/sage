@@ -10,4 +10,5 @@ cnn-lstm/data
 cnn-lstm/timer_summary.json
 ncf/cache/*
 ncf/ml-*m*
-*stdio_sage*
+cnn-lstm/stdio_sage*
+ncf/stdio_sage*

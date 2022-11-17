@@ -12,10 +12,11 @@ export USE_WANDB=0
 export WANDB_API_KEY=0 #wandb api key
 export WANDB_ENTITY=0 #wandb entity
 
-world_size=2
+world_size=4
 
 ############### threshold=1/(2*(31832577*density)^(1/2)) ###########
 ############### density=0.095 -> threshold=0.0002875     ###########
+############### density=0.001 -> threshold=0.002802     ###########
 
 ########################## Exact ###################################################
 # reducer='exact'

@@ -1,0 +1,603 @@
+==========================================
+SLURM_JOB_ID = 150917
+SLURM_NODELIST = gpu[10-12,24]
+==========================================
+Node IP: 10.151.0.10
+distributed
+Rank: 0
+World size: 4
+Available devices: 1
+Current cuda device: 0
+Reducer: <gradient_reducers.TopKReducer object at 0x2af0de0dae10>
+Current cuda device after: 0
+NeuMF(
+  (mf_user_embed): Embedding(138493, 64)
+  (mf_item_embed): Embedding(26744, 64)
+  (mlp_user_embed): Embedding(138493, 128)
+  (mlp_item_embed): Embedding(26744, 128)
+  (mlp): ModuleList(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (final): Linear(in_features=128, out_features=1, bias=True)
+)
+31832577 parameters
+[Epoch 0] [Rank 0] ###### Epoch stats: #######
+[Epoch 0] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 0] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 0] [Rank 0] Total bits transmitted: 18192931456
+[Epoch 0] [Rank 0] New best hr!
+[Epoch 0] [Rank 0] {'best_epoch_stats/best_train_throughput': 1352977.7516711983, 'best_epoch_stats/best_eval_throughput': 112068216.45171839, 'best_epoch_stats/mean_train_throughput': 1352977.7516711983, 'best_epoch_stats/mean_eval_throughput': 112068216.45171839, 'best_epoch_stats/best_accuracy': 0.8345836973709863, 'best_epoch_stats/best_epoch': 0, 'best_epoch_stats/time_to_target': 75.4969413280487, 'best_epoch_stats/time_to_best_model': 75.49652910232544}
+[Epoch 1] [Rank 0] ###### Epoch stats: #######
+[Epoch 1] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 1] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 1] [Rank 0] Total bits transmitted: 36385862912
+[Epoch 1] [Rank 0] New best hr!
+[Epoch 1] [Rank 0] {'best_epoch_stats/best_train_throughput': 1360031.7624220622, 'best_epoch_stats/best_eval_throughput': 112945438.27668709, 'best_epoch_stats/mean_train_throughput': 1356504.7570466301, 'best_epoch_stats/mean_eval_throughput': 112506827.36420274, 'best_epoch_stats/best_accuracy': 0.8481872730029677, 'best_epoch_stats/best_epoch': 1, 'best_epoch_stats/time_to_target': 148.6441295146942, 'best_epoch_stats/time_to_best_model': 148.6439597606659}
+[Epoch 2] [Rank 0] ###### Epoch stats: #######
+[Epoch 2] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 2] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 2] [Rank 0] Total bits transmitted: 54578794368
+[Epoch 2] [Rank 0] New best hr!
+[Epoch 2] [Rank 0] {'best_epoch_stats/best_train_throughput': 1360031.7624220622, 'best_epoch_stats/best_eval_throughput': 112945438.27668709, 'best_epoch_stats/mean_train_throughput': 1356106.371951624, 'best_epoch_stats/mean_eval_throughput': 112584807.96835457, 'best_epoch_stats/best_accuracy': 0.8709176637086351, 'best_epoch_stats/best_epoch': 2, 'best_epoch_stats/time_to_target': 222.0459268093109, 'best_epoch_stats/time_to_best_model': 222.04576778411865}
+[Epoch 3] [Rank 0] ###### Epoch stats: #######
+[Epoch 3] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 3] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 3] [Rank 0] Total bits transmitted: 72771725824
+[Epoch 3] [Rank 0] New best hr!
+[Epoch 3] [Rank 0] {'best_epoch_stats/best_train_throughput': 1360031.7624220622, 'best_epoch_stats/best_eval_throughput': 112945438.27668709, 'best_epoch_stats/mean_train_throughput': 1355842.2262491519, 'best_epoch_stats/mean_eval_throughput': 112628673.67343235, 'best_epoch_stats/best_accuracy': 0.8818063006794568, 'best_epoch_stats/best_epoch': 3, 'best_epoch_stats/time_to_target': 295.4617714881897, 'best_epoch_stats/time_to_best_model': 295.4616131782532}
+[Epoch 4] [Rank 0] ###### Epoch stats: #######
+[Epoch 4] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 4] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 4] [Rank 0] Total bits transmitted: 90964657280
+[Epoch 4] [Rank 0] New best hr!
+[Epoch 4] [Rank 0] {'best_epoch_stats/best_train_throughput': 1360031.7624220622, 'best_epoch_stats/best_eval_throughput': 113003740.78075728, 'best_epoch_stats/mean_train_throughput': 1355192.650746048, 'best_epoch_stats/mean_eval_throughput': 112703687.09489734, 'best_epoch_stats/best_accuracy': 0.8885936473323561, 'best_epoch_stats/best_epoch': 4, 'best_epoch_stats/time_to_target': 369.010347366333, 'best_epoch_stats/time_to_best_model': 369.01017665863037}
+[Epoch 5] [Rank 0] ###### Epoch stats: #######
+[Epoch 5] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 5] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 5] [Rank 0] Total bits transmitted: 109157588736
+[Epoch 6] [Rank 0] ###### Epoch stats: #######
+[Epoch 6] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 6] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 6] [Rank 0] Total bits transmitted: 127350520192
+[Epoch 7] [Rank 0] ###### Epoch stats: #######
+[Epoch 7] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 7] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 7] [Rank 0] Total bits transmitted: 145543451648
+[Epoch 7] [Rank 0] New best hr!
+[Epoch 7] [Rank 0] {'best_epoch_stats/best_train_throughput': 1360031.7624220622, 'best_epoch_stats/best_eval_throughput': 113003740.78075728, 'best_epoch_stats/mean_train_throughput': 1354249.4571452034, 'best_epoch_stats/mean_eval_throughput': 112805164.91310729, 'best_epoch_stats/best_accuracy': 0.889893352010571, 'best_epoch_stats/best_epoch': 7, 'best_epoch_stats/time_to_target': 589.6426062583923, 'best_epoch_stats/time_to_best_model': 589.6424407958984}
+[Epoch 8] [Rank 0] ###### Epoch stats: #######
+[Epoch 8] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 8] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 8] [Rank 0] Total bits transmitted: 163736383104
+[Epoch 8] [Rank 0] New best hr!
+[Epoch 8] [Rank 0] {'best_epoch_stats/best_train_throughput': 1360031.7624220622, 'best_epoch_stats/best_eval_throughput': 113003740.78075728, 'best_epoch_stats/mean_train_throughput': 1354610.9327303106, 'best_epoch_stats/mean_eval_throughput': 112814617.35911891, 'best_epoch_stats/best_accuracy': 0.9026304578570759, 'best_epoch_stats/best_epoch': 8, 'best_epoch_stats/time_to_target': 662.925852060318, 'best_epoch_stats/time_to_best_model': 662.9256839752197}
+[Epoch 9] [Rank 0] ###### Epoch stats: #######
+[Epoch 9] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 9] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 9] [Rank 0] Total bits transmitted: 181929314560
+[Epoch 10] [Rank 0] ###### Epoch stats: #######
+[Epoch 10] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 10] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 10] [Rank 0] Total bits transmitted: 200122246016
+[Epoch 11] [Rank 0] ###### Epoch stats: #######
+[Epoch 11] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 11] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 11] [Rank 0] Total bits transmitted: 218315177472
+[Epoch 11] [Rank 0] New best hr!
+[Epoch 11] [Rank 0] {'best_epoch_stats/best_train_throughput': 1360031.7624220622, 'best_epoch_stats/best_eval_throughput': 113077575.37708615, 'best_epoch_stats/mean_train_throughput': 1355236.7819774041, 'best_epoch_stats/mean_eval_throughput': 112856011.48055369, 'best_epoch_stats/best_accuracy': 0.908204746810308, 'best_epoch_stats/best_epoch': 11, 'best_epoch_stats/time_to_target': 882.8380856513977, 'best_epoch_stats/time_to_best_model': 882.8379065990448}
+[Epoch 12] [Rank 0] ###### Epoch stats: #######
+[Epoch 12] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 12] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 12] [Rank 0] Total bits transmitted: 236508108928
+[Epoch 13] [Rank 0] ###### Epoch stats: #######
+[Epoch 13] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 13] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 13] [Rank 0] Total bits transmitted: 254701040384
+[Epoch 13] [Rank 0] New best hr!
+[Epoch 13] [Rank 0] {'best_epoch_stats/best_train_throughput': 1363289.8391904433, 'best_epoch_stats/best_eval_throughput': 113077575.37708615, 'best_epoch_stats/mean_train_throughput': 1356320.8822887514, 'best_epoch_stats/mean_eval_throughput': 112879247.67854051, 'best_epoch_stats/best_accuracy': 0.9091578635743323, 'best_epoch_stats/best_epoch': 13, 'best_epoch_stats/time_to_target': 1028.8326573371887, 'best_epoch_stats/time_to_best_model': 1028.8324990272522}
+[Epoch 14] [Rank 0] ###### Epoch stats: #######
+[Epoch 14] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 14] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 14] [Rank 0] Total bits transmitted: 272893971840
+[Epoch 14] [Rank 0] New best hr!
+[Epoch 14] [Rank 0] {'best_epoch_stats/best_train_throughput': 1363945.1696431325, 'best_epoch_stats/best_eval_throughput': 113077575.37708615, 'best_epoch_stats/mean_train_throughput': 1356829.168112377, 'best_epoch_stats/mean_eval_throughput': 112884660.71628055, 'best_epoch_stats/best_accuracy': 0.9154253283559458, 'best_epoch_stats/best_epoch': 14, 'best_epoch_stats/time_to_target': 1101.7702605724335, 'best_epoch_stats/time_to_best_model': 1101.7701041698456}
+[Epoch 15] [Rank 0] ###### Epoch stats: #######
+[Epoch 15] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 15] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 15] [Rank 0] Total bits transmitted: 291086903296
+[Epoch 15] [Rank 0] New best hr!
+[Epoch 15] [Rank 0] {'best_epoch_stats/best_train_throughput': 1375881.3882370682, 'best_epoch_stats/best_eval_throughput': 113093487.48968129, 'best_epoch_stats/mean_train_throughput': 1358019.93187017, 'best_epoch_stats/mean_eval_throughput': 112897712.3896181, 'best_epoch_stats/best_accuracy': 0.9162629158152398, 'best_epoch_stats/best_epoch': 15, 'best_epoch_stats/time_to_target': 1174.0760514736176, 'best_epoch_stats/time_to_best_model': 1174.0758848190308}
+[Epoch 16] [Rank 0] ###### Epoch stats: #######
+[Epoch 16] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 16] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 16] [Rank 0] Total bits transmitted: 309279834752
+[Epoch 16] [Rank 0] New best hr!
+[Epoch 16] [Rank 0] {'best_epoch_stats/best_train_throughput': 1375881.3882370682, 'best_epoch_stats/best_eval_throughput': 113128597.1617551, 'best_epoch_stats/mean_train_throughput': 1358994.0943958575, 'best_epoch_stats/mean_eval_throughput': 112911293.84680262, 'best_epoch_stats/best_accuracy': 0.9177070321243673, 'best_epoch_stats/best_epoch': 16, 'best_epoch_stats/time_to_target': 1246.4500050544739, 'best_epoch_stats/time_to_best_model': 1246.4498484134674}
+[Epoch 17] [Rank 0] ###### Epoch stats: #######
+[Epoch 17] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 17] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 17] [Rank 0] Total bits transmitted: 327472766208
+[Epoch 17] [Rank 0] New best hr!
+[Epoch 17] [Rank 0] {'best_epoch_stats/best_train_throughput': 1375906.171441246, 'best_epoch_stats/best_eval_throughput': 113128597.1617551, 'best_epoch_stats/mean_train_throughput': 1359933.6542317125, 'best_epoch_stats/mean_eval_throughput': 112916212.13616921, 'best_epoch_stats/best_accuracy': 0.9194977363476854, 'best_epoch_stats/best_epoch': 17, 'best_epoch_stats/time_to_target': 1318.7545237541199, 'best_epoch_stats/time_to_best_model': 1318.7543635368347}
+[Epoch 18] [Rank 0] ###### Epoch stats: #######
+[Epoch 18] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 18] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 18] [Rank 0] Total bits transmitted: 345665697664
+[Epoch 18] [Rank 0] New best hr!
+[Epoch 18] [Rank 0] {'best_epoch_stats/best_train_throughput': 1375906.171441246, 'best_epoch_stats/best_eval_throughput': 113128597.1617551, 'best_epoch_stats/mean_train_throughput': 1360637.653866835, 'best_epoch_stats/mean_eval_throughput': 112903718.97845866, 'best_epoch_stats/best_accuracy': 0.924349967146354, 'best_epoch_stats/best_epoch': 18, 'best_epoch_stats/time_to_target': 1391.195853471756, 'best_epoch_stats/time_to_best_model': 1391.1956968307495}
+[Epoch 19] [Rank 0] ###### Epoch stats: #######
+[Epoch 19] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 19] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 19] [Rank 0] Total bits transmitted: 363858629120
+[Epoch 20] [Rank 0] ###### Epoch stats: #######
+[Epoch 20] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 20] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 20] [Rank 0] Total bits transmitted: 382051560576
+[Epoch 21] [Rank 0] ###### Epoch stats: #######
+[Epoch 21] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 21] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 21] [Rank 0] Total bits transmitted: 400244492032
+[Epoch 22] [Rank 0] ###### Epoch stats: #######
+[Epoch 22] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 22] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 22] [Rank 0] Total bits transmitted: 418437423488
+[Epoch 22] [Rank 0] New best hr!
+[Epoch 22] [Rank 0] {'best_epoch_stats/best_train_throughput': 1380049.8380316775, 'best_epoch_stats/best_eval_throughput': 113174861.79611221, 'best_epoch_stats/mean_train_throughput': 1363140.7947193421, 'best_epoch_stats/mean_eval_throughput': 112893945.30217257, 'best_epoch_stats/best_accuracy': 0.9267183178933232, 'best_epoch_stats/best_epoch': 22, 'best_epoch_stats/time_to_target': 1680.600078344345, 'best_epoch_stats/time_to_best_model': 1680.5999157428741}
+[Epoch 23] [Rank 0] ###### Epoch stats: #######
+[Epoch 23] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 23] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 23] [Rank 0] Total bits transmitted: 436630354944
+[Epoch 23] [Rank 0] New best hr!
+[Epoch 23] [Rank 0] {'best_epoch_stats/best_train_throughput': 1380049.8380316775, 'best_epoch_stats/best_eval_throughput': 113174861.79611221, 'best_epoch_stats/mean_train_throughput': 1363408.9557865893, 'best_epoch_stats/mean_eval_throughput': 112901360.46169226, 'best_epoch_stats/best_accuracy': 0.9292888449235701, 'best_epoch_stats/best_epoch': 23, 'best_epoch_stats/time_to_target': 1753.2380607128143, 'best_epoch_stats/time_to_best_model': 1753.2379026412964}
+[Epoch 24] [Rank 0] ###### Epoch stats: #######
+[Epoch 24] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 24] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 24] [Rank 0] Total bits transmitted: 454823286400
+[Epoch 24] [Rank 0] New best hr!
+[Epoch 24] [Rank 0] {'best_epoch_stats/best_train_throughput': 1380049.8380316775, 'best_epoch_stats/best_eval_throughput': 113226845.50196756, 'best_epoch_stats/mean_train_throughput': 1363902.579266525, 'best_epoch_stats/mean_eval_throughput': 112914379.86330326, 'best_epoch_stats/best_accuracy': 0.9296643151639433, 'best_epoch_stats/best_epoch': 24, 'best_epoch_stats/time_to_target': 1825.5505516529083, 'best_epoch_stats/time_to_best_model': 1825.550400018692}
+[Epoch 25] [Rank 0] ###### Epoch stats: #######
+[Epoch 25] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 25] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 25] [Rank 0] Total bits transmitted: 473016217856
+[Epoch 26] [Rank 0] ###### Epoch stats: #######
+[Epoch 26] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 26] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 26] [Rank 0] Total bits transmitted: 491209149312
+[Epoch 26] [Rank 0] New best hr!
+distributed
+Rank: 3
+World size: 4
+Available devices: 1
+Current cuda device: 0
+Reducer: <gradient_reducers.TopKReducer object at 0x2ad994c94dd0>
+Current cuda device after: 0
+NeuMF(
+  (mf_user_embed): Embedding(138493, 64)
+  (mf_item_embed): Embedding(26744, 64)
+  (mlp_user_embed): Embedding(138493, 128)
+  (mlp_item_embed): Embedding(26744, 128)
+  (mlp): ModuleList(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (final): Linear(in_features=128, out_features=1, bias=True)
+)
+31832577 parameters
+[Epoch 0] [Rank 3] ###### Epoch stats: #######
+[Epoch 0] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 0] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 0] [Rank 3] Total bits transmitted: 18192931456
+[Epoch 1] [Rank 3] ###### Epoch stats: #######
+[Epoch 1] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 1] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 1] [Rank 3] Total bits transmitted: 36385862912
+[Epoch 2] [Rank 3] ###### Epoch stats: #######
+[Epoch 2] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 2] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 2] [Rank 3] Total bits transmitted: 54578794368
+[Epoch 3] [Rank 3] ###### Epoch stats: #######
+[Epoch 3] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 3] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 3] [Rank 3] Total bits transmitted: 72771725824
+[Epoch 4] [Rank 3] ###### Epoch stats: #######
+[Epoch 4] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 4] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 4] [Rank 3] Total bits transmitted: 90964657280
+[Epoch 5] [Rank 3] ###### Epoch stats: #######
+[Epoch 5] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 5] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 5] [Rank 3] Total bits transmitted: 109157588736
+[Epoch 6] [Rank 3] ###### Epoch stats: #######
+[Epoch 6] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 6] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 6] [Rank 3] Total bits transmitted: 127350520192
+[Epoch 7] [Rank 3] ###### Epoch stats: #######
+[Epoch 7] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 7] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 7] [Rank 3] Total bits transmitted: 145543451648
+[Epoch 8] [Rank 3] ###### Epoch stats: #######
+[Epoch 8] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 8] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 8] [Rank 3] Total bits transmitted: 163736383104
+[Epoch 9] [Rank 3] ###### Epoch stats: #######
+[Epoch 9] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 9] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 9] [Rank 3] Total bits transmitted: 181929314560
+[Epoch 10] [Rank 3] ###### Epoch stats: #######
+[Epoch 10] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 10] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 10] [Rank 3] Total bits transmitted: 200122246016
+[Epoch 11] [Rank 3] ###### Epoch stats: #######
+[Epoch 11] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 11] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 11] [Rank 3] Total bits transmitted: 218315177472
+[Epoch 12] [Rank 3] ###### Epoch stats: #######
+[Epoch 12] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 12] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 12] [Rank 3] Total bits transmitted: 236508108928
+[Epoch 13] [Rank 3] ###### Epoch stats: #######
+[Epoch 13] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 13] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 13] [Rank 3] Total bits transmitted: 254701040384
+[Epoch 14] [Rank 3] ###### Epoch stats: #######
+[Epoch 14] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 14] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 14] [Rank 3] Total bits transmitted: 272893971840
+[Epoch 15] [Rank 3] ###### Epoch stats: #######
+[Epoch 15] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 15] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 15] [Rank 3] Total bits transmitted: 291086903296
+[Epoch 16] [Rank 3] ###### Epoch stats: #######
+[Epoch 16] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 16] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 16] [Rank 3] Total bits transmitted: 309279834752
+[Epoch 17] [Rank 3] ###### Epoch stats: #######
+[Epoch 17] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 17] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 17] [Rank 3] Total bits transmitted: 327472766208
+[Epoch 18] [Rank 3] ###### Epoch stats: #######
+[Epoch 18] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 18] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 18] [Rank 3] Total bits transmitted: 345665697664
+[Epoch 19] [Rank 3] ###### Epoch stats: #######
+[Epoch 19] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 19] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 19] [Rank 3] Total bits transmitted: 363858629120
+[Epoch 20] [Rank 3] ###### Epoch stats: #######
+[Epoch 20] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 20] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 20] [Rank 3] Total bits transmitted: 382051560576
+[Epoch 21] [Rank 3] ###### Epoch stats: #######
+[Epoch 21] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 21] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 21] [Rank 3] Total bits transmitted: 400244492032
+[Epoch 22] [Rank 3] ###### Epoch stats: #######
+[Epoch 22] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 22] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 22] [Rank 3] Total bits transmitted: 418437423488
+[Epoch 23] [Rank 3] ###### Epoch stats: #######
+[Epoch 23] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 23] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 23] [Rank 3] Total bits transmitted: 436630354944
+[Epoch 24] [Rank 3] ###### Epoch stats: #######
+[Epoch 24] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 24] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 24] [Rank 3] Total bits transmitted: 454823286400
+[Epoch 25] [Rank 3] ###### Epoch stats: #######
+[Epoch 25] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 25] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 25] [Rank 3] Total bits transmitted: 473016217856
+[Epoch 26] [Rank 3] ###### Epoch stats: #######
+[Epoch 26] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 26] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 26] [Rank 3] Total bits transmitted: 491209149312
+[Epoch 27] [Rank 3] ###### Epoch stats: #######
+[Epoch 27] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 27] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 27] [Rank 3] Total bits transmitted: 509402080768
+[Epoch 28] [Rank 3] ###### Epoch stats: #######
+[Epoch 28] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 28] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 28] [Rank 3] Total bits transmitted: 527595012224
+distributed
+Rank: 2
+World size: 4
+Available devices: 1
+Current cuda device: 0
+Reducer: <gradient_reducers.TopKReducer object at 0x2b590aaf4d10>
+Current cuda device after: 0
+NeuMF(
+  (mf_user_embed): Embedding(138493, 64)
+  (mf_item_embed): Embedding(26744, 64)
+  (mlp_user_embed): Embedding(138493, 128)
+  (mlp_item_embed): Embedding(26744, 128)
+  (mlp): ModuleList(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (final): Linear(in_features=128, out_features=1, bias=True)
+)
+31832577 parameters
+[Epoch 0] [Rank 2] ###### Epoch stats: #######
+[Epoch 0] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 0] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 0] [Rank 2] Total bits transmitted: 18192931456
+[Epoch 1] [Rank 2] ###### Epoch stats: #######
+[Epoch 1] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 1] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 1] [Rank 2] Total bits transmitted: 36385862912
+[Epoch 2] [Rank 2] ###### Epoch stats: #######
+[Epoch 2] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 2] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 2] [Rank 2] Total bits transmitted: 54578794368
+[Epoch 3] [Rank 2] ###### Epoch stats: #######
+[Epoch 3] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 3] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 3] [Rank 2] Total bits transmitted: 72771725824
+[Epoch 4] [Rank 2] ###### Epoch stats: #######
+[Epoch 4] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 4] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 4] [Rank 2] Total bits transmitted: 90964657280
+[Epoch 5] [Rank 2] ###### Epoch stats: #######
+[Epoch 5] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 5] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 5] [Rank 2] Total bits transmitted: 109157588736
+[Epoch 6] [Rank 2] ###### Epoch stats: #######
+[Epoch 6] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 6] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 6] [Rank 2] Total bits transmitted: 127350520192
+[Epoch 7] [Rank 2] ###### Epoch stats: #######
+[Epoch 7] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 7] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 7] [Rank 2] Total bits transmitted: 145543451648
+[Epoch 8] [Rank 2] ###### Epoch stats: #######
+[Epoch 8] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 8] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 8] [Rank 2] Total bits transmitted: 163736383104
+[Epoch 9] [Rank 2] ###### Epoch stats: #######
+[Epoch 9] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 9] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 9] [Rank 2] Total bits transmitted: 181929314560
+[Epoch 10] [Rank 2] ###### Epoch stats: #######
+[Epoch 10] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 10] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 10] [Rank 2] Total bits transmitted: 200122246016
+[Epoch 11] [Rank 2] ###### Epoch stats: #######
+[Epoch 11] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 11] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 11] [Rank 2] Total bits transmitted: 218315177472
+[Epoch 12] [Rank 2] ###### Epoch stats: #######
+[Epoch 12] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 12] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 12] [Rank 2] Total bits transmitted: 236508108928
+[Epoch 13] [Rank 2] ###### Epoch stats: #######
+[Epoch 13] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 13] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 13] [Rank 2] Total bits transmitted: 254701040384
+[Epoch 14] [Rank 2] ###### Epoch stats: #######
+[Epoch 14] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 14] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 14] [Rank 2] Total bits transmitted: 272893971840
+[Epoch 15] [Rank 2] ###### Epoch stats: #######
+[Epoch 15] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 15] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 15] [Rank 2] Total bits transmitted: 291086903296
+[Epoch 16] [Rank 2] ###### Epoch stats: #######
+[Epoch 16] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 16] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 16] [Rank 2] Total bits transmitted: 309279834752
+[Epoch 17] [Rank 2] ###### Epoch stats: #######
+[Epoch 17] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 17] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 17] [Rank 2] Total bits transmitted: 327472766208
+[Epoch 18] [Rank 2] ###### Epoch stats: #######
+[Epoch 18] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 18] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 18] [Rank 2] Total bits transmitted: 345665697664
+[Epoch 19] [Rank 2] ###### Epoch stats: #######
+[Epoch 19] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 19] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 19] [Rank 2] Total bits transmitted: 363858629120
+[Epoch 20] [Rank 2] ###### Epoch stats: #######
+[Epoch 20] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 20] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 20] [Rank 2] Total bits transmitted: 382051560576
+[Epoch 21] [Rank 2] ###### Epoch stats: #######
+[Epoch 21] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 21] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 21] [Rank 2] Total bits transmitted: 400244492032
+[Epoch 22] [Rank 2] ###### Epoch stats: #######
+[Epoch 22] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 22] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 22] [Rank 2] Total bits transmitted: 418437423488
+[Epoch 23] [Rank 2] ###### Epoch stats: #######
+[Epoch 23] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 23] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 23] [Rank 2] Total bits transmitted: 436630354944
+[Epoch 24] [Rank 2] ###### Epoch stats: #######
+[Epoch 24] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 24] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 24] [Rank 2] Total bits transmitted: 454823286400
+[Epoch 25] [Rank 2] ###### Epoch stats: #######
+[Epoch 25] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 25] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 25] [Rank 2] Total bits transmitted: 473016217856
+[Epoch 26] [Rank 2] ###### Epoch stats: #######
+[Epoch 26] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 26] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 26] [Rank 2] Total bits transmitted: 491209149312
+[Epoch 27] [Rank 2] ###### Epoch stats: #######
+[Epoch 27] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 27] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 27] [Rank 2] Total bits transmitted: 509402080768
+[Epoch 28] [Rank 2] ###### Epoch stats: #######
+[Epoch 28] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 28] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 28] [Rank 2] Total bits transmitted: 527595012224
+distributed
+Rank: 1
+World size: 4
+Available devices: 1
+Current cuda device: 0
+Reducer: <gradient_reducers.TopKReducer object at 0x2b1303fabd90>
+Current cuda device after: 0
+NeuMF(
+  (mf_user_embed): Embedding(138493, 64)
+  (mf_item_embed): Embedding(26744, 64)
+  (mlp_user_embed): Embedding(138493, 128)
+  (mlp_item_embed): Embedding(26744, 128)
+  (mlp): ModuleList(
+    (0): Linear(in_features=256, out_features=256, bias=True)
+    (1): Linear(in_features=256, out_features=128, bias=True)
+    (2): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (final): Linear(in_features=128, out_features=1, bias=True)
+)
+31832577 parameters
+[Epoch 0] [Rank 1] ###### Epoch stats: #######
+[Epoch 0] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 0] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 0] [Rank 1] Total bits transmitted: 18192931456
+[Epoch 1] [Rank 1] ###### Epoch stats: #######
+[Epoch 1] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 1] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 1] [Rank 1] Total bits transmitted: 36385862912
+[Epoch 2] [Rank 1] ###### Epoch stats: #######
+[Epoch 2] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 2] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 2] [Rank 1] Total bits transmitted: 54578794368
+[Epoch 3] [Rank 1] ###### Epoch stats: #######
+[Epoch 3] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 3] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 3] [Rank 1] Total bits transmitted: 72771725824
+[Epoch 4] [Rank 1] ###### Epoch stats: #######
+[Epoch 4] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 4] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 4] [Rank 1] Total bits transmitted: 90964657280
+[Epoch 5] [Rank 1] ###### Epoch stats: #######
+[Epoch 5] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 5] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 5] [Rank 1] Total bits transmitted: 109157588736
+[Epoch 6] [Rank 1] ###### Epoch stats: #######
+[Epoch 6] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 6] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 6] [Rank 1] Total bits transmitted: 127350520192
+[Epoch 7] [Rank 1] ###### Epoch stats: #######
+[Epoch 7] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 7] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 7] [Rank 1] Total bits transmitted: 145543451648
+[Epoch 8] [Rank 1] ###### Epoch stats: #######
+[Epoch 8] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 8] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 8] [Rank 1] Total bits transmitted: 163736383104
+[Epoch 9] [Rank 1] ###### Epoch stats: #######
+[Epoch 9] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 9] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 9] [Rank 1] Total bits transmitted: 181929314560
+[Epoch 10] [Rank 1] ###### Epoch stats: #######
+[Epoch 10] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 10] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 10] [Rank 1] Total bits transmitted: 200122246016
+[Epoch 11] [Rank 1] ###### Epoch stats: #######
+[Epoch 11] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 11] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 11] [Rank 1] Total bits transmitted: 218315177472
+[Epoch 12] [Rank 1] ###### Epoch stats: #######
+[Epoch 12] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 12] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 12] [Rank 1] Total bits transmitted: 236508108928
+[Epoch 13] [Rank 1] ###### Epoch stats: #######
+[Epoch 13] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 13] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 13] [Rank 1] Total bits transmitted: 254701040384
+[Epoch 14] [Rank 1] ###### Epoch stats: #######
+[Epoch 14] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 14] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 14] [Rank 1] Total bits transmitted: 272893971840
+[Epoch 15] [Rank 1] ###### Epoch stats: #######
+[Epoch 15] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 15] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 15] [Rank 1] Total bits transmitted: 291086903296
+[Epoch 16] [Rank 1] ###### Epoch stats: #######
+[Epoch 16] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 16] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 16] [Rank 1] Total bits transmitted: 309279834752
+[Epoch 17] [Rank 1] ###### Epoch stats: #######
+[Epoch 17] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 17] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 17] [Rank 1] Total bits transmitted: 327472766208
+[Epoch 18] [Rank 1] ###### Epoch stats: #######
+[Epoch 18] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 18] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 18] [Rank 1] Total bits transmitted: 345665697664
+[Epoch 19] [Rank 1] ###### Epoch stats: #######
+[Epoch 19] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 19] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 19] [Rank 1] Total bits transmitted: 363858629120
+[Epoch 20] [Rank 1] ###### Epoch stats: #######
+[Epoch 20] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 20] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 20] [Rank 1] Total bits transmitted: 382051560576
+[Epoch 21] [Rank 1] ###### Epoch stats: #######
+[Epoch 21] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 21] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 21] [Rank 1] Total bits transmitted: 400244492032
+[Epoch 22] [Rank 1] ###### Epoch stats: #######
+[Epoch 22] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 22] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 22] [Rank 1] Total bits transmitted: 418437423488
+[Epoch 23] [Rank 1] ###### Epoch stats: #######
+[Epoch 23] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 23] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 23] [Rank 1] Total bits transmitted: 436630354944
+[Epoch 24] [Rank 1] ###### Epoch stats: #######
+[Epoch 24] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 24] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 24] [Rank 1] Total bits transmitted: 454823286400
+[Epoch 25] [Rank 1] ###### Epoch stats: #######
+[Epoch 25] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 25] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 25] [Rank 1] Total bits transmitted: 473016217856
+[Epoch 26] [Rank 1] ###### Epoch stats: #######
+[Epoch 26] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 26] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 26] [Rank 1] Total bits transmitted: 491209149312
+[Epoch 27] [Rank 1] ###### Epoch stats: #######
+[Epoch 27] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 27] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 27] [Rank 1] Total bits transmitted: 509402080768
+[Epoch 28] [Rank 1] ###### Epoch stats: #######
+[Epoch 28] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 28] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 28] [Rank 1] Total bits transmitted: 527595012224
+[Epoch 29] [Rank 3] ###### Epoch stats: #######
+[Epoch 29] [Rank 3] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 29] [Rank 3] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 29] [Rank 3] Total bits transmitted: 545787943680
+[Epoch 29] [Rank 2] ###### Epoch stats: #######
+[Epoch 29] [Rank 2] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 29] [Rank 2] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 29] [Rank 2] Total bits transmitted: 545787943680
+[Epoch 26] [Rank 0] {'best_epoch_stats/best_train_throughput': 1380049.8380316775, 'best_epoch_stats/best_eval_throughput': 113226845.50196756, 'best_epoch_stats/mean_train_throughput': 1364749.5731525815, 'best_epoch_stats/mean_eval_throughput': 112930183.24948828, 'best_epoch_stats/best_accuracy': 0.9312528431039836, 'best_epoch_stats/best_epoch': 26, 'best_epoch_stats/time_to_target': 1970.218806028366, 'best_epoch_stats/time_to_best_model': 1970.2186493873596}
+[Epoch 27] [Rank 0] ###### Epoch stats: #######
+[Epoch 27] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 27] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 27] [Rank 0] Total bits transmitted: 509402080768
+[Epoch 27] [Rank 0] New best hr!
+[Epoch 27] [Rank 0] {'best_epoch_stats/best_train_throughput': 1380049.8380316775, 'best_epoch_stats/best_eval_throughput': 113226845.50196756, 'best_epoch_stats/mean_train_throughput': 1365179.6544272264, 'best_epoch_stats/mean_eval_throughput': 112910976.60540268, 'best_epoch_stats/best_accuracy': 0.9336211938509528, 'best_epoch_stats/best_epoch': 27, 'best_epoch_stats/time_to_target': 2042.477613210678, 'best_epoch_stats/time_to_best_model': 2042.477466583252}
+[Epoch 28] [Rank 0] ###### Epoch stats: #######
+[Epoch 28] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 28] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 28] [Rank 0] Total bits transmitted: 527595012224
+[Epoch 29] [Rank 0] ###### Epoch stats: #######
+[Epoch 29] [Rank 0] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 29] [Rank 0] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 29] [Rank 0] Total bits transmitted: 545787943680
+[Epoch 29] [Rank 1] ###### Epoch stats: #######
+[Epoch 29] [Rank 1] Current ratio of transmitted gradients: 9.499988015422064
+[Epoch 29] [Rank 1] Average ratio of transmitted gradients: 9.499988015422064
+[Epoch 29] [Rank 1] Total bits transmitted: 545787943680

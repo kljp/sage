@@ -17,12 +17,21 @@ $ conda deactivate sage
 ## How to start
 
 The scripts to run code are written for SLURM workload manager, and setup of **multi-node (each with 1 GPU)**. In `run.sh`, you can specify *model*, *dataset*, ***reducer***, and *world_size*. ***Note***: if you want to use multiple GPUs for each node, use **mpirun** to execute `run.py` in `run.sh`; but, you should modify source code to give correct rank to each prcocess.
-- If you use **SLURM**, use `pararun` and modify it for your configuration. The script `pararun` executes `run.sh` in parallel. The script `run.sh` includes setup for distributed training.
-- If you do not use SLURM, you do not need to use `pararun`. Instead, run `run.sh` on your nodes, then rendezvous of pytorch allows processes are connected. For this distributed training, you should modify three lines of code: specify ***RANK***, ***hostip***, ***port*** to use in `run.sh`.
+
+- ### Overview of shell scripts
+
+ - If you use **SLURM**, use `pararun` and modify it for your configuration. The script `pararun` executes `run.sh` in parallel. The script `run.sh` includes setup for distributed training.
+ - If you do not use SLURM, you do not need to use `pararun`. Instead, run `run.sh` on your nodes, then rendezvous of pytorch allows processes are connected. For this distributed training, you should modify three lines of code: specify ***RANK***, ***hostip***, ***port*** to use in `run.sh`.
 
 - ### CNN and LSTM benchmarks
 
- #### - Run training script with dataset download
+ #### 1. Prepare dataset
+
+ - If you use **SLURM**, you should use tricky method because we did not implement dataset download code along with SLURM. 1) Execute `run.sh` with single worker training configuration: configure the ***n_nodes***, ***n_procs***, ***world_size*** to 1. Then, the code will download the dataset. 2) Check that the dataset is downloaded. You can check this on your prompt. 3) Terminate the program.
+
+ - If you do not use **SLURM**, nothing to do here.
+
+  #### 2. Run training script
 
  - If you use **SLURM**, use following command.
 ```bash
@@ -52,6 +61,10 @@ $ sbatch pararun
 ```bash
 $ hostip=<ip> port=<port> rank=<rank> ./run.sh
 ```
+
+## Benchmark results
+
+We provide raw data of benchmark results used in our paper. You can find the raw data in `results` directory of this repository. All figures and tables presenting benchmark results in our paper are based on the provided raw data.
 
 ## Acknowledgements
 
