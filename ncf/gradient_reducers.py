@@ -10,7 +10,6 @@ import torch
 import random
 
 
-
 class Reducer:
     def __init__(self, random_seed, device, timer):
         self.rng = np.random.RandomState(random_seed)
@@ -38,6 +37,7 @@ class TopKReducer(Reducer):
     def __init__(self, random_seed, device, timer, compression=1 / 244):
         super().__init__(random_seed, device, timer)
         self.compression = compression
+        self.iteration = -1
 
     def reduce(self, grad_in, grad_out, memory_out):
         """
@@ -48,6 +48,8 @@ class TopKReducer(Reducer):
         """
         bits_communicated = 0
         params_transmitted = 0
+
+        self.iteration += 1
 
         with self.timer("reduce.flatpack", verbosity=2):
             # Find the size of a flatpacked gradient
@@ -71,12 +73,15 @@ class TopKReducer(Reducer):
                 flat_positions[start:end] = positions
 
         with self.timer("reduce.memory", verbosity=2):
+#            norm_mem = 0.0
             for tensor, mem, start, end in zip(
                 grad_in, memory_out, flatgrad_start_idx, flatgrad_end_idx
             ):
                 positions = flat_positions[start:end]
                 mem.data[:] = tensor
                 mem.view(-1)[positions.long()] = 0.0
+#                norm_mem += torch.sum(mem.view(-1).square())
+#            print("[Iteration " + str(self.iteration) + "] [RANK " + str(float(self.rank)) + "] Error norm: " + str(norm_mem))
 
         with self.timer("reduce.gather", verbosity=2):
             if self.n_workers > 1:
@@ -101,8 +106,9 @@ class TopKReducer(Reducer):
                     positions = pos[start:end]
                     values = val[start:end]
                     # out.view(-1)[pos].add_(1.0 / self.n_workers, val)
-                    out.view(-1)[positions.long()] += values / self.n_workers
+                    out.view(-1)[positions.long()] += values / self.n_workers        
 
+        #print('[Iteration ' + str(self.iteration) + '] [Rank ' + str(self.rank) + '] bits = ' + str(bits_communicated))
         return bits_communicated, params_transmitted
 
 class GlobalTopKReducer(Reducer):
@@ -215,12 +221,15 @@ class ThreshReducer(Reducer):
                 local_sizes.append(values.numel())
 
         with self.timer("reduce.memory", verbosity=2):
+#            norm_mem = 0.0
             for tensor, mem, positions in zip(
                 grad_in, memory_out, compressed_positions
             ):
                 mem.data[:] = tensor
                 mem.view(-1)[positions] = 0.0
-                
+#                norm_mem += torch.sum(mem.view(-1).square())
+#            print("[Iteration " + str(self.iteration) + "] [RANK " + str(float(self.rank)) + "] Error norm: " + str(norm_mem))
+               
         with self.timer("reduce.flatpack", verbosity=2):
             flatgrad_size = 0
             tensor_idx = [0]
@@ -291,9 +300,9 @@ class ThreshReducer(Reducer):
                     # out.view(-1)[pos].add_(1.0 / self.n_workers, val)
                     out.view(-1)[positions.long()] += values / self.n_workers
         self.density_average = (self.iteration * self.density_average + self.density_actual) / (self.iteration + 1)
+        
         if self.iteration % 10 == 0:
-            print('[Iteration ' + str(self.iteration) + '] [Rank ' + str(self.rank) + '] ' + ', d = ' + str(self.density_actual) + ', m = ' + str(self.density_average))
-                   
+            print('[Iteration ' + str(self.iteration) + '] [Rank ' + str(self.rank) + '] ' + ', d = ' + str(self.density_actual) + ', m = ' + str(self.density_average) + ', bits = ' + str(bits_communicated))                   
         return bits_communicated, params_transmitted
 
 class SageReducer(Reducer):
@@ -304,6 +313,7 @@ class SageReducer(Reducer):
         self.iteration = -1
         self.alpha = 1.0
         self.beta = 1.0
+        self.gamma = 1.0
         self.savg_prev = 1 # Sampled average
         self.savg_curr = 1
         self.density_ideal = compression
@@ -347,8 +357,15 @@ class SageReducer(Reducer):
                         numel_exam += positions.numel()
                     self.density_exam = numel_exam / self.num_grad
                     exam = self.density_ideal - self.density_exam
-                    self.beta = 2.0 / (1.0 + np.exp(exam)) # 0.99975
-                self.threshold = self.threshold * self.alpha * self.beta
+                    self.beta = 2.0 / (1.0 + np.exp(exam))
+                exam2 = self.density_exam / self.density_ideal
+                if exam2 < 0.1:
+                    self.gamma = 0.95
+                elif exam2 > 10.0:
+                    self.gamma = 1.05
+                else:
+                    self.gamma = 1.0
+                self.threshold = self.threshold * self.alpha * self.beta * self.gamma
             else:
                 for tensor in grad_in:
                     temp_sz = tensor.view(-1).numel()
@@ -369,11 +386,14 @@ class SageReducer(Reducer):
                 compressed_positions.append(positions)
                 local_sizes.append(values.numel())
         with self.timer("reduce.memory", verbosity=2):
+#            norm_mem = 0.0
             for tensor, mem, positions in zip(
                 grad_in, memory_out, compressed_positions
             ):
                 mem.data[:] = tensor
                 mem.view(-1)[positions] = 0.0
+#                norm_mem += torch.sum(mem.view(-1).square())
+#            print("[Iteration " + str(self.iteration) + "] [RANK " + str(float(self.rank)) + "] Error norm: " + str(norm_mem))
                 
         with self.timer("reduce.flatpack", verbosity=2):
             flatgrad_size = 0
@@ -453,8 +473,9 @@ class SageReducer(Reducer):
                    
         self.savg_prev = self.savg_curr
         self.density_average = (self.iteration * self.density_average + self.density_actual) / (self.iteration + 1)
+        
         if self.iteration % 10 == 0:
-            print('[Iteration ' + str(self.iteration) + '] [Rank ' + str(self.rank) + '] ' + 'a = ' + str(float(self.alpha)) + ', b = ' + str(self.beta) + ', delta = ' + str(float(self.threshold)) + ', c = ' + str(self.density_exam) + ', d = ' + str(self.density_actual) + ', m = ' + str(self.density_average))
+            print('[Iteration ' + str(self.iteration) + '] [Rank ' + str(self.rank) + '] ' + 'a = ' + str(float(self.alpha)) + ', b = ' + str(self.beta) + ', c = ' + str(self.gamma) + ', delta = ' + str(float(self.threshold)) + ', e = ' + str(self.density_exam) + ', d = ' + str(self.density_actual) + ', m = ' + str(self.density_average) + ', bits = ' + str(bits_communicated))
         return bits_communicated, params_transmitted
 
 class AccordionTopKReducer(Reducer):
@@ -578,6 +599,7 @@ class ExactReducer(Reducer):
         :param grad_out: dictionary
         :param memory_out: dictionary
         """
+
         with self.timer("reduce.zero_mem", verbosity=2):
             for mem in memory_out:
                 mem.zero_()
@@ -589,6 +611,7 @@ class ExactReducer(Reducer):
         with self.timer("reduce.reduce", verbosity=2):
             bits_communicated, params_transmitted = reduce_mean_list(self.device, list_in, list_out, self.timer)
 
+        #print('[Rank ' + str(self.rank) + '] bits = ' + str(bits_communicated))
         return bits_communicated, params_transmitted
 
 

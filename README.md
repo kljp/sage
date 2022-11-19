@@ -18,12 +18,12 @@ $ conda deactivate sage
 
 The scripts to run code are written for SLURM workload manager, and setup of **multi-node (each with 1 GPU)**. In `run.sh`, you can specify *model*, *dataset*, ***reducer***, and *world_size*. ***Note***: if you want to use multiple GPUs for each node, use **mpirun** to execute `run.py` in `run.sh`; but, you should modify source code to give correct rank to each prcocess.
 
-- ### Overview of shell scripts
+### Overview of shell scripts
 
  - If you use **SLURM**, use `pararun` and modify it for your configuration. The script `pararun` executes `run.sh` in parallel. The script `run.sh` includes setup for distributed training.
  - If you do not use SLURM, you do not need to use `pararun`. Instead, run `run.sh` on your nodes, then rendezvous of pytorch allows processes are connected. For this distributed training, you should modify three lines of code: specify ***RANK***, ***hostip***, ***port*** to use in `run.sh`.
 
-- ### CNN and LSTM benchmarks
+### CNN and LSTM benchmarks
 
  #### 1. Prepare dataset
 
@@ -31,7 +31,7 @@ The scripts to run code are written for SLURM workload manager, and setup of **m
 
  - If you do not use **SLURM**, nothing to do here.
 
-  #### 2. Run training script
+#### 2. Run training script
 
  - If you use **SLURM**, use following command.
 ```bash
@@ -42,16 +42,16 @@ $ sbatch pararun
 $ hostip=<ip> port=<port> rank=<rank> ./run.sh
 ```
 
-- ### Neural Collaborative Filtering (NCF) benchmarks
+### Neural Collaborative Filtering (NCF) benchmarks
 
- #### 1. Prepare dataset
+#### 1. Prepare dataset
 
  - To download dataset, use following command.
 ```bash
 $ ./prepare_dataset.sh
 ```
 
- #### 2. Run training script
+#### 2. Run training script
 
  - If you use **SLURM**, use following command.
 ```bash

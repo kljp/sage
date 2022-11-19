@@ -14,11 +14,11 @@ export USE_WANDB=0 # Whether to use wandb or not
 ########################################## Tasks #########################################
 
 ##### ResNet18-CIFAR10 #######
-# task='resnet18'
+ task='resnet18'
 ##############################
 
 ##### ResNet18-CIFAR100#######
- task='resnet18_cifar100'
+# task='resnet18_cifar100'
 ##############################
 
 ##### VGG16-CIFAR10 ####### ABNORMAL WORK
@@ -84,13 +84,13 @@ world_size=4
 # |-----------|----------------------|------------------- |-----------------------|
 # | Network   | Total paramaters (d) | k_min (Top-%)      |\frac{2}{\sqrt{k_min}} |
 # |-------------------------------------------------------------------------------|
-# | LSTM      | 28949319             | 28949   (Top-0.1%) | 2.938 x 10e-3         |
+# | LSTM      | 28949319             | 144746   (Top-0.5%) | 1.31 x 10e-3         |
 # |-------------------------------------------------------------------------------|
 
 ########### Exact ################
- reducer='exact'
- if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
- python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --rank=${RANK}
+# reducer='exact'
+# if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
+# python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --rank=${RANK}
 ##############################
 
 ########### Threshold ############ 
@@ -100,9 +100,9 @@ world_size=4
 ##################################
 
 ########### SAGE ############ 
-# reducer='sage'
-# if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
-# python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --thresh=0.00472 --comp_ratio=0.001 --rank=${RANK}
+ reducer='sage'
+ if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
+ python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --thresh=0.00472 --comp_ratio=0.001 --rank=${RANK}
 ##################################
 
 ########### Top-k ############
