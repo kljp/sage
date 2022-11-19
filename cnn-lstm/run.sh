@@ -96,13 +96,13 @@ world_size=4
 ########### Threshold ############ 
 # reducer='thresh'
 # if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
-# python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --thresh=0.00472 --rank=${RANK}
+# python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --thresh=0.00473 --rank=${RANK}
 ##################################
 
 ########### SAGE ############ 
  reducer='sage'
  if ((${RANK} == 0)); then rm -f ${DIST_INIT}; fi
- python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --thresh=0.00472 --comp_ratio=0.001 --rank=${RANK}
+ python run.py --world_size=$world_size --task=$task --seed=1 --reducer=$reducer --thresh=0.00473 --comp_ratio=0.001 --rank=${RANK}
 ##################################
 
 ########### Top-k ############

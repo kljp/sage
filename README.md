@@ -63,8 +63,7 @@ $ hostip=<ip> port=<port> rank=<rank> ./run.sh
 ```
 
 ## Benchmark results
-
-We provide raw data of benchmark results used in our paper. You can find the raw data in `results` directory of this repository. All figures and tables presenting benchmark results in our paper are based on the provided raw data.
+We provide raw data of benchmark results used in our paper. You can find the raw data from [here](https://github.com/kljp/topk_results/tree/master/parser_sage). All figures and tables presenting benchmark results in our paper are based on the provided raw data.
 
 ## Acknowledgements
 
