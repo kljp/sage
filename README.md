@@ -87,7 +87,7 @@ Most of code except [SAGE](https://github.com/kljp/sage) implementation is provi
 
 ## Publication
 
-No publication yet.
+**SAGE: toward on-the-fly gradient compression ratio scaling**. Daegun Yoon, Minjoong Jeong, Sangyoon Oh. ***The Journal of Supercomputing***, Feb. 2023. [**\[Paper\]**](https://link.springer.com/article/10.1007/s11227-023-05120-7)
 
 ## Contact
 
